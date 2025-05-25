@@ -36,8 +36,8 @@ const CustomSwiper = ({
     <div className={styles.sliderWrapper}>
       <Swiper
         navigation={{
-          nextEl: `.arrow-left-${id}`,
-          prevEl: `.arrow-right-${id}`,
+          nextEl: `.arrow-right-${id}`,
+          prevEl: `.arrow-left-${id}`,
         }}
         autoHeight={true}
         modules={[Navigation]}
@@ -110,14 +110,7 @@ const CustomSwiper = ({
                         sizes="100vw"
                         style={{ objectFit: "cover" }}
                       />
-                      <div
-                        style={{
-                          position: "absolute",
-                          top: "50%",
-                          left: "50%",
-                          transform: "translate(-50%, -50%)",
-                        }}
-                      >
+                      <div className={styles.playButton}>
                         <PlayIcon />
                       </div>
                     </div>

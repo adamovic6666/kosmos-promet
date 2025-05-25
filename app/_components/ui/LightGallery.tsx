@@ -129,14 +129,17 @@ const LightGallery = ({
             <iframe
               src={
                 media[activeIndex].includes("youtube.com/watch")
-                  ? media[activeIndex].replace(
-                      /youtube\.com\/watch\?v=([^&]+)/,
-                      "youtube.com/embed/$1"
-                    )
+                  ? `https://www.youtube.com/embed/${new URL(
+                      media[activeIndex]
+                    ).searchParams.get("v")}?si=${
+                      new URL(media[activeIndex]).searchParams.get("si") || ""
+                    }`
                   : media[activeIndex]
               }
               className={styles.galleryVideo}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              frameBorder="0"
               allowFullScreen
               style={{
                 width: "100%",

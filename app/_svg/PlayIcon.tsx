@@ -9,7 +9,7 @@ const PlayIcon = () => {
       viewBox="0 0 32 32"
       width="32px"
       style={{
-        backgroundColor: "#222",
+        backgroundColor: "#ccc",
       }}
     >
       <g id="Layer_1" />
@@ -17,7 +17,7 @@ const PlayIcon = () => {
         <path
           d="M16,0C7.164,0,0,7.164,0,16s7.164,16,16,16s16-7.164,16-16S24.836,0,16,0z M10,24V8l16.008,8L10,24z   "
           style={{
-            fill: "#ccc",
+            fill: "#fff",
           }}
         />
       </g>

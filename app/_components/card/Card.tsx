@@ -19,7 +19,9 @@ const Card = ({
         <div className={`${styles.image} ${isProduct ? styles.imageBig : ""}`}>
           <Image src={imageSrc} alt={name} fill />
         </div>
-        <div className={styles.title}>
+        <div
+          className={`${styles.title}  ${isProduct ? styles.titleNoCaps : ""}`}
+        >
           {name?.includes("`") ? (
             <h4>
               <span>{name?.split("`")[0]}</span>

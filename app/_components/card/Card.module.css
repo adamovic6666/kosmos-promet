@@ -36,6 +36,10 @@
   transition: all 0.3s ease;
 }
 
+.titleNoCaps h4 {
+  text-transform: capitalize;
+}
+
 .title {
   background-color: var(--gray-medium);
   display: flex;
