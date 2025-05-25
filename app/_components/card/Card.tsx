@@ -22,15 +22,11 @@ const Card = ({
         <div
           className={`${styles.title}  ${isProduct ? styles.titleNoCaps : ""}`}
         >
-          {name?.includes("`") ? (
-            <h4>
-              <span>{name?.split("`")[0]}</span>
-              <br />
-              <span>{name?.split("`").slice(1).join(" ")}</span>
-            </h4>
-          ) : (
-            <h4>{name ?? "No name"}</h4>
-          )}
+          <h4>
+            {name && name.length > 52
+              ? name.slice(0, 52) + "..."
+              : name ?? "No name"}
+          </h4>
         </div>
       </article>
     </Link>

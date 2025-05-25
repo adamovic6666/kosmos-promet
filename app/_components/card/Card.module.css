@@ -37,7 +37,7 @@
 }
 
 .titleNoCaps h4 {
-  text-transform: capitalize;
+  text-transform: unset;
 }
 
 .title {

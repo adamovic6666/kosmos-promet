@@ -134,7 +134,7 @@ const ProductDetails = ({ productDetails }: ProductDetailsProps) => {
             )}
             {productDetails.fabric_number && (
               <div>
-                <p className={styles.bold}>OEM fabrički broj:</p>
+                <p className={styles.bold}>OEM Fabrički broj:</p>
                 <p>{productDetails.fabric_number}</p>
               </div>
             )}
