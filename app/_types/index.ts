@@ -4,6 +4,10 @@ export interface Product {
   title?: string;
   image: string;
   alias: string;
+  url?: string;
+  is_new?: boolean;
+  main_photo?: string;
+  product_code?: string;
 }
 
 export interface ProductDetail {

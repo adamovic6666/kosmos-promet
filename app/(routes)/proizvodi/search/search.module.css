@@ -1,9 +1,10 @@
 .searchResults {
-  padding: 4rem 0;
+  padding: 10.4rem 0 8rem;
+  min-height: calc(100vh - 5.2rem);
 }
 
 .searchResults h1 {
-  margin-bottom: 2.4rem;
+  margin-bottom: 4rem;
 }
 
 .loading {
@@ -19,6 +20,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
+  margin-top: 2.4rem;
 }
 
 .resultItem {
@@ -27,15 +29,9 @@
   padding: 1.6rem;
   border-radius: 0.8rem;
   background-color: var(--white);
-  box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.05);
   transition: transform 0.2s, box-shadow 0.2s;
   text-decoration: none;
   color: inherit;
-}
-
-.resultItem:hover {
-  transform: translateY(-0.4rem);
-  box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.1);
 }
 
 .resultImage {
@@ -64,19 +60,21 @@
 
 .resultContent {
   flex: 1;
+  gap: 1.6rem;
 }
 
 .resultContent h2 {
   margin: 0 0 0.8rem 0;
   font-size: 1.8rem;
   color: #333;
+  text-align: start;
+  text-transform: unset;
+  line-height: 1.2;
 }
 
 .resultContent p {
-  margin: 0 0 1.6rem 0;
   font-size: 1.4rem;
   color: #666;
-  line-height: 1.5;
 }
 
 .category {
@@ -103,14 +101,68 @@
   font-size: 1.4rem;
 }
 
-@media (max-width: 768px) {
+.resultContent {
+  display: flex;
+}
+
+.productDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.productDetails span:nth-of-type(2) {
+  opacity: 0.6;
+  display: inline-block;
+  max-width: 6rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+  font-size: 1rem;
+  transform: translateY(0.2rem);
+}
+
+.productDetails span {
+  margin-right: 0.4rem;
+}
+
+.productDetails span:nth-of-type(1) {
+  font-weight: 500;
+  font-size: 1.4rem;
+}
+
+.productDetails p {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  max-width: 12rem;
+}
+
+@media (min-width: 768px) {
   .resultItem {
     flex-direction: column;
   }
-  
+
   .resultImage {
     width: 100%;
     height: 16rem;
     min-width: unset;
+  }
+
+  .searchResults {
+    padding: 12rem 0 8rem;
+  }
+
+  .resultsList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
   }
 }

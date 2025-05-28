@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import styles from "./Header.module.css";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Facebook from "@/app/_svg/Facebook";
 import YouTube from "@/app/_svg/YouTube";
 import Link from "next/link";
@@ -14,6 +14,12 @@ const Header = () => {
   const [searchIsOpen, setSearchIsOpen] = useState(false);
   const pathname = usePathname();
   const [isMobile, setIsMobile] = useState(false);
+  // Define a type for the SearchDropdown ref if not already defined
+  type SearchDropdownRef = {
+    clearSearch: () => void;
+  };
+
+  const searchInputRef = useRef<SearchDropdownRef | null>(null);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -117,9 +123,23 @@ const Header = () => {
         className={`${styles.mobileSearchOverlay} ${
           searchIsOpen ? styles.open : ""
         }`}
+        onClick={(e) => {
+          // Close dropdown when clicking on backdrop
+          if (e.target === e.currentTarget) {
+            handleCloseSearch();
+          }
+        }}
       >
         <div className={styles.mobileSearchContainer}>
-          <div className={styles.mobileSearchClose} onClick={handleOpenSearch}>
+          <div
+            className={styles.mobileSearchClose}
+            onClick={() => {
+              // Clear search text and close the search overlay
+              if (searchInputRef?.current) {
+                searchInputRef.current.clearSearch();
+              }
+            }}
+          >
             ✕
           </div>
           <div className={styles.mobileSearchInput}>
@@ -127,6 +147,7 @@ const Header = () => {
               placeholder="Pretraži..."
               isMobile={true}
               onClose={handleCloseSearch}
+              ref={searchInputRef}
             />
           </div>
         </div>

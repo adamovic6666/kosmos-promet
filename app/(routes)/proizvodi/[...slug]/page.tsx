@@ -28,7 +28,6 @@ const page = async () => {
     `${process.env.BASE_URL}/api/v1/list-products?data=${pathname}&cc=W4E)C9($8n=n*S(OBJMUR_hQ0.$t6P/xOx4a3v/|D@>U3LU8a,`
   );
   const { products, parent } = await res.json();
-
   return (
     <>
       <Products

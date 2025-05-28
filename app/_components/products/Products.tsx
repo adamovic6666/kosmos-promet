@@ -48,6 +48,7 @@ const Products = ({
               name={(product?.title || product?.name) as string}
               image={product.image}
               alias={product.alias}
+              isNew={product.is_new}
             />
           ))}
         </div>
