@@ -47,6 +47,7 @@ h6 {
   font-family: var(--font-open-sans);
 }
 
+.container-extra-small,
 .container-medium,
 .container-small,
 .container {
@@ -64,6 +65,10 @@ h6 {
 
 .container-small {
   max-width: 74rem;
+}
+
+.container-extra-small {
+  max-width: 58rem;
 }
 
 button,
