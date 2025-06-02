@@ -31,6 +31,18 @@ const CustomSwiper = ({
 }: CustomSwiperProps) => {
   const showArrows =
     (products && products.length > 3) || (images && images.thumb.length > 3);
+    
+  const getYouTubeVideoId = (url: string): string => {
+    if (url.includes('youtube.com/watch')) {
+      return new URL(url).searchParams.get('v') || '';
+    } else if (url.includes('youtube.com/shorts')) {
+      const pathname = new URL(url).pathname;
+      return pathname.split('/').pop() || '';
+    } else if (url.includes('youtu.be')) {
+      return url.split('youtu.be/')[1].split('?')[0];
+    }
+    return '';
+  };
 
   return (
     <div className={styles.sliderWrapper}>
@@ -70,9 +82,10 @@ const CustomSwiper = ({
         {images &&
           images.thumb.map((media, index) => {
             const origMedia = images.orig[index];
+            console.log(origMedia, "origMedia");
             const isYoutube =
               typeof origMedia === "string" &&
-              origMedia.includes("youtube.com");
+              (origMedia.includes("youtube.com") || origMedia.includes("youtu.be"));
 
             return (
               <SwiperSlide key={index}>
@@ -99,12 +112,12 @@ const CustomSwiper = ({
                         height: "100%",
                         top: 0,
                         left: 0,
+                        background: "#000",
+                        opacity: 1,
                       }}
                     >
                       <Image
-                        src={`https://img.youtube.com/vi/${
-                          origMedia.split("v=")[1]?.split("&")[0]
-                        }/hqdefault.jpg`}
+                        src={`https://img.youtube.com/vi/${getYouTubeVideoId(origMedia)}/hqdefault.jpg`}
                         alt={`YouTube video thumbnail ${index + 2}`}
                         fill
                         sizes="100vw"

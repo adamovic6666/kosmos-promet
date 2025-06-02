@@ -11,10 +11,19 @@ const ProductDetails = ({ productDetails }: ProductDetailsProps) => {
   const isNew = productDetails.is_new;
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
   // Create an array that includes the main image plus the gallery images
+  // Make sure to properly handle YouTube URLs by preserving them exactly as they are
   const allGalleryImages = [
     productDetails.main_photo,
-    ...productDetails.photo_gallery.orig,
+    ...productDetails.photo_gallery.orig.map((item: string) => {
+      // For YouTube links, use them directly without prefixing with API URL
+      if (typeof item === 'string' && (item.includes('youtube.com') || item.includes('youtu.be'))) {
+        return item;
+      }
+      // For site images, keep as is (will be prefixed in the LightGallery component)
+      return item;
+    }),
   ];
   const leftSide = useRef<HTMLDivElement>(null);
   const rightSide = useRef<HTMLDivElement>(null);
@@ -109,7 +118,7 @@ const ProductDetails = ({ productDetails }: ProductDetailsProps) => {
             ref={descriptionRef}
             className={styles.descriptionContainer}
             style={
-              productDetails.description
+              productDetails?.description
                 ? {
                     maxHeight: `${descriptionHeight}px`,
                     overflowY: "auto",
@@ -117,25 +126,25 @@ const ProductDetails = ({ productDetails }: ProductDetailsProps) => {
                 : undefined
             }
           >
-            {productDetails.description && (
+            {productDetails?.description && (
               <div className={styles.description}>
                 <span
                   dangerouslySetInnerHTML={{
-                    __html: productDetails.description,
+                    __html: productDetails?.description,
                   }}
                 />
               </div>
             )}
-            {productDetails.tip_vozila && (
+            {productDetails?.tip_vozila && (
               <div>
                 <p className={styles.bold}>Marka i model vozila:</p>
-                <p>{productDetails.tip_vozila}</p>
+                <p>{productDetails?.tip_vozila}</p>
               </div>
             )}
-            {productDetails.fabric_number && (
+            {productDetails?.fabric_number && (
               <div>
                 <p className={styles.bold}>OEM Fabrički broj:</p>
-                <p>{productDetails.fabric_number}</p>
+                <p>{productDetails?.fabric_number}</p>
               </div>
             )}
           </div>

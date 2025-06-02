@@ -23,9 +23,10 @@ export async function generateMetadata({
   );
 
   const { metatag }: ProductDetail = await response.json();
+  const title = metatag?.title?.split?.(" | ")[0] || "Auto Frogy";
   return {
     title: metatag?.title
-      ? `Auto Frogy | ${metatag?.title}`
+      ? `Auto Frogy | ${title}`
       : "Auto Frogy | Proizvodnja i prodaja auto kopči i žabica",
     description:
       metatag?.description ??
@@ -55,7 +56,7 @@ const Page = async ({ params }: PageProps) => {
   return (
     <>
       <ProductDetails productDetails={product} />
-      <SimilarProducts similarProducts={product.similar_products || []} />
+      <SimilarProducts similarProducts={product?.similar_products || []} />
       <Contact />
     </>
   );

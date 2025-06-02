@@ -67,6 +67,10 @@
   object-fit: contain;
 }
 
+.galleryVideo {
+  max-width: 100%;
+}
+
 .navButton {
   background: rgba(0, 0, 0, 0.4);
   border: none;
@@ -100,9 +104,64 @@
   height: 3.2rem;
 }
 
+.thumbnails {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1.6rem;
+  overflow-x: auto;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.thumbnail {
+  width: 6.4rem;
+  height: 6.4rem;
+  position: relative;
+  border-radius: 0.4rem;
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.3s, transform 0.3s;
+  flex-shrink: 0;
+  border: 0.2rem solid transparent;
+}
+
+.thumbnail:hover {
+  opacity: 0.8;
+}
+
+.activeThumbnail {
+  opacity: 1;
+  border-color: var(--white, white);
+  transform: scale(1.05);
+}
+
+.thumbnailYouTube {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.playButtonSmall {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 2.4rem;
+  height: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
 .counter {
   position: absolute;
-  bottom: 2.4rem;
+  bottom: 0.8rem;
   left: 50%;
   transform: translateX(-50%);
   color: white;

@@ -57,7 +57,22 @@ const LightGallery = ({
     setActiveIndex((prev) => (prev === media.length - 1 ? 0 : prev + 1));
   };
 
+  const getYouTubeVideoId = (url: string): string => {
+    if (url.includes("youtube.com/watch")) {
+      return new URL(url).searchParams.get("v") || "";
+    } else if (url.includes("youtube.com/shorts") || url.includes("youtu.be")) {
+      const pathname = new URL(url).pathname;
+      return pathname.split("/").pop() || "";
+    }
+    return "";
+  };
+
   if (!isOpen) return null;
+
+  const currentMedia = media[activeIndex];
+  const isYouTubeVideo =
+    typeof currentMedia === "string" &&
+    (currentMedia.includes("youtube.com") || currentMedia.includes("youtu.be"));
 
   return (
     <div className={styles.lightgallery}>
@@ -116,41 +131,48 @@ const LightGallery = ({
         </button>
 
         <div className={styles.imageContainer}>
-          {media[activeIndex].startsWith("/sites") ? (
-            <Image
-              className={styles.galleryImage}
-              src={process.env.NEXT_PUBLIC_API_URL + media[activeIndex]}
-              alt={`Gallery image ${activeIndex + 1}`}
-              fill
-              sizes="100vw"
-              style={{ objectFit: "contain" }}
-            />
-          ) : (
+          {isYouTubeVideo ? (
             <iframe
-              src={
-                media[activeIndex].includes("youtube.com/watch")
-                  ? `https://www.youtube.com/embed/${new URL(
-                      media[activeIndex]
-                    ).searchParams.get("v")}?si=${
-                      new URL(media[activeIndex]).searchParams.get("si") || ""
-                    }`
-                  : media[activeIndex]
-              }
+              src={`https://www.youtube.com/embed/${getYouTubeVideoId(
+                currentMedia
+              )}`}
               className={styles.galleryVideo}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
               frameBorder="0"
               allowFullScreen
               style={{
-                width: "100%",
+                width: currentMedia.includes("youtube.com/shorts")
+                  ? "auto"
+                  : "100%",
                 height: "100%",
-                aspectRatio: "16/9",
+                aspectRatio: currentMedia.includes("youtube.com/shorts")
+                  ? "9/16"
+                  : "16/9",
                 border: "none",
                 display: "block",
                 maxHeight: "80vh",
                 background: "#000",
               }}
               title={`Gallery video ${activeIndex + 1}`}
+            />
+          ) : currentMedia.startsWith("/sites") ? (
+            <Image
+              className={styles.galleryImage}
+              src={process.env.NEXT_PUBLIC_API_URL + currentMedia}
+              alt={`Gallery image ${activeIndex + 1}`}
+              fill
+              sizes="100vw"
+              style={{ objectFit: "contain" }}
+            />
+          ) : (
+            <Image
+              className={styles.galleryImage}
+              src={currentMedia}
+              alt={`Gallery image ${activeIndex + 1}`}
+              fill
+              sizes="100vw"
+              style={{ objectFit: "contain" }}
             />
           )}
         </div>
