@@ -1,6 +1,7 @@
 import Products from "@/app/_components/products/Products";
 import { headers } from "next/headers";
 import type { Metadata } from "next";
+import { Product } from "@/app/_types";
 
 export async function generateMetadata(): Promise<Metadata> {
   // read route params
@@ -28,10 +29,14 @@ const page = async () => {
     `${process.env.BASE_URL}/api/v1/list-products?data=${pathname}&cc=W4E)C9($8n=n*S(OBJMUR_hQ0.$t6P/xOx4a3v/|D@>U3LU8a,`
   );
   const { products, parent } = await res.json();
+  const sortedByNewField = products.sort((a: Product, b: Product) => {
+    return a.is_new === b.is_new ? 0 : a.is_new ? -1 : 1;
+  });
+
   return (
     <>
       <Products
-        allProducts={products || []}
+        allProducts={sortedByNewField || []}
         parentDetails={parent ?? {}}
         smallPadding
       />
