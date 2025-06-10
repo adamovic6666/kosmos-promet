@@ -7,11 +7,13 @@ const Card = ({
   name,
   alias,
   isNew = false,
+  productCode = "",
 }: {
   image: string;
   name: string;
   alias: string;
   isNew?: boolean;
+  productCode?: string;
 }) => {
   const imageSrc = process.env.NEXT_PUBLIC_API_URL + image;
   const isProduct = alias.split("/").includes("proizvod");
@@ -20,6 +22,11 @@ const Card = ({
       {isNew && (
         <div className={styles.newBadge}>
           <span>novo</span>
+        </div>
+      )}
+      {productCode && (
+        <div className={styles.productCode}>
+          <span>{productCode}</span>
         </div>
       )}
       <Link href={alias} className={styles.link}>

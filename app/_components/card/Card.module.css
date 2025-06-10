@@ -66,19 +66,30 @@
   position: relative;
 }
 
+.productCode,
 .newBadge {
-  background-color: var(--red);
-  color: var(--white);
   text-transform: uppercase;
   z-index: 1;
   border-radius: 1.6rem;
   padding: 0.4rem 1.4rem;
-  font-size: 1.2rem;
   font-weight: 600;
   position: absolute;
+  z-index: 9;
+  font-size: 1.2rem;
+}
+
+.newBadge {
+  background-color: var(--red);
+  color: var(--white);
   top: 1.8rem;
   right: 1.8rem;
-  z-index: 9;
+}
+
+.productCode {
+  background-color: var(--gray-light);
+  color: #000;
+  top: 1.8rem;
+  left: 1.8rem;
 }
 
 @media screen and (min-width: 768px) {
