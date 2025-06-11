@@ -21,7 +21,6 @@ const Products = ({
   const isProductPage = allProducts?.some((products) =>
     products.alias.includes("/proizvod/")
   );
-  console.log(products, "products");
   const description = isMainPage
     ? "Sa više od 20 godina iskustva u proizvodnji, izgradili smo reputaciju pouzdanog proizvođača visokokvalitetnih plastičnih auto delova koji odgovaraju najvišim standardima savremenih vozila."
     : "Kompletna ponuda naših proizvoda na jednom mestu. Praktično organizovano, jednostavno za pretragu.";
