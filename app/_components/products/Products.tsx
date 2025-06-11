@@ -38,7 +38,9 @@ const Products = ({
           <p className={styles.description}>{description}</p>
         )}
         {parentDetails?.description && (
-          <p dangerouslySetInnerHTML={{ __html: parentDetails?.description }} />
+          <div
+            dangerouslySetInnerHTML={{ __html: parentDetails?.description }}
+          />
         )}
         <div className={styles.grid}>
           {products.map((product: Product) => (
