@@ -32,6 +32,10 @@
   max-height: 20rem;
 }
 
+.image img {
+  object-fit: contain;
+}
+
 .imageBig img {
   width: 100%;
   height: 100%;
