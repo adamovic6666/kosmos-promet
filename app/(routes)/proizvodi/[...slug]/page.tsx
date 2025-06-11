@@ -26,13 +26,16 @@ const page = async () => {
   const headerList = await headers();
   const pathname = headerList.get("x-current-path");
   const res = await fetch(
-    `${process.env.BASE_URL}/api/v1/list-products?data=${pathname}&cc=W4E)C9($8n=n*S(OBJMUR_hQ0.$t6P/xOx4a3v/|D@>U3LU8a,`
+    `${process.env.BASE_URL}/api/v1/list-products?data=${pathname}&cc=W4E)C9($8n=n*S(OBJMUR_hQ0.$t6P/xOx4a3v/|D@>U3LU8a,`,
+    {
+      cache: "no-store", // Disable caching completely to always get fresh data
+      next: { revalidate: 0 }, // Disable revalidation to ensure fresh data
+    }
   );
   const { products, parent } = await res.json();
   const sortedByNewField = products.sort((a: Product, b: Product) => {
     return a.is_new === b.is_new ? 0 : a.is_new ? -1 : 1;
   });
-
   return (
     <>
       <Products
