@@ -76,6 +76,10 @@
   position: absolute;
   z-index: 9;
   font-size: 1.2rem;
+  max-width: 5.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .newBadge {
