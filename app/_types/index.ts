@@ -7,6 +7,7 @@ export interface Product {
   url?: string;
   is_new?: boolean;
   main_photo?: string;
+  media_updated_at?: number;
   product_code?: string;
 }
 

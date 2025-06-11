@@ -8,14 +8,18 @@ const Card = ({
   alias,
   isNew = false,
   productCode = "",
+  mediaUpdatedAt,
 }: {
   image: string;
   name: string;
   alias: string;
   isNew?: boolean;
   productCode?: string;
+  mediaUpdatedAt?: number;
 }) => {
-  const imageSrc = process.env.NEXT_PUBLIC_API_URL + image;
+  const imageSrc = `${process.env.NEXT_PUBLIC_API_URL}${image}${
+    image.includes("?") ? "&" : "?"
+  }t=${mediaUpdatedAt || 0}`;
   const isProduct = alias.split("/").includes("proizvod");
   return (
     <div className={styles.cardWrapper}>

@@ -51,6 +51,7 @@ const Products = ({
               alias={product.alias}
               isNew={product.is_new}
               productCode={product.product_code}
+              mediaUpdatedAt={product.media_updated_at || 0}
             />
           ))}
         </div>
