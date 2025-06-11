@@ -7,18 +7,26 @@ import Image from "next/image";
 import { ProductDetailsProps } from "@/app/_types";
 
 const ProductDetails = ({ productDetails }: ProductDetailsProps) => {
-  const mainImage = process.env.NEXT_PUBLIC_API_URL + productDetails.main_photo;
+  const mainPhoto = productDetails.main_photo || "";
+  const updatedAt = productDetails.media_updated_at || 0;
+  const mainImage = `${process.env.NEXT_PUBLIC_API_URL}${mainPhoto}${
+    mainPhoto.includes("?") ? "&" : "?"
+  }t=${updatedAt}`;
+
   const isNew = productDetails.is_new;
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  
+
   // Create an array that includes the main image plus the gallery images
   // Make sure to properly handle YouTube URLs by preserving them exactly as they are
   const allGalleryImages = [
     productDetails.main_photo,
     ...productDetails.photo_gallery.orig.map((item: string) => {
       // For YouTube links, use them directly without prefixing with API URL
-      if (typeof item === 'string' && (item.includes('youtube.com') || item.includes('youtu.be'))) {
+      if (
+        typeof item === "string" &&
+        (item.includes("youtube.com") || item.includes("youtu.be"))
+      ) {
         return item;
       }
       // For site images, keep as is (will be prefixed in the LightGallery component)

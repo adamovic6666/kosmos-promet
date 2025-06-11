@@ -19,10 +19,7 @@ export async function generateMetadata({
   const { slug } = resolvedParams;
 
   const response = await fetch(
-    `${process.env.BASE_URL}/api/v1/get-product?p=/proizvod/${slug}&cc=W4E)C9($8n=n*S(OBJMUR_hQ0.$t6P/xOx4a3v/|D@>U3LU8a,`,
-    {
-      cache: "no-store", // Disable caching to always get fresh data
-    }
+    `${process.env.BASE_URL}/api/v1/get-product?p=/proizvod/${slug}&cc=W4E)C9($8n=n*S(OBJMUR_hQ0.$t6P/xOx4a3v/|D@>U3LU8a,`
   );
 
   const { metatag }: ProductDetail = await response.json();

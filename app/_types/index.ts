@@ -28,6 +28,7 @@ export interface ProductDetail {
     description: string;
   };
   similar_products?: Product[];
+  media_updated_at?: number;
 }
 
 export interface ProductDetailsProps {

@@ -26,10 +26,7 @@ const page = async () => {
   const headerList = await headers();
   const pathname = headerList.get("x-current-path");
   const res = await fetch(
-    `${process.env.BASE_URL}/api/v1/list-products?data=${pathname}&cc=W4E)C9($8n=n*S(OBJMUR_hQ0.$t6P/xOx4a3v/|D@>U3LU8a,`,
-    {
-      cache: "no-store", // Disable caching completely to always get fresh data
-    }
+    `${process.env.BASE_URL}/api/v1/list-products?data=${pathname}&cc=W4E)C9($8n=n*S(OBJMUR_hQ0.$t6P/xOx4a3v/|D@>U3LU8a,`
   );
   const { products, parent } = await res.json();
   const sortedByNewField = products.sort((a: Product, b: Product) => {
