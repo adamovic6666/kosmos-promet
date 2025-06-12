@@ -7,11 +7,12 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import emailjs from "@emailjs/browser";
 import Input from "../ui/Input";
 import Button from "../ui/Button";
+import Select from "../ui/Select";
 
 const schema = z.object({
   fullName: z.string().min(1, "Ime i prezime su obavezni"),
   email: z.string().email("Email nije validan"),
-  subject: z.string().min(1, "Naslov poruke je obavezan"),
+  reason: z.string().min(1, "Naslov poruke je obavezan"),
   message: z.string().min(1, "Poruka je obavezna"),
 });
 type FormData = z.infer<typeof schema>;
@@ -25,7 +26,7 @@ const ContactForm = () => {
     defaultValues: {
       fullName: "",
       email: "",
-      subject: "",
+      reason: "",
       message: "",
     },
   });
@@ -43,7 +44,7 @@ const ContactForm = () => {
         {
           from_name: data.fullName,
           email: data.email,
-          subject: data.subject,
+          subject: data.reason,
           message: data.message,
         },
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
@@ -83,7 +84,8 @@ const ContactForm = () => {
                 borderRadius: "4px",
               }}
             >
-              Thank you for your message! We will get back to you soon.
+              Vaša poruka je uspešno poslata! Hvala Vam što ste nas
+              kontaktirali.
             </div>
           )}
 
@@ -114,7 +116,12 @@ const ContactForm = () => {
             />
           </div>
 
-          <Input name="subject" placeholder="Naslov poruke" control={control} />
+          {/* <Input name="subject" placeholder="Naslov poruke" control={control} /> */}
+          <Select
+            name="reason"
+            label="Kako možemo da Vam pomognemo?"
+            control={control}
+          />
           <Input
             name="message"
             placeholder="Upišite Vašu poruku ovde"

@@ -14,7 +14,8 @@ const Header = () => {
   const [searchIsOpen, setSearchIsOpen] = useState(false);
   const pathname = usePathname();
   const [isMobile, setIsMobile] = useState(false);
-  // Define a type for the SearchDropdown ref if not already defined
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   type SearchDropdownRef = {
     clearSearch: () => void;
   };
@@ -46,6 +47,20 @@ const Header = () => {
     setSearchIsOpen(false);
   };
 
+  const handleOpenDropdown = () => {
+    if (dropdownTimeoutRef.current) {
+      clearTimeout(dropdownTimeoutRef.current);
+      dropdownTimeoutRef.current = null;
+    }
+    setIsDropdownOpen(true);
+  };
+
+  const handleCloseDropdown = () => {
+    dropdownTimeoutRef.current = setTimeout(() => {
+      setIsDropdownOpen(false);
+    }, 300); // Small delay to prevent flickering
+  };
+
   useEffect(() => {
     if ((menuIsOpen || searchIsOpen) && isMobile) {
       document.body.style.overflow = "hidden";
@@ -66,7 +81,7 @@ const Header = () => {
           </div>
         )}
         <nav className={`${styles.nav} ${menuIsOpen ? styles.open : ""}`}>
-          <ul>
+          <ul className={styles.navList}>
             {navLinks.map(({ label, href }) => (
               <li key={label}>
                 {label.toLowerCase() === "katalog" ? (
@@ -76,6 +91,18 @@ const Header = () => {
                 ) : (
                   <Link
                     onClick={handleOpenMenu}
+                    onMouseOver={() => {
+                      // Close search when hovering over a link
+                      if (label === "proizvodi") {
+                        handleOpenDropdown();
+                      }
+                    }}
+                    onMouseLeave={() => {
+                      // Close dropdown when mouse leaves the link
+                      if (label === "proizvodi") {
+                        handleCloseDropdown();
+                      }
+                    }}
                     href={href}
                     className={
                       pathname === href ? styles.activeLink : styles.link
@@ -83,6 +110,57 @@ const Header = () => {
                   >
                     {label}
                   </Link>
+                )}
+                {label === "proizvodi" && (
+                  <div
+                    className={`${styles.productsDropdown} ${
+                      isDropdownOpen ? styles.open : ""
+                    }`}
+                    onMouseEnter={handleOpenDropdown}
+                    onMouseLeave={handleCloseDropdown}
+                  >
+                    <ul className={styles.productsList}>
+                      <li>
+                        <Link href="/proizvodi/auto-kopce">Auto kopče</Link>
+                      </li>
+                      <li>
+                        <Link href="/proizvodi/kopce-podizaca-stakla">
+                          Kopče podizača stakla
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/proizvodi/fiksatori-za-patosnice">
+                          Fiksatori za patosnice
+                        </Link>
+                      </li>
+
+                      <li>
+                        <Link href="/proizvodi/ukrasne-kapice-za-srafove">
+                          Ukrasne kapice za šrafove
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/proizvodi/univerzalni-nastavci">
+                          Univerzalni nastavci
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/proizvodi/nosaci-i-ramovi-za-tablice">
+                          Nosaci i ramovi za tablice
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/proizvodi/alati-za-limare">
+                          Alati za limare
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/proizvodi/ostali-proizvodi">
+                          Ostali proizvodi
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
                 )}
               </li>
             ))}

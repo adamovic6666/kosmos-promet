@@ -44,16 +44,17 @@
   height: 3.2rem;
 }
 
-.header .nav ul {
+.header .nav .navList {
   list-style: none;
   margin-top: -6rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0;
+  position: relative;
 }
 
-.header .nav ul li a {
+.header .nav .navList li a {
   font-size: 2.4rem;
   text-transform: uppercase;
   font-weight: 800;
@@ -199,13 +200,19 @@
   opacity: 0.2;
 }
 
-.header .nav ul li a {
+.header .nav .navList li a {
   text-decoration: none;
 }
 
 .activeLink {
   color: var(--gray-ultra-dark);
   opacity: 0.6;
+}
+
+.productsDropdown {
+  opacity: 0;
+  visibility: hidden;
+  display: none;
 }
 
 @media screen and (min-width: 768px) {
@@ -216,7 +223,7 @@
 }
 
 @media screen and (min-width: 968px) {
-  .header .nav ul {
+  .header .nav .navList {
     display: flex;
     list-style: none;
     padding: 0;
@@ -226,7 +233,7 @@
     flex-direction: row;
   }
 
-  .header .nav ul li {
+  .header .nav .navList li {
     font-weight: 700;
   }
 
@@ -243,7 +250,7 @@
     all: unset;
   }
 
-  .header .nav ul li a {
+  .header .nav .navList li a {
     font-size: 1.6rem;
     margin-bottom: 0;
     font-weight: 700;
@@ -256,5 +263,52 @@
   .actions,
   .burger {
     display: none;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  /* Using existing relative positioning from line ~246 */
+
+  .productsDropdown {
+    display: block;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%) !important;
+    min-width: 24rem;
+    background-color: var(--white);
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.6rem;
+    border-radius: 1.6rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .productsDropdown.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .productsList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav .navList .productsList li a {
+    font-size: 1.4rem;
+    text-transform: none;
+    transition: all 0.3s ease;
+  }
+
+  .nav .navList .productsList li a:hover {
+    color: var(--gray-ultra-dark);
+    opacity: 0.6;
   }
 }

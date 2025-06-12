@@ -7,6 +7,7 @@
   --gray-dark: #2c2c2c;
   --gray-ultra-dark: #3c3c3c;
   --white: #ffffff;
+  --color-error: #ff0000;
 }
 
 * {

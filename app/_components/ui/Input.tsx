@@ -38,7 +38,7 @@ const Input = ({
           />
         )}
         {fieldState.error && (
-          <p className={styles.InputError}>{fieldState.error.message}</p>
+          <span className={styles.InputError}>{fieldState.error.message}</span>
         )}
       </>
     );

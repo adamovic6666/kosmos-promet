@@ -90,14 +90,14 @@
   background-color: var(--red);
   color: var(--white);
   top: 1.8rem;
-  right: 1.8rem;
+  left: 1.8rem;
 }
 
 .productCode {
   background-color: var(--gray-light);
   color: #000;
   top: 1.8rem;
-  left: 1.8rem;
+  right: 1.8rem;
 }
 
 @media screen and (min-width: 768px) {
