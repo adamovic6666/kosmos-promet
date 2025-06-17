@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   images: {
     domains: ["backend.autofrogy.com", "placehold.co", "img.youtube.com"],
-    unoptimized: true,
+    unoptimized: true, // Keep unoptimized for cPanel
   },
   env: {
     NEXT_PUBLIC_API_URL: process.env.BASE_URL,
@@ -13,6 +13,13 @@ const nextConfig: NextConfig = {
     NEXT_PUBLIC_EMAILJS_TEMPLATE_ID: process.env.EMAILJS_TEMPLATE_ID,
     NEXT_PUBLIC_EMAILJS_PUBLIC_KEY: process.env.EMAILJS_PUBLIC_KEY,
   },
+  poweredByHeader: false, // Reduces response header size
+  reactStrictMode: false, // Reduces development overhead
+  experimental: {
+    // Optimize server-side rendering
+    optimizeServerReact: true,
+  },
+  generateEtags: true, // Improves caching
 };
 
 export default nextConfig;
