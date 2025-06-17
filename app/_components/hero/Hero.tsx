@@ -16,7 +16,8 @@ const Hero = ({
       <div className={`${styles.heroImage} ${rotate ? styles.rotate : ""}`}>
         <Image
           src={"/images/hero.webp"}
-          fill
+          width={1920}
+          height={785}
           alt="hero-image"
           priority={true}
           loading="eager"
