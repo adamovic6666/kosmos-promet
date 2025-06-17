@@ -14,7 +14,13 @@ const Hero = ({
   return (
     <section className={styles.hero}>
       <div className={`${styles.heroImage} ${rotate ? styles.rotate : ""}`}>
-        <Image src={"/images/hero.webp"} fill alt="hero-image" />
+        <Image
+          src={"/images/hero.webp"}
+          fill
+          alt="hero-image"
+          priority={true}
+          loading="eager"
+        />
       </div>
       <div className={`container ${styles.heroContent}`}>
         <h1
