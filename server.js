@@ -18,12 +18,16 @@ const handle = app.getRequestHandler();
 app.prepare().then(() => {
   createServer(async (req, res) => {
     try {
-      // Be sure to pass `true` as the second argument to `url.parse`.
+      // Add cache control headers
+      res.setHeader('Cache-Control', 'public, max-age=3600, stale-while-revalidate=86400');
+      
+      // Handle image files with stronger caching
+      if (req.url.match(/\.(jpg|jpeg|png|gif|webp|svg|ico)$/i)) {
+        res.setHeader('Cache-Control', 'public, max-age=86400, stale-while-revalidate=604800');
+      }
 
       // This tells it to parse the query portion of the URL.
-
       const parsedUrl = parse(req.url, true);
-
       const { pathname, query } = parsedUrl;
 
       if (pathname === "/a") {
@@ -35,9 +39,7 @@ app.prepare().then(() => {
       }
     } catch (err) {
       console.error("Error occurred handling", req.url, err);
-
       res.statusCode = 500;
-
       res.end("internal server error");
     }
   })

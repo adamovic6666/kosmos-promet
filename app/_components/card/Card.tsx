@@ -17,9 +17,11 @@ const Card = ({
   productCode?: string;
   mediaUpdatedAt?: number;
 }) => {
+  // Force cache busting with current timestamp for cPanel deployment
+  const timestamp = mediaUpdatedAt || Date.now(); // Use current timestamp if mediaUpdatedAt not available
   const imageSrc = `${process.env.NEXT_PUBLIC_API_URL}${image}${
     image.includes("?") ? "&" : "?"
-  }t=${mediaUpdatedAt || 0}`;
+  }t=${timestamp}`;
   const isProduct = alias.split("/").includes("proizvod");
   return (
     <div className={styles.cardWrapper}>

@@ -2,8 +2,22 @@ import Contact from "@/app/_components/contact/Contact";
 import ProductDetails from "@/app/_components/products/product-details/ProductDetails";
 import SimilarProducts from "@/app/_components/products/similar-products/SimilarProducts";
 import { ProductDetail } from "@/app/_types";
-
+import { cache } from "react";
 import type { Metadata } from "next";
+
+export const revalidate = 3600; // Revalidate this page every hour
+
+// Cached data fetching function to eliminate duplicate API calls
+const getProductData = cache(async (slug: string): Promise<ProductDetail> => {
+  const response = await fetch(
+    `${process.env.BASE_URL}/api/v1/get-product?p=/proizvod/${slug}&cc=W4E)C9($8n=n*S(OBJMUR_hQ0.$t6P/xOx4a3v/|D@>U3LU8a,`,
+    {
+      next: { revalidate: 3600 }, // Cache API response for 1 hour
+    }
+  );
+
+  return await response.json();
+});
 
 export async function generateMetadata({
   params,
@@ -18,11 +32,9 @@ export async function generateMetadata({
   const resolvedParams = await params;
   const { slug } = resolvedParams;
 
-  const response = await fetch(
-    `${process.env.BASE_URL}/api/v1/get-product?p=/proizvod/${slug}&cc=W4E)C9($8n=n*S(OBJMUR_hQ0.$t6P/xOx4a3v/|D@>U3LU8a,`
-  );
+  const product = await getProductData(slug);
+  const { metatag } = product;
 
-  const { metatag }: ProductDetail = await response.json();
   const title = metatag?.title?.split?.(" | ")[0] || "Auto Frogy";
   return {
     title: metatag?.title
@@ -47,11 +59,8 @@ const Page = async ({ params }: PageProps) => {
   const resolvedParams = await params;
   const { slug } = resolvedParams;
 
-  const response = await fetch(
-    `${process.env.BASE_URL}/api/v1/get-product?p=/proizvod/${slug}&cc=W4E)C9($8n=n*S(OBJMUR_hQ0.$t6P/xOx4a3v/|D@>U3LU8a,`
-  );
-
-  const product: ProductDetail = await response.json();
+  // Reuse the same cached data fetching function
+  const product = await getProductData(slug);
 
   return (
     <>

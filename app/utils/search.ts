@@ -24,8 +24,10 @@ export interface SearchResult {
   category?: string;
 }
 
-// Search function that calls the API
-export const searchProducts = async (
+import { cache } from "react";
+
+// Search function that calls the API, now with React cache
+export const searchProducts = cache(async (
   query: string,
   isDropdown: boolean = false
 ): Promise<SearchResult[]> => {
@@ -33,7 +35,7 @@ export const searchProducts = async (
   if (query.length < 2) {
     return [];
   }
-  // Log query for debugging
+  
   try {
     // Hard-code the hash with special characters correctly escaped
     const hash = "W4E)C9($8n=n*S(OBJMUR_hQ0.$t6P/xOx4a3v/|D@>U3LU8a,";
@@ -48,7 +50,9 @@ export const searchProducts = async (
       query
     )}&cc=${encodedHash}${isDropdown ? "&type=dropdown" : ""}`;
 
-    const response = await fetch(url);
+    const response = await fetch(url, {
+      next: { revalidate: 300 }, // Cache for 5 minutes
+    });
 
     if (!response.ok) {
       throw new Error(
@@ -62,4 +66,4 @@ export const searchProducts = async (
     console.error("Search API error:", error);
     return [];
   }
-};
+});
