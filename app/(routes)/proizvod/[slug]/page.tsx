@@ -5,15 +5,10 @@ import { ProductDetail } from "@/app/_types";
 import { cache } from "react";
 import type { Metadata } from "next";
 
-export const revalidate = 3600; // Revalidate this page every hour
-
 // Cached data fetching function to eliminate duplicate API calls
 const getProductData = cache(async (slug: string): Promise<ProductDetail> => {
   const response = await fetch(
-    `${process.env.BASE_URL}/api/v1/get-product?p=/proizvod/${slug}&cc=W4E)C9($8n=n*S(OBJMUR_hQ0.$t6P/xOx4a3v/|D@>U3LU8a,`,
-    {
-      next: { revalidate: 3600 }, // Cache API response for 1 hour
-    }
+    `${process.env.BASE_URL}/api/v1/get-product?p=/proizvod/${slug}&cc=W4E)C9($8n=n*S(OBJMUR_hQ0.$t6P/xOx4a3v/|D@>U3LU8a,`
   );
 
   return await response.json();
