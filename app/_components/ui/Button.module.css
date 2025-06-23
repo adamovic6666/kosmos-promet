@@ -9,8 +9,18 @@
   opacity: 0.5;
 }
 
+.Ghost {
+  background-color: transparent;
+  color: var(--text);
+  border: 1px solid var(--text);
+}
+
 @media (min-width: 768px) {
   .Button:hover {
     background-color: var(--red-dark);
+  }
+
+  .Ghost:hover {
+    opacity: 0.8;
   }
 }

@@ -35,7 +35,7 @@ const Products = ({
         {isMainPage && <h2>proizvodni asortiman</h2>}
         {parentDetails?.title && !isMainPage && <h2>{parentDetails?.title}</h2>}
         {!parentDetails?.description && !isProductPage && (
-          <p className={styles.description}>{description}</p>
+          <div className={styles.description}>{description}</div>
         )}
         {parentDetails?.description && (
           <div

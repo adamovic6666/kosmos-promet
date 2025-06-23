@@ -39,3 +39,19 @@ export interface ProductDetailsProps {
 export interface SimilarProductsProps {
   similarProducts: Product[];
 }
+
+export interface ConsentOptions {
+  necessary: boolean;
+  analytics: boolean;
+  marketing: boolean;
+}
+
+export interface ConsentOptions {
+  necessary: boolean;
+  analytics: boolean;
+  marketing: boolean;
+}
+
+export interface CookieConsentProps {
+  onPreferenceChange: (preferences: ConsentOptions) => void;
+}

@@ -12,7 +12,7 @@ const openSans = Open_Sans({
   weight: ["300", "400", "700", "800"],
 });
 export const metadata: Metadata = {
-  metadataBase: new URL("https://autofrogy.vercel.app/"),
+  metadataBase: new URL("https://www.autofrogy.com/"),
   applicationName: "Auto Frogy",
   title: "Auto Frogy | Proizvodnja i prodaja plastičnih auto delova",
   description:
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: "Auto Frogy | Proizvodnja i prodaja plastičnih auto delova",
     description:
       "Preko 20 godina iskustva u proizvodnji plastičnih auto delova. Najveći izbor auto kopči i žabica, kopči podizača stakla, fiksatora za patosnice, nosača i ramova za tablice, alata i ostale opreme.",
-    url: "https://autofrogy.vercel.app/",
+    url: "https://www.autofrogy.com/",
     siteName: "Auto Frogy",
     images: [
       {

@@ -6,16 +6,18 @@ const Button = ({
   children,
   onClick,
   disabled = false,
+  type = "solid",
 }: {
   children: React.ReactNode;
   onClick?: () => void;
   disabled?: boolean;
+  type?: "ghost" | "solid";
 }) => {
   return (
     <button
-      className={`${styles.Button} ${
-        disabled ? styles.Disabled : ""
-      } button-red`}
+      className={`${styles.Button} ${disabled ? styles.Disabled : ""} ${
+        type === "ghost" ? styles.Ghost : "button-red"
+      }`}
       onClick={onClick}
       disabled={disabled}
     >

@@ -9,7 +9,7 @@ const Wellcome = ({ allProducts }: { allProducts: Product[] }) => {
         <h2>DOBRO DOŠLI U AUTO FROGY</h2>
         <p>
           <strong>SZTR UGREN</strong> je osnovan 2002. godine i bavi se
-          proizvodnjom delova od plastike za auto- industriju.
+          proizvodnjom delova od plastike za auto-industriju.
         </p>
         <br />
         <p>
@@ -19,9 +19,18 @@ const Wellcome = ({ allProducts }: { allProducts: Product[] }) => {
           danas predstavlja garanciju kvaliteta u industriji. U ponudi, pored
           auto-kopči i žabica, imamo i kopče podizača stakla, univerzalne
           nastavke i reducire, ukrasne kapice za šrafove, čepove za patosnice,
-          ramove i nosače za tablice – i još mnogo toga.
+          ramove i nosače za tablice - i još mnogo toga.
         </p>
         <br />
+        <p>
+          Pored Srbije, naši proizvodi su godinama prisutni širom regiona - u
+          Crnoj Gori, Bosni i Hercegovini, Severnoj Makedoniji, Hrvatskoj,
+          Sloveniji i Albaniji. Takođe izvozimo u zemlje Evropske unije poput
+          Francuske, Nemačke, Italije, Poljske i Grčke, ali i na tržišta Turske
+          i Alžira.
+        </p>
+        <br />
+
         <p>
           U 2024. godini <strong>AUTO FROGY</strong> je otvorio novi, moderni
           objekat koji integriše naš proizvodni pogon i magacin, kao i
