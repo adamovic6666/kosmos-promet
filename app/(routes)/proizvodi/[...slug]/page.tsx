@@ -1,15 +1,15 @@
 import Products from "@/app/_components/products/Products";
 import type { Metadata } from "next";
 import { Product } from "@/app/_types";
-import { cache } from "react";
 
 // Shared data fetching function to eliminate duplicate API calls
-const getProductsData = cache(async (pathname: string) => {
+const getProductsData = async (pathname: string) => {
   const res = await fetch(
-    `${process.env.BASE_URL}/api/v1/list-products?data=${pathname}&cc=W4E)C9($8n=n*S(OBJMUR_hQ0.$t6P/xOx4a3v/|D@>U3LU8a,`
+    `${process.env.BASE_URL}/api/v1/list-products?data=${pathname}&cc=W4E)C9($8n=n*S(OBJMUR_hQ0.$t6P/xOx4a3v/|D@>U3LU8a,`,
+    { next: { revalidate: 60 } }
   );
   return await res.json();
-});
+};
 
 export async function generateMetadata({
   params,
@@ -38,7 +38,6 @@ const page = async ({ params }: { params?: Promise<{ slug: string[] }> }) => {
 
   // Reuse the same cached data fetching function
   const { products, parent } = await getProductsData(pathname);
-
   const sortedByNewField = products.sort((a: Product, b: Product) => {
     return a.is_new === b.is_new ? 0 : a.is_new ? -1 : 1;
   });

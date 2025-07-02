@@ -1,4 +1,6 @@
 import Contact from "@/app/_components/contact/Contact";
+import CardSkeleton from "@/app/_components/skeletons/CardSkeleton";
+import { Suspense } from "react";
 
 export default function Layout({
   children,
@@ -7,7 +9,7 @@ export default function Layout({
 }>) {
   return (
     <>
-      {children}
+      <Suspense fallback={<CardSkeleton />}>{children}</Suspense>
       <Contact />
     </>
   );
