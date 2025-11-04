@@ -1,5 +1,5 @@
 .footer {
-  background-color: var(--gray-dark);
+  background-color: var(--color-gray-darker);
 }
 
 .footer > div {
@@ -8,7 +8,7 @@
   align-items: center;
   padding: 1.6rem;
   justify-content: space-between;
-  color: var(--white);
+  color: var(--color-gray-light);
   font-size: 1.4rem;
   gap: 1.6rem;
 }

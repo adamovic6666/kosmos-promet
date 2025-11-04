@@ -12,16 +12,17 @@ const PrivacyPolicy = () => {
           </p>
 
           <p>
-            SZTR Ugren posvećen je zaštiti vaše privatnosti. Ova Politika
-            privatnosti objašnjava kako prikupljamo, koristimo, otkrivamo i
-            štitimo vaše podatke kada posećujete našu veb stranicu,&nbsp;
+            Kosmos Promet d.o.o. posvećen je zaštiti vaše privatnosti. Ova
+            Politika privatnosti objašnjava kako prikupljamo, koristimo,
+            otkrivamo i štitimo vaše podatke kada posećujete našu veb
+            stranicu,&nbsp;
             <a
               className={styles.webiste}
-              href="https://www.autofrogy.com/"
+              href="https://www.kosmospromet.com/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              www.autofrogy.com
+              www.kosmospromet.com
             </a>
             &nbsp;(&quot;Sajt&quot;). Molimo vas da pažljivo pročitate ovu
             politiku privatnosti. Ako se ne slažete sa uslovima ove politike
@@ -178,16 +179,16 @@ const PrivacyPolicy = () => {
               molimo vas da nas kontaktirate na:
             </p>
             <p className={styles.contactInfo}>
-              SZTR UGREN
+              Kosmos Promet d.o.o.
               <br />
-              Cara Dušana 144, 22320 Inđija
+              Golubinačka 28, 22320 Inđija
               <br />
               Email:{" "}
-              <a href="mailto:office@autofrogy.com" className={styles.link}>
-                office@autofrogy.com
+              <a href="mailto:office@kosmospromet.com" className={styles.link}>
+                office@kosmospromet.com
               </a>
               <br />
-              Telefon: +381-22-55-11-21
+              Telefon: +381-22-557-651
             </p>
           </div>
 
@@ -213,11 +214,11 @@ const PrivacyPolicy = () => {
             </p>
 
             <p>
-              SZTR Ugren koristi kolačiće i slične tehnologije praćenja na našoj
-              veb stranici
-              <a href="https://www.autofrogy.com" className={styles.link}>
+              Kosmos Promet d.o.o koristi kolačiće i slične tehnologije praćenja
+              na našoj veb stranici
+              <a href="https://www.kosmospromet.com" className={styles.link}>
                 {" "}
-                www.autofrogy.com
+                www.kosmospromet.com
               </a>{" "}
               (&quot;Sajt&quot;). Ova Politika kolačića objašnjava šta su
               kolačići, kako ih koristimo i kako možete upravljati svojim
@@ -389,16 +390,19 @@ const PrivacyPolicy = () => {
                 možete nas kontaktirati na:
               </p>
               <p className={styles.contactInfo}>
-                SZTR UGREN
+                Kosmos Promet d.o.o.
                 <br />
-                Cara Dušana 144, 22320 Inđija
+                Golubinačka 28, 22320 Inđija
                 <br />
                 Email:{" "}
-                <a href="mailto:office@autofrogy.com" className={styles.link}>
-                  office@autofrogy.com
+                <a
+                  href="mailto:office@kosmospromet.com"
+                  className={styles.link}
+                >
+                  office@kosmospromet.com
                 </a>
                 <br />
-                Telefon: +381-22-55-11-21
+                Telefon: +381-22-557-651
               </p>
               <p>
                 Nastavkom korišćenja našeg Sajta, pristajete na korišćenje

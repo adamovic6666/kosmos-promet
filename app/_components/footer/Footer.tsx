@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className="container">
-        <div>© {new Date().getFullYear()} Ugren SZTR - Auto Frogy</div>
+        <div>© {new Date().getFullYear()} Kosmos Promet d.o.o.</div>
         <Link href="/politika-privatnosti">Politika privatnosti</Link>
       </div>
     </footer>

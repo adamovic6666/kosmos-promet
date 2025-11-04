@@ -1,5 +1,10 @@
 .contactForm {
-  padding: 6.4rem 0;
+  padding: 8rem 0;
+  background-color: var(--color-gray-light);
+}
+
+.contactForm h2 {
+  color: var(--color-navy-dark);
 }
 
 .contactForm > div {
@@ -8,7 +13,7 @@
 
 .contactForm p {
   text-align: center;
-  color: #333;
+  color: var(--color-gray-dark);
 }
 
 .inputGroup,
@@ -28,7 +33,7 @@
 
 @media screen and (min-width: 768px) {
   .contactForm {
-    padding: 8rem 0;
+    padding: 12rem 0;
   }
 
   .contactForm form {

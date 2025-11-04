@@ -1,13 +1,51 @@
+@font-face {
+  font-family: 'Rawline';
+  src: url('/font/rawline-300.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Rawline';
+  src: url('/font/rawline-400.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Rawline';
+  src: url('/font/rawline-700.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Rawline';
+  src: url('/font/rawline-800.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --black: #000000;
-  --red: #cf0000;
-  --red-dark: #a40000;
-  --gray-light: #e6e6e6;
-  --gray-medium: #ccc;
-  --gray-dark: #2c2c2c;
-  --gray-ultra-dark: #3c3c3c;
-  --white: #ffffff;
-  --color-error: #ff0000;
+  /* Primary / Brand Colors */
+  --color-navy-dark: #000066;      /* very dark navy blue */
+  --color-blue-primary: #4267B0;   /* Facebook-like blue */
+  --color-blue-light: #3579D5;     /* lighter accent blue */
+
+  /* Neutrals */
+  --color-white: #FFFFFF;          /* pure white */
+  --color-gray-light: #E6E6E6;     /* light gray / border gray */
+  --color-gray: #4D4D4D;           /* medium gray / body text */
+  --color-gray-dark: #3C3C3C;      /* dark gray / headings */
+  --color-gray-darker: #333333;    /* darker gray / backgrounds */
+  --color-black: #000000;          /* pure black */
+
+  /* Font Variables */
+  --font-rawline: 'Rawline', sans-serif;
 }
 
 * {
@@ -23,7 +61,7 @@ body {
   padding: 0;
   font-size: 1.6rem;
   overflow-x: hidden;
-  font-family: var(--font-open-sans);
+  font-family: var(--font-rawline);
   position: relative;
   background-color: var(--gray-light);
 }
@@ -45,7 +83,16 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-open-sans);
+  font-family: var(--font-rawline);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-white);
 }
 
 .container-extra-small,
@@ -79,7 +126,11 @@ p {
   font-size: 1.6rem;
   line-height: 1.45;
   letter-spacing: 0.03rem;
-  font-family: var(--font-open-sans);
+  font-family: var(--font-rawline);
+}
+
+p {
+  color: var(--color-gray-dark);
 }
 
 li {
@@ -90,10 +141,9 @@ h1,
 h2,
 h3,
 h4 {
-  text-transform: uppercase;
   font-weight: 800;
   text-align: center;
-  margin-bottom: 2.4rem;
+  margin-bottom: .8rem;
 }
 
 h1 {
@@ -115,16 +165,20 @@ h5 {
   font-size: clamp(1.5rem, 0.536vw + 1.018rem, 1.6rem);
 }
 
-.button-red,
+.button-blue,
 .link-red {
-  background-color: var(--red);
-  color: var(--white);
+  background-color: var(--color-navy-dark);
+  color: var(--color-white);
   padding: 0.6rem 2.4rem;
   border-radius: 2.4rem;
   text-decoration: none;
   font-weight: 300;
   font-size: 1.6rem;
   transition: all 0.3s ease;
+}
+
+.button-blue:hover {
+  background-color: var(--color-blue-light);
 }
 
 .link-red:hover {

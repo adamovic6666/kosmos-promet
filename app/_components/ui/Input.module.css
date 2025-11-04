@@ -7,14 +7,13 @@
 .InputWrapper input {
   width: 100%;
   border: none;
-  background-color: var(--white);
-  color: #333;
+  background-color: var(--color-white);
+  color: var(--color-gray-dark);
   font-size: 1.6rem;
   outline: none;
-  border-bottom: 1px solid var(--color-grey);
   padding: 0.8rem 1.6rem;
   transition: all 0.3s;
-  font-family: var(--font-open-sans);
+  font-family: var(--font-rawline);
   border-radius: 2.4rem;
   font-weight: 300;
 }
@@ -23,9 +22,9 @@
   max-height: 3.4rem;
 }
 
-.InputError textarea::placeholder,
+.InputWrapper textarea::placeholder,
 .InputWrapper input::placeholder {
-  color: #333;
+  color: var(--color-gray-dark);
   font-size: 1.6rem;
   font-weight: 300;
 }

@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   z-index: 10;
-  background-color: var(--white);
+  background-color: var(--color-white);
 }
 
 .header > div {
@@ -78,7 +78,7 @@
 
 .search {
   padding-left: 3.2rem;
-  background: var(--red) url("/images/search.svg") no-repeat 0.8rem center;
+  background: var(--color-blue-primary) url("/images/search.svg") no-repeat 0.8rem center;
   background-size: 2.4rem;
   border: none;
   border-radius: 2.4rem;
@@ -109,10 +109,10 @@
 }
 
 .search input::placeholder {
-  color: var(--white);
+  color: var(--color-white);
   font-size: 1.6rem;
   font-weight: 300;
-  font-family: var(--font-open-sans);
+  font-family: var(--font-rawline);
 }
 
 .burger {
@@ -202,11 +202,11 @@
 
 .header .nav .navList li a {
   text-decoration: none;
+  color: var(--color-navy-dark);
 }
 
-.activeLink {
-  color: var(--gray-ultra-dark);
-  opacity: 0.6;
+.header .nav .navList li .activeLink {
+  color: var(--color-gray);
 }
 
 .productsDropdown {

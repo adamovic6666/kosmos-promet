@@ -28,7 +28,7 @@
   outline: none;
   color: #333;
   font-weight: 300;
-  font-family: var(--font-open-sans);
+  font-family: var(--font-rawline);
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -40,10 +40,10 @@
 }
 
 .SelectWrapper select::placeholder {
-  color: #333;
+  color: var(--color-gray-dark);
   font-size: 1.6rem;
   font-weight: 300;
-  font-family: var(--font-open-sans);
+  font-family: var(--font-rawline);
 }
 
 /* Style for empty select */

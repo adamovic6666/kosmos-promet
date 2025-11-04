@@ -7,7 +7,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import emailjs from "@emailjs/browser";
 import Input from "../ui/Input";
 import Button from "../ui/Button";
-import Select from "../ui/Select";
 
 const schema = z.object({
   fullName: z.string().min(1, "Ime i prezime su obavezni"),
@@ -71,8 +70,9 @@ const ContactForm = () => {
   return (
     <section className={styles.contactForm}>
       <div className="container-small">
-        <h2>KONTAKTIRAJTE NAS</h2>
-        <p>Pišite nam i saznajte više o našim proizvodima i uslugama.</p>
+        <h2>Pišite nam</h2>
+        <p>Tu smo za sva vaša pitanja!</p>
+        <p> Pišite nam za više informacija o proizvodima i uslugama.</p>
         <form onSubmit={handleSubmit(onSubmit)}>
           {submitSuccess && (
             <div
@@ -116,12 +116,12 @@ const ContactForm = () => {
             />
           </div>
 
-          {/* <Input name="subject" placeholder="Naslov poruke" control={control} /> */}
-          <Select
+          <Input name="subject" placeholder="Naslov poruke" control={control} />
+          {/* <Select
             name="reason"
             label="Kako možemo da Vam pomognemo?"
             control={control}
-          />
+          /> */}
           <Input
             name="message"
             placeholder="Upišite Vašu poruku ovde"

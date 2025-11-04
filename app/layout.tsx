@@ -1,16 +1,10 @@
 import "./globals.css";
 import Header from "./_components/header/Header";
 import Footer from "./_components/footer/Footer";
-import { Open_Sans } from "next/font/google";
 import type { Metadata } from "next";
-import ogImage from "../public/images/og.png";
+import ogImage from "../public/images/og.webp";
 import GoogleAnalytics from "./_components/google-analytics/GoogleAnalytics";
 
-const openSans = Open_Sans({
-  subsets: ["latin"],
-  variable: "--font-open-sans",
-  weight: ["300", "400", "700", "800"],
-});
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.autofrogy.com/"),
   applicationName: "Auto Frogy",
@@ -49,7 +43,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={openSans.variable}>
+      <body>
         <GoogleAnalytics />
         <Header />
         <main>{children}</main>

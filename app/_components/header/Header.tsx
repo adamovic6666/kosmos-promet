@@ -76,7 +76,7 @@ const Header = () => {
         {!searchIsOpen && (
           <div className={styles.logo}>
             <Link href={"/"}>
-              <Image src={"/images/logo.webp"} alt="logo" fill />
+              <Image src={"/images/logo.svg"} alt="logo" fill />
             </Link>
           </div>
         )}

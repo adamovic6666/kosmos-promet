@@ -17,7 +17,7 @@
 
 @media (min-width: 768px) {
   .Button:hover {
-    background-color: var(--red-dark);
+    background-color: var(--color-blue-light);
   }
 
   .Ghost:hover {

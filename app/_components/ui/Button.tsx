@@ -16,7 +16,7 @@ const Button = ({
   return (
     <button
       className={`${styles.Button} ${disabled ? styles.Disabled : ""} ${
-        type === "ghost" ? styles.Ghost : "button-red"
+        type === "ghost" ? styles.Ghost : "button-blue"
       }`}
       onClick={onClick}
       disabled={disabled}

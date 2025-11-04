@@ -1,17 +1,19 @@
 import Contact from "@/app/_components/contact/Contact";
 import ContactForm from "@/app/_components/forms/ContactForm";
+import GotQuestions from "@/app/_components/got-questions/GotQuestions";
 import AboutUsHero from "@/app/_components/hero/AboutUsHero";
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Auto Frogy | Kontaktirajte nas",
+  title: "Kosmos Promet | Kontakt",
   description:
-    "Kontaktirajte Auto Frogy tim – tu smo da odgovorimo na sva Vaša pitanja.",
+    "Kontaktirajte Kosmos tehničku podršku za više informacija o delovima za prskalice i atomizere.",
 };
 const page = () => {
   return (
     <>
       <AboutUsHero />
       <ContactForm />
+      <GotQuestions />
       <Contact />
     </>
   );
