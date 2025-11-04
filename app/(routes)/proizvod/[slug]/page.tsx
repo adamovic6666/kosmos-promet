@@ -52,15 +52,15 @@ const Page = async ({ params }: PageProps) => {
 
   // Always treat params as Promise in Next.js
   const resolvedParams = await params;
-  const { slug } = resolvedParams;
+  // const { slug } = resolvedParams;
 
   // Reuse the same cached data fetching function
-  const product = await getProductData(slug);
+  // const product = await getProductData(slug);
 
   return (
     <>
-      <ProductDetails productDetails={product} />
-      <SimilarProducts similarProducts={product?.similar_products || []} />
+      <ProductDetails productDetails={{}} />
+      <SimilarProducts similarProducts={[]} />
       <Contact />
     </>
   );
