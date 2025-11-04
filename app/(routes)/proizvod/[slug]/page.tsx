@@ -1,5 +1,5 @@
 import Contact from "@/app/_components/contact/Contact";
-import ProductDetails from "@/app/_components/products/product-details/ProductDetails";
+// import ProductDetails from "@/app/_components/products/product-details/ProductDetails";
 import SimilarProducts from "@/app/_components/products/similar-products/SimilarProducts";
 import { ProductDetail } from "@/app/_types";
 import { cache } from "react";
@@ -51,7 +51,7 @@ const Page = async ({ params }: PageProps) => {
   }
 
   // Always treat params as Promise in Next.js
-  const resolvedParams = await params;
+  // const resolvedParams = await params;
   // const { slug } = resolvedParams;
 
   // Reuse the same cached data fetching function
@@ -59,7 +59,7 @@ const Page = async ({ params }: PageProps) => {
 
   return (
     <>
-      <ProductDetails productDetails={{}} />
+      {/* <ProductDetails productDetails={{}} /> */}
       <SimilarProducts similarProducts={[]} />
       <Contact />
     </>
