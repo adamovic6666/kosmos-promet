@@ -8,6 +8,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navLinks } from "@/app/utils/nav-links";
 import SearchDropdown from "@/app/_components/ui/SearchDropdown";
+import Burger from "@/app/_svg/Burger";
+import Search from "@/app/_svg/Search";
+import Cart from "@/app/_svg/Cart";
 
 const Header = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
@@ -72,7 +75,16 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className="container">
-        <div className={styles.burger} onClick={handleOpenMenu} />
+        <div className={styles.mobileIcons}>
+          <Burger onClick={handleOpenMenu} className={styles.burger} />
+          {!searchIsOpen && (
+            <Search
+              onClick={handleOpenSearch}
+              className={styles.headerSearchIcon}
+            />
+          )}
+        </div>
+
         {!searchIsOpen && (
           <div className={styles.logo}>
             <Link href={"/"}>
@@ -84,33 +96,27 @@ const Header = () => {
           <ul className={styles.navList}>
             {navLinks.map(({ label, href }) => (
               <li key={label}>
-                {label.toLowerCase() === "katalog" ? (
-                  <a href="/pdf/AutoFrogyKatalog2025.pdf" target="_blank">
-                    {label}
-                  </a>
-                ) : (
-                  <Link
-                    onClick={handleOpenMenu}
-                    onMouseOver={() => {
-                      // Close search when hovering over a link
-                      if (label === "proizvodi") {
-                        handleOpenDropdown();
-                      }
-                    }}
-                    onMouseLeave={() => {
-                      // Close dropdown when mouse leaves the link
-                      if (label === "proizvodi") {
-                        handleCloseDropdown();
-                      }
-                    }}
-                    href={href}
-                    className={
-                      pathname === href ? styles.activeLink : styles.link
+                <Link
+                  onClick={handleOpenMenu}
+                  onMouseOver={() => {
+                    // Close search when hovering over a link
+                    if (label === "proizvodi") {
+                      handleOpenDropdown();
                     }
-                  >
-                    {label}
-                  </Link>
-                )}
+                  }}
+                  onMouseLeave={() => {
+                    // Close dropdown when mouse leaves the link
+                    if (label === "proizvodi") {
+                      handleCloseDropdown();
+                    }
+                  }}
+                  href={href}
+                  className={
+                    pathname === href ? styles.activeLink : styles.link
+                  }
+                >
+                  {label}
+                </Link>
                 {label === "proizvodi" && (
                   <div
                     className={`${styles.productsDropdown} ${
@@ -185,15 +191,15 @@ const Header = () => {
 
           <div className={styles.bgImage}></div>
         </nav>
-        <div className={styles.search}>
-          <SearchDropdown
-            placeholder="Pretraži..."
-            className={styles.headerSearch}
-          />
+        <div className={styles.cartContainer}>
+          <div className={styles.search}>
+            <SearchDropdown
+              placeholder="Pretraži..."
+              className={styles.headerSearch}
+            />
+          </div>
+          <Cart className={styles.cart} />
         </div>
-        {!searchIsOpen && (
-          <div className={styles.mobileSearch} onClick={handleOpenSearch} />
-        )}
       </div>
 
       {/* Mobile Search Overlay */}

@@ -62,7 +62,7 @@ const Contact = () => {
               <div>
                 <Download />
                 <span>
-                  <a href="/pdf/SZTR-Ugren.pdf" target="_blank">
+                  <a href="/pdf/podaci-o-preduzecu.pdf" target="_blank">
                     Podaci o preduzeću
                   </a>
                 </span>

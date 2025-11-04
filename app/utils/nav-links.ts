@@ -12,8 +12,8 @@ export const navLinks = [
     href: "/proizvodi",
   },
   {
-    label: "katalog",
-    href: "/katalog",
+    label: "kalkulator",
+    href: "/kalkulator",
   },
   {
     label: "kontakt",

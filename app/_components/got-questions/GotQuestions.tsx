@@ -17,11 +17,11 @@ const GotQuestions = () => {
           ili rešenje.
         </p>
         <div className={styles.gotQuestionsSocials}>
-          <a href="">
+          <a href="viber://chat?number=+38163647205">
             Viber
             <Viber />
           </a>
-          <a href="">
+          <a href="whatsapp://send?text=Zdravo!&phone=+38163647205">
             WhatsApp
             <Whatsapp />
           </a>

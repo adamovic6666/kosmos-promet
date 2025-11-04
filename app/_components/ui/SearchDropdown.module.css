@@ -22,7 +22,7 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  color: var(--white);
+  color: var(--color-white);
   font-size: 1.6rem;
   display: flex;
   align-items: center;
