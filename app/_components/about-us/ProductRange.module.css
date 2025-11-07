@@ -2,9 +2,11 @@
   padding: 6.4rem 0 2.4rem;
 }
 
-.productRange > p {
+.productRange .productRangeText {
   margin-bottom: 4rem;
+  text-align: center;
 }
+
 .navNext,
 .navPrev {
   position: absolute;

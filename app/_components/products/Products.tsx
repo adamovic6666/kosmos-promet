@@ -5,6 +5,7 @@ import Card from "../card/Card";
 import styles from "./Products.module.css";
 import { usePathname } from "next/navigation";
 import { Product } from "@/app/_types";
+import dummyData from "../../../public/data/dummy-data.json";
 
 const Products = ({
   allProducts,
@@ -17,22 +18,32 @@ const Products = ({
 }) => {
   const pathname = usePathname();
   const isMainPage = pathname === "/";
-  const products = isMainPage ? allProducts?.slice(0, 6) : allProducts;
+  const isProductsPage = pathname === "/proizvodi";
+  const products = isMainPage ? dummyData?.slice(0, 6) : dummyData;
+  // const products = dummyData;
   const isProductPage = allProducts?.some((products) =>
     products.alias.includes("/proizvod/")
   );
-  const description = isMainPage
-    ? "Sa više od 20 godina iskustva u proizvodnji, izgradili smo reputaciju pouzdanog proizvođača visokokvalitetnih plastičnih auto delova koji odgovaraju najvišim standardima savremenih vozila."
-    : "Kompletna ponuda naših proizvoda na jednom mestu. Praktično organizovano, jednostavno za pretragu.";
+  const description = isMainPage ? (
+    <p>
+      Širok izbor delova i opreme za prskalice i atomizere na jednom mestu.{" "}
+      <br /> Provereni kvalitet, dostupnost i brza isporuka.
+    </p>
+  ) : (
+    <p>
+      Širok izbor delova i opreme za prskalice i atomizere na jednom mestu.{" "}
+      <br /> Provereni kvalitet, dostupnost i pouzdana isporuka.
+    </p>
+  );
 
   return (
     <section
       className={` ${smallPadding ? styles.smallPadding : ""} ${
         styles.products
-      }`}
+      } ${isProductsPage ? styles.productsIncreasedTop : ""}`}
     >
       <div className="container-small">
-        {isMainPage && <h2>proizvodni asortiman</h2>}
+        <h2>Proizvodi</h2>
         {parentDetails?.title && !isMainPage && <h2>{parentDetails?.title}</h2>}
         {!parentDetails?.description && !isProductPage && (
           <div className={styles.description}>{description}</div>
@@ -51,13 +62,13 @@ const Products = ({
               alias={product.alias}
               isNew={product.is_new}
               productCode={product.product_code}
-              mediaUpdatedAt={product.media_updated_at || 0}
+              // mediaUpdatedAt={product.media_updated_at || 0}
             />
           ))}
         </div>
         {isMainPage && (
-          <Link href="/proizvodi" className="link-red">
-            Kompletna ponuda
+          <Link href="/proizvodi" className="button-blue">
+            Poseti prodavnicu
           </Link>
         )}
       </div>

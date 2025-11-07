@@ -1,5 +1,6 @@
-import AboutUs from "./_components/about-us/AboutUs";
+import MainAboutUs from "./_components/about-us/MainAboutUs";
 import Contact from "./_components/contact/Contact";
+import GotQuestions from "./_components/got-questions/GotQuestions";
 import Hero from "./_components/hero/Hero";
 import Products from "./_components/products/Products";
 
@@ -15,9 +16,10 @@ export default async function Home() {
   // const data = await res.json();
   return (
     <>
-      <Hero title="proizvodnja plastičnih auto delova" maxWidth="520px" />
+      <Hero title="Hero" maxWidth="520px" />
       <Products allProducts={[]} />
-      <AboutUs />
+      <MainAboutUs />
+      <GotQuestions />
       <Contact />
     </>
   );

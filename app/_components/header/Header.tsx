@@ -2,8 +2,6 @@
 import Image from "next/image";
 import styles from "./Header.module.css";
 import { useEffect, useState, useRef } from "react";
-import Facebook from "@/app/_svg/Facebook";
-import YouTube from "@/app/_svg/YouTube";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navLinks } from "@/app/utils/nav-links";
@@ -171,23 +169,6 @@ const Header = () => {
               </li>
             ))}
           </ul>
-
-          <div className={styles.socials}>
-            <a
-              href="https://www.facebook.com/autofrogy"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Facebook fill="#000" />
-            </a>
-            <a
-              href="https://www.youtube.com/@autofrogy"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <YouTube fill="#000" />
-            </a>
-          </div>
 
           <div className={styles.bgImage}></div>
         </nav>

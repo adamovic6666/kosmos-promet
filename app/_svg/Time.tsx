@@ -5,8 +5,7 @@ const Time = () => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       id="Capa_1"
-      enable-background="new 0 0 347.442 347.442"
-      height="512"
+      enableBackground="new 0 0 347.442 347.442"
       viewBox="0 0 347.442 347.442"
       width="512"
       style={{ fill: "#4D4D4D" }}

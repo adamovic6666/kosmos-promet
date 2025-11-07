@@ -14,9 +14,11 @@ const Contact = () => {
             <Pin />
             <div>
               <h5>Kosmos Promet d.o.o.</h5>
-              <span>Golubinačka 28</span>
-              <span>22320 Inđija</span>
-              <span>Srbija</span>
+              <div className={styles.address}>
+                <span>Golubinačka 28</span>
+                <span>22320 Inđija</span>
+                <span>Srbija</span>
+              </div>
             </div>
           </div>
 

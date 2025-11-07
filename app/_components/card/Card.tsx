@@ -8,20 +8,20 @@ const Card = ({
   alias,
   isNew = false,
   productCode = "",
-  mediaUpdatedAt,
-}: {
+}: // mediaUpdatedAt,
+{
   image: string;
   name: string;
   alias: string;
   isNew?: boolean;
   productCode?: string;
-  mediaUpdatedAt?: number;
+  // mediaUpdatedAt?: number;
 }) => {
   // Force cache busting with current timestamp for cPanel deployment
-  const timestamp = mediaUpdatedAt || Date.now(); // Use current timestamp if mediaUpdatedAt not available
-  const imageSrc = `${process.env.NEXT_PUBLIC_API_URL}${image}${
-    image.includes("?") ? "&" : "?"
-  }t=${timestamp}`;
+  // const timestamp = mediaUpdatedAt || Date.now(); // Use current timestamp if mediaUpdatedAt not available
+  // const imageSrc = `${process.env.NEXT_PUBLIC_API_URL}${image}${
+  //   image.includes("?") ? "&" : "?"
+  // }t=${timestamp}`;
   const isProduct = alias.split("/").includes("proizvod");
   return (
     <div className={styles.cardWrapper}>
@@ -40,7 +40,7 @@ const Card = ({
           <div
             className={`${styles.image} ${isProduct ? styles.imageBig : ""}`}
           >
-            <Image src={imageSrc} alt={name} fill />
+            <Image src={image} alt={name} fill />
           </div>
           <div
             className={`${styles.title}  ${

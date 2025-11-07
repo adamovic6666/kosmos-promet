@@ -1,6 +1,6 @@
 .card {
   transition: all 0.3s ease;
-  border-radius: 1.6rem;
+  border-radius: .8rem;
   overflow: hidden;
   cursor: pointer;
   width: 100%;
@@ -17,19 +17,19 @@
 .image {
   width: 100%;
   height: auto;
-  aspect-ratio: 1.4 / 1;
-  background-color: var(--white);
+  aspect-ratio: 1 / 1;
+  background-color: var(--color-white);
   display: flex;
   align-items: center;
   justify-content: center;
-  max-height: 16.4rem;
+  max-height: 32rem;
   position: relative;
   overflow: hidden;
 }
 
 .imageBig {
   aspect-ratio: 1 / 1;
-  max-height: 20rem;
+  max-height: 32rem;
 }
 
 .image img {
@@ -51,7 +51,7 @@
 }
 
 .title {
-  background-color: var(--gray-medium);
+  background-color: var(--color-blue-primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,6 +64,7 @@
 .title h4 {
   margin: 0;
   max-width: 16rem;
+  text-transform: uppercase;
 }
 
 .cardWrapper {
@@ -74,7 +75,7 @@
 .newBadge {
   text-transform: uppercase;
   z-index: 1;
-  border-radius: 1.6rem;
+  border-radius: .8rem;
   padding: 0.4rem 1.4rem;
   font-weight: 600;
   position: absolute;
@@ -94,19 +95,15 @@
 }
 
 .productCode {
-  background-color: var(--gray-light);
+  background-color: var(--color-blue-primary);
   color: #000;
   top: 1.8rem;
   right: 1.8rem;
 }
 
 @media screen and (min-width: 768px) {
-  .card {
-    border-radius: 3.6rem;
-  }
-
   .title {
-    height: 7.2rem;
+    height: 6.4rem;
   }
 
   .title h4 {

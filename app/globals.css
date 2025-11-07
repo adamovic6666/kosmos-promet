@@ -32,7 +32,8 @@
 
 :root {
   /* Primary / Brand Colors */
-  --color-navy-dark: #000066;      /* very dark navy blue */
+  --color-navy-dark: #000066;  
+  --color-navy-darker: #000044;  /* very dark navy blue */
   --color-blue-primary: #4267B0;   /* Facebook-like blue */
   --color-blue-light: #3579D5;     /* lighter accent blue */
 
@@ -144,7 +145,7 @@ h3,
 h4 {
   font-weight: 800;
   text-align: center;
-  margin-bottom: .8rem;
+  margin-bottom: 1.6rem;
 }
 
 h1 {
@@ -155,15 +156,16 @@ h1 {
 
 h2 {
   font-size: clamp(2.4rem, 2.143vw + 2.21rem, 4.8rem);
+  line-height: 1;
 }
 
 h4 {
-  font-size: clamp(1.3rem, 0.8vw + 1rem, 1.7rem);
+  font-size: clamp(1.6rem, 0.8vw + 1rem, 1.7rem);
   line-height: 1.1;
 }
 
 h5 {
-  font-size: clamp(1.2rem, 0.406vw + 1.018rem, 1.6rem);
+  font-size: clamp(1.4rem, 0.406vw + 1.018rem, 1.6rem);
 }
 
 .button-blue,
@@ -171,7 +173,7 @@ h5 {
   background-color: var(--color-navy-dark);
   color: var(--color-white);
   padding: 0.6rem 2.4rem;
-  border-radius: .8rem;
+  border-radius: 2.4rem;
   text-decoration: none;
   font-weight: 300;
   font-size: 1.6rem;
@@ -179,7 +181,7 @@ h5 {
 }
 
 .button-blue:hover {
-  background-color: var(--color-blue-light);
+  background-color: var(--color-navy-darker);
 }
 
 .link-red:hover {
@@ -188,6 +190,10 @@ h5 {
 
 .swiper {
   position: static !important;
+}
+
+.swiper-wrapper {
+  height: auto !important;
 }
 
 .swiper-button-disabled {
@@ -222,6 +228,5 @@ th {
   .container {
     padding: 0;
   }
-
 
 }

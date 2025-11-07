@@ -1,11 +1,11 @@
 import Contact from "@/app/_components/contact/Contact";
-import Hero from "@/app/_components/hero/Hero";
+// import Hero from "@/app/_components/hero/Hero";
 import Products from "@/app/_components/products/Products";
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Auto Frogy | Proizvodnja i prodaja auto kopči i žabica",
+  title: " Kosmos Promet | Proizvodi",
   description:
-    "Najveći izbor auto kopči, kopči podizača stakla, fiksatora za patosnice, nosača za tablice, ramova za tablice i ostale auto opreme. Pronađite sve na jednom mestu!",
+    "Najveći izbor delova za traktorske prskalice i atomizere u Srbiji po najpovoljnijim cenama.",
 };
 export const revalidate = 3600; // Revalidate every hour
 
@@ -20,7 +20,7 @@ const page = async () => {
 
   return (
     <>
-      <Hero maxWidth="50vw" rotate={true} title="PROIZVODNI ASORTIMAN" />
+      {/* <Hero maxWidth="50vw" rotate={true} title="PROIZVODNI ASORTIMAN" /> */}
       <Products allProducts={[]} />
       <Contact />
     </>

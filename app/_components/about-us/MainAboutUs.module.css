@@ -1,0 +1,51 @@
+.mainAboutUs {
+  padding: 8rem 0;
+  background-color: var(--color-blue-light);
+  color: var(--white);
+
+}
+
+.content {
+    width: 100%;
+    position: relative;
+        padding-top: 1.6rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+}
+
+.content a {
+    margin-top: 3.2rem;
+}
+
+.image {
+    width: 100%;
+    position: relative;
+    aspect-ratio: 16  / 9;
+}
+
+.text {
+    text-align: center;
+    text-align: justify;
+    padding-top: .8rem;
+}
+
+.text p {
+    color: var(--color-white);
+}
+
+
+@media screen and (min-width: 768px) {
+  .mainAboutUs {
+    padding: 12rem 0;
+  }
+
+  
+  .content {
+
+    padding-top: 2.4rem;
+}
+
+
+}

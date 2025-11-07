@@ -1,8 +1,19 @@
 .products {
-  padding: 6.4rem 0 8rem;
+  padding: 8rem 0;
+  background-color: var(--color-gray-light);
 }
+
+.productsIncreasedTop {
+  padding: 12rem 0;
+}
+
 .smallPadding {
   padding: 10.4rem 0 8rem;
+}
+
+.products h2 {
+  color: var(--color-navy-dark);
+
 }
 
 .smallPadding h2 {
@@ -17,13 +28,13 @@
 }
 
 .products > div > div {
-  margin-bottom: 3.2rem;
   text-align: center;
 }
 
 .description {
   text-align: center;
   color: #333;
+  margin-bottom: 3.2rem;
 }
 
 .grid {
@@ -40,7 +51,11 @@
 
 @media screen and (min-width: 768px) {
   .products {
-    padding: 8rem 0;
+    padding: 12rem 0;
+  }
+
+  .productsIncreasedTop {
+    padding: 16rem 0;
   }
 
   .grid {

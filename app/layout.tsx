@@ -6,11 +6,11 @@ import ogImage from "../public/images/og.webp";
 import GoogleAnalytics from "./_components/google-analytics/GoogleAnalytics";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.autofrogy.com/"),
-  applicationName: "Auto Frogy",
-  title: "Auto Frogy | Proizvodnja i prodaja plastičnih auto delova",
+  metadataBase: new URL("https://www.kosmospromet.com/"),
+  applicationName: "Kosmos Promet",
+  title: "Delovi za prskalice i atomizere | Kosmos Promet",
   description:
-    "Preko 20 godina iskustva u proizvodnji plastičnih auto delova. Najveći izbor auto kopči i žabica, kopči podizača stakla, fiksatora za patosnice, nosača i ramova za tablice, alata i ostale opreme.",
+    "Širok asortiman delova za prskalice i atomizere po povoljnim cenama. Dostupni odmah uz brzu isporuku i stručnu tehničku podršku Kosmos Promet.",
   icons: {
     icon: [
       { url: "/images/favicon-16x16.png", sizes: "16x16", type: "image/png" },
@@ -18,17 +18,17 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "Auto Frogy | Proizvodnja i prodaja plastičnih auto delova",
+    title: "Kosmos Promet | Delovi za prskalice i atomizere",
     description:
-      "Preko 20 godina iskustva u proizvodnji plastičnih auto delova. Najveći izbor auto kopči i žabica, kopči podizača stakla, fiksatora za patosnice, nosača i ramova za tablice, alata i ostale opreme.",
-    url: "https://www.autofrogy.com/",
-    siteName: "Auto Frogy",
+      "Širok asortiman delova za prskalice i atomizere po povoljnim cenama. Dostupni odmah uz brzu isporuku i stručnu tehničku podršku Kosmos Promet.",
+    url: "https://www.kosmospromet.com/",
+    siteName: "Kosmos Promet",
     images: [
       {
         url: ogImage.src,
         width: 1200,
         height: 630,
-        alt: "Auto Frogy",
+        alt: "Kosmos Promet",
       },
     ],
     locale: "sr_RS",

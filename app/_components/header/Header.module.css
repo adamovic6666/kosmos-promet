@@ -16,9 +16,9 @@
 
 .header .nav {
   position: fixed;
-  top: 5.8rem;
+  top: 6.4rem;
   left: 0;
-  height: calc(100vh - 5.8rem);
+  height: calc(100vh - 6.4rem);
   width: 100%;
   background-color: var(--color-gray-light);
   z-index: 10000;
@@ -28,20 +28,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.socials {
-  position: absolute;
-  left: 50%;
-  bottom: 8rem;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 1.2rem;
-}
-
-.socials svg {
-  width: 3.2rem;
-  height: 3.2rem;
 }
 
 .header .nav .navList {
@@ -74,6 +60,7 @@
   max-width: 200px;
   height: auto;
   aspect-ratio: 36 / 5;
+  flex: 2;
 }
 
 .search {
@@ -201,7 +188,7 @@
 }
 
 .header .nav .navList li .activeLink {
-  color: #c9c9c9;
+  color: #818181;
 }
 
 .productsDropdown {
@@ -214,18 +201,21 @@
   display: flex;
   align-items: center;
   gap: 0.8rem;
+  flex: 1;
 }
 
 .cart {
-  width: 3.2rem;
-  height: 3.2rem;
+  width: 2.8rem;
+  height: 2.8rem;
   cursor: pointer;
 }
 
 .cartContainer {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 1.6rem;
+  flex: 1;
 }
 
 @media screen and (min-width: 768px) {
@@ -270,7 +260,6 @@
   }
 
   .bgImage,
-  .socials,
   .mobileSearchOverlay,
   .mobileSearch,
   .actions,
@@ -327,5 +316,9 @@
   .nav .navList .productsList li a:hover {
     color: var(--gray-ultra-dark);
     opacity: 0.6;
+  }
+
+  .cartContainer {
+    flex: none;
   }
 }

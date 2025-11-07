@@ -1,11 +1,12 @@
 import Contact from "@/app/_components/contact/Contact";
+import GotQuestions from "@/app/_components/got-questions/GotQuestions";
 import ContactHero from "@/app/_components/hero/ContactHero";
 import Wellcome from "@/app/_components/wellcome/Wellcome";
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Auto Frogy | O nama",
+  title: "Kosmos Promet | O nama",
   description:
-    "Auto Frogy - preko 20 godina proizvodnje plastičnih auto delova u Srbiji. Lider u prodaji auto kopči u Srbiji i regionu.",
+    "Od 1993. godine Kosmos Promet proizvodi i distribuira potrošne delove za traktorske prskalice i atomizere. Širok asortiman, kvalitetni brendovi, brza isporuka i stručna podrška širom regiona.",
 };
 const page = async () => {
   // const res = await fetch(
@@ -17,6 +18,7 @@ const page = async () => {
     <>
       <ContactHero />
       <Wellcome allProducts={[]} />
+      <GotQuestions />
       <Contact />
     </>
   );

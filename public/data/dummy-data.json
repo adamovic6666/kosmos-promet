@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "name": "Atomizeri",
+    "image": "https://dummyimage.com/300",
+    "alias": "atomizeri"
+  },
+  {
+    "id": 2,
+    "name": "Prskalice",
+    "image": "https://dummyimage.com/300",
+    "alias": "prskalice"
+  },
+  {
+    "id": 3,
+    "name": "Bure",
+    "image": "https://dummyimage.com/300",
+    "alias": "bure"
+  },
+    {
+    "id": 4,
+    "name": "Bure2",
+    "image": "https://dummyimage.com/300",
+    "alias": "regulatori"
+  },
+    {
+    "id": 5,
+    "name": "Bure3",
+    "image": "https://dummyimage.com/300",
+    "alias": "grane"
+  },
+    {
+    "id": 6,
+    "name": "Bure4",
+    "image": "https://dummyimage.com/300",
+    "alias": "dizne"
+  },
+  {
+    "id": 7,
+    "name": "Bure5",
+    "image": "https://dummyimage.com/300",
+    "alias": "sita"
+  },
+  {
+    "id": 8,
+    "name": "Bure6",
+    "image": "https://dummyimage.com/300",
+    "alias": "ostali proizvodi"
+  }
+]
+ 
