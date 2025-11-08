@@ -15,8 +15,8 @@ const Header = () => {
   const [searchIsOpen, setSearchIsOpen] = useState(false);
   const pathname = usePathname();
   const [isMobile, setIsMobile] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  // const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  // const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   type SearchDropdownRef = {
     clearSearch: () => void;
   };
@@ -48,19 +48,19 @@ const Header = () => {
     setSearchIsOpen(false);
   };
 
-  const handleOpenDropdown = () => {
-    if (dropdownTimeoutRef.current) {
-      clearTimeout(dropdownTimeoutRef.current);
-      dropdownTimeoutRef.current = null;
-    }
-    setIsDropdownOpen(true);
-  };
+  // const handleOpenDropdown = () => {
+  //   if (dropdownTimeoutRef.current) {
+  //     clearTimeout(dropdownTimeoutRef.current);
+  //     dropdownTimeoutRef.current = null;
+  //   }
+  //   setIsDropdownOpen(true);
+  // };
 
-  const handleCloseDropdown = () => {
-    dropdownTimeoutRef.current = setTimeout(() => {
-      setIsDropdownOpen(false);
-    }, 300); // Small delay to prevent flickering
-  };
+  // const handleCloseDropdown = () => {
+  //   dropdownTimeoutRef.current = setTimeout(() => {
+  //     setIsDropdownOpen(false);
+  //   }, 300); // Small delay to prevent flickering
+  // };
 
   useEffect(() => {
     if ((menuIsOpen || searchIsOpen) && isMobile) {
@@ -98,15 +98,15 @@ const Header = () => {
                   onClick={handleOpenMenu}
                   onMouseOver={() => {
                     // Close search when hovering over a link
-                    if (label === "proizvodi") {
-                      handleOpenDropdown();
-                    }
+                    // if (label === "proizvodi") {
+                    //   handleOpenDropdown();
+                    // }
                   }}
                   onMouseLeave={() => {
                     // Close dropdown when mouse leaves the link
-                    if (label === "proizvodi") {
-                      handleCloseDropdown();
-                    }
+                    // if (label === "proizvodi") {
+                    //   handleCloseDropdown();
+                    // }
                   }}
                   href={href}
                   className={
