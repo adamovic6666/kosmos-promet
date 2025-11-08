@@ -60,7 +60,10 @@ interface AtomizerCeramicResults {
   ukupnaKolicina: string;
 }
 
-type CalculationResults = StandardSprayResults | DirectedSprayResults | AtomizerCeramicResults;
+type CalculationResults =
+  | StandardSprayResults
+  | DirectedSprayResults
+  | AtomizerCeramicResults;
 
 const Select = ({
   value,
@@ -301,7 +304,7 @@ const KalkulatorPage = () => {
     const rezultat = protok.toFixed(2);
     console.log(rezultat, "rezultat");
     const matchingResults = calculationData.filter(
-      (item) => item.potrosnja === rezultat
+      (item) => item.potrosnja === rezultat,
     );
     setTableResults(matchingResults);
   };
@@ -406,7 +409,7 @@ const KalkulatorPage = () => {
                 onChange={(e) =>
                   handleInputChange(
                     "brojdizni",
-                    parseFloat(e.target.value) || 0
+                    parseFloat(e.target.value) || 0,
                   )
                 }
                 onClick={(e) => e.currentTarget.select()}
@@ -474,7 +477,7 @@ const KalkulatorPage = () => {
                 onChange={(e) =>
                   handleInputChange(
                     "brojdizni",
-                    parseFloat(e.target.value) || 0
+                    parseFloat(e.target.value) || 0,
                   )
                 }
                 onClick={(e) => e.currentTarget.select()}
@@ -499,7 +502,7 @@ const KalkulatorPage = () => {
                 onChange={(e) =>
                   handleInputChange(
                     "sirinamlaza",
-                    parseFloat(e.target.value) || 0
+                    parseFloat(e.target.value) || 0,
                   )
                 }
                 onClick={(e) => e.currentTarget.select()}
@@ -565,7 +568,7 @@ const KalkulatorPage = () => {
                 onChange={(e) =>
                   handleInputChange(
                     "brojdizni",
-                    parseFloat(e.target.value) || 0
+                    parseFloat(e.target.value) || 0,
                   )
                 }
                 onClick={(e) => e.currentTarget.select()}
@@ -579,7 +582,7 @@ const KalkulatorPage = () => {
                 onChange={(e) =>
                   handleInputChange(
                     "brojredova",
-                    parseFloat(e.target.value) || 0
+                    parseFloat(e.target.value) || 0,
                   )
                 }
                 onClick={(e) => e.currentTarget.select()}
@@ -647,7 +650,7 @@ const KalkulatorPage = () => {
                 onChange={(e) =>
                   handleInputChange(
                     "brojdizni",
-                    parseFloat(e.target.value) || 0
+                    parseFloat(e.target.value) || 0,
                   )
                 }
                 onClick={(e) => e.currentTarget.select()}
@@ -678,7 +681,7 @@ const KalkulatorPage = () => {
                 onChange={(e) =>
                   handleInputChange(
                     "izmerenaKolicina",
-                    parseFloat(e.target.value) || 0
+                    parseFloat(e.target.value) || 0,
                   )
                 }
                 onClick={(e) => e.currentTarget.select()}
@@ -692,7 +695,7 @@ const KalkulatorPage = () => {
                 onChange={(e) =>
                   handleInputChange(
                     "vremeKolicina",
-                    parseFloat(e.target.value) || 0
+                    parseFloat(e.target.value) || 0,
                   )
                 }
                 onClick={(e) => e.currentTarget.select()}
@@ -750,7 +753,7 @@ const KalkulatorPage = () => {
                 onChange={(e) =>
                   handleInputChange(
                     "brojdizni",
-                    parseFloat(e.target.value) || 0
+                    parseFloat(e.target.value) || 0,
                   )
                 }
                 onClick={(e) => e.currentTarget.select()}
@@ -784,17 +787,23 @@ const KalkulatorPage = () => {
         return (
           <div className="results">
             <div>
-              Potreban protok dizne u minuti je : {standardResults.protok} litara
+              Potreban protok dizne u minuti je : {standardResults.protok}{" "}
+              litara
             </div>
             <div>
-              Za jedan minut uređaj će izbaciti : {standardResults.ukupProtok} litara
-            </div>
-            <div>Za zadatu površinu je potrebno : {standardResults.vreme} minuta</div>
-            <div>
-              Za jedan hektar bi bilo potrebno : {standardResults.vremeJedan} minuta
+              Za jedan minut uređaj će izbaciti : {standardResults.ukupProtok}{" "}
+              litara
             </div>
             <div>
-              Potrebno je : {standardResults.potrebno} litara vode za celu parcelu
+              Za zadatu površinu je potrebno : {standardResults.vreme} minuta
+            </div>
+            <div>
+              Za jedan hektar bi bilo potrebno : {standardResults.vremeJedan}{" "}
+              minuta
+            </div>
+            <div>
+              Potrebno je : {standardResults.potrebno} litara vode za celu
+              parcelu
             </div>
           </div>
         );
@@ -808,21 +817,24 @@ const KalkulatorPage = () => {
             {directedResults.protok && (
               <>
                 <div>
-                  Potreban protok dizne u minuti je : {directedResults.protok} litara
+                  Potreban protok dizne u minuti je : {directedResults.protok}{" "}
+                  litara
                 </div>
                 <div>
-                  Za jedan minut potrebno je : {directedResults.ukupProtok} litara
+                  Za jedan minut potrebno je : {directedResults.ukupProtok}{" "}
+                  litara
                 </div>
                 <div>
-                  Za jedan hektar bi bilo potrebno : {directedResults.vremeJedan} minuta
+                  Za jedan hektar bi bilo potrebno :{" "}
+                  {directedResults.vremeJedan} minuta
                 </div>
                 <div>
-                  Za zadatu površinu bi bilo potrebno : {directedResults.vremeUkupno}{" "}
-                  minuta
+                  Za zadatu površinu bi bilo potrebno :{" "}
+                  {directedResults.vremeUkupno} minuta
                 </div>
                 <div>
-                  Potrebno je : {directedResults.ukupnaKolicina} litara vode za celu
-                  parcelu
+                  Potrebno je : {directedResults.ukupnaKolicina} litara vode za
+                  celu parcelu
                 </div>
               </>
             )}
@@ -833,19 +845,24 @@ const KalkulatorPage = () => {
         return (
           <div className="results">
             <div>
-              Potreban protok dizne u minuti je : {multipleDirectedResults.protok} litara
+              Potreban protok dizne u minuti je :{" "}
+              {multipleDirectedResults.protok} litara
             </div>
             <div>
-              Za jedan minut uređaj će izbaciti : {multipleDirectedResults.ukupProtok} litara
+              Za jedan minut uređaj će izbaciti :{" "}
+              {multipleDirectedResults.ukupProtok} litara
             </div>
             <div>
-              Za jedan hektar bi bilo potrebno : {multipleDirectedResults.vremeJedan} minuta
+              Za jedan hektar bi bilo potrebno :{" "}
+              {multipleDirectedResults.vremeJedan} minuta
             </div>
             <div>
-              Za zadatu površinu je potrebno : {multipleDirectedResults.vremeUkupno} minuta
+              Za zadatu površinu je potrebno :{" "}
+              {multipleDirectedResults.vremeUkupno} minuta
             </div>
             <div>
-              Potrebno je : {multipleDirectedResults.ukupnaKolicina} litara vode za celu parcelu
+              Potrebno je : {multipleDirectedResults.ukupnaKolicina} litara vode
+              za celu parcelu
             </div>
           </div>
         );
@@ -853,18 +870,24 @@ const KalkulatorPage = () => {
         const atomizerResults = results as DirectedSprayResults;
         return (
           <div className="results">
-            <div>Protok jedne dizne u minuti je : {atomizerResults.protok} litara</div>
             <div>
-              Ukupno atomizer izbaci : {atomizerResults.ukupProtok} litara vode u minuti
+              Protok jedne dizne u minuti je : {atomizerResults.protok} litara
             </div>
             <div>
-              Za jedan hektar bi bilo potrebno : {atomizerResults.vremeJedan} minuta
+              Ukupno atomizer izbaci : {atomizerResults.ukupProtok} litara vode
+              u minuti
             </div>
             <div>
-              Za zadatu površinu je potrebno : {atomizerResults.vremeUkupno} minuta
+              Za jedan hektar bi bilo potrebno : {atomizerResults.vremeJedan}{" "}
+              minuta
             </div>
             <div>
-              Potrebno je : {atomizerResults.ukupnaKolicina} litara vode za celu parcelu
+              Za zadatu površinu je potrebno : {atomizerResults.vremeUkupno}{" "}
+              minuta
+            </div>
+            <div>
+              Potrebno je : {atomizerResults.ukupnaKolicina} litara vode za celu
+              parcelu
             </div>
           </div>
         );
@@ -873,28 +896,32 @@ const KalkulatorPage = () => {
         return (
           <div className="results">
             <div>
-              Protok jedne dizne dobijen testom je : {ceramicResults.protok} litara
+              Protok jedne dizne dobijen testom je : {ceramicResults.protok}{" "}
+              litara
             </div>
             <div>
               Pritisak koji treba da postavimo na uređaju:{" "}
               {ceramicResults.potrebniPritisak} bara
             </div>
             <div>
-              Potreban protok jedne dizne u minuti je : {ceramicResults.potrebniProtok}{" "}
+              Potreban protok jedne dizne u minuti je :{" "}
+              {ceramicResults.potrebniProtok} litara
+            </div>
+            <div>
+              Za jedan minut uređaj će izbaciti : {ceramicResults.ukupProtok}{" "}
               litara
             </div>
             <div>
-              Za jedan minut uređaj će izbaciti : {ceramicResults.ukupProtok} litara
+              Za jedan hektar bi bilo potrebno : {ceramicResults.vremeJedan}{" "}
+              minuta
             </div>
             <div>
-              Za jedan hektar bi bilo potrebno : {ceramicResults.vremeJedan} minuta
+              Za zadatu površinu potrebno je : {ceramicResults.vremeUkupno}{" "}
+              minuta
             </div>
             <div>
-              Za zadatu površinu potrebno je : {ceramicResults.vremeUkupno} minuta
-            </div>
-            <div>
-              Potrebna količina vode za ceo teren je : {ceramicResults.ukupnaKolicina}{" "}
-              litara
+              Potrebna količina vode za ceo teren je :{" "}
+              {ceramicResults.ukupnaKolicina} litara
             </div>
           </div>
         );
@@ -926,13 +953,14 @@ const KalkulatorPage = () => {
               selectedType === "usmereno-jedna" && !showActualAmount
                 ? calculateDirectedSingle
                 : selectedType === "usmereno-jedna" &&
-                  showActualAmount &&
-                  !(results as DirectedSprayResults)?.protok
-                ? continueDirectedSingle
-                : handleCalculate
+                    showActualAmount &&
+                    !(results as DirectedSprayResults)?.protok
+                  ? continueDirectedSingle
+                  : handleCalculate
             }
           >
-            {selectedType === "usmereno-jedna" && !(results as DirectedSprayResults)?.protok
+            {selectedType === "usmereno-jedna" &&
+            !(results as DirectedSprayResults)?.protok
               ? "Dalje"
               : "Dalje"}
           </button>

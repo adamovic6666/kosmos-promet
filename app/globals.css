@@ -1,30 +1,30 @@
 @font-face {
-  font-family: 'Rawline';
-  src: url('/font/rawline-300.ttf') format('truetype');
+  font-family: "Rawline";
+  src: url("/font/rawline-300.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Rawline';
-  src: url('/font/rawline-400.ttf') format('truetype');
+  font-family: "Rawline";
+  src: url("/font/rawline-400.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Rawline';
-  src: url('/font/rawline-700.ttf') format('truetype');
+  font-family: "Rawline";
+  src: url("/font/rawline-700.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Rawline';
-  src: url('/font/rawline-800.ttf') format('truetype');
+  font-family: "Rawline";
+  src: url("/font/rawline-800.ttf") format("truetype");
   font-weight: 800;
   font-style: normal;
   font-display: swap;
@@ -32,26 +32,25 @@
 
 :root {
   /* Primary / Brand Colors */
-  --color-navy-dark: #000066;  
-  --color-navy-darker: #000044;  /* very dark navy blue */
-  --color-blue-primary: #4267B0;   /* Facebook-like blue */
-  --color-blue-light: #3579D5;     /* lighter accent blue */
+  --color-navy-dark: #000066;
+  --color-navy-darker: #000044; /* very dark navy blue */
+  --color-blue-primary: #4267b0; /* Facebook-like blue */
+  --color-blue-light: #3579d5; /* lighter accent blue */
 
   /* Neutrals */
-  --color-white: #FFFFFF;          /* pure white */
-  --color-gray-light: #E6E6E6;     /* light gray / border gray */
-  --color-gray: #4D4D4D;           /* medium gray / body text */
-  --color-gray-dark: #3C3C3C;      /* dark gray / headings */
-  --color-gray-darker: #333333;    /* darker gray / backgrounds */
-  --color-black: #000000;          /* pure black */
+  --color-white: #ffffff; /* pure white */
+  --color-gray-light: #e6e6e6; /* light gray / border gray */
+  --color-gray: #4d4d4d; /* medium gray / body text */
+  --color-gray-dark: #3c3c3c; /* dark gray / headings */
+  --color-gray-darker: #333333; /* darker gray / backgrounds */
+  --color-black: #000000; /* pure black */
 
   /* Font Variables */
-  --font-rawline: 'Rawline', sans-serif;
+  --font-rawline: "Rawline", sans-serif;
 }
 
 * {
   box-sizing: border-box;
-
 }
 
 html {
@@ -229,9 +228,7 @@ th {
     padding: 0;
   }
 
-
-p {
-  font-size: 1.6rem;
-}
-
+  p {
+    font-size: 1.6rem;
+  }
 }

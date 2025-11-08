@@ -67,7 +67,7 @@ const SearchDropdown = forwardRef<SearchDropdownRef, SearchDropdownProps>(
         } finally {
           setIsLoading(false);
         }
-      }, 400) // 400ms debounce - waits until typing pauses
+      }, 400), // 400ms debounce - waits until typing pauses
     ).current;
 
     // Handle input change
@@ -109,7 +109,7 @@ const SearchDropdown = forwardRef<SearchDropdownRef, SearchDropdownProps>(
       if (e.key === "ArrowDown") {
         e.preventDefault();
         setSelectedIndex((prev) =>
-          prev < results.length - 1 ? prev + 1 : prev
+          prev < results.length - 1 ? prev + 1 : prev,
         );
       }
       // Up arrow
@@ -225,7 +225,7 @@ const SearchDropdown = forwardRef<SearchDropdownRef, SearchDropdownProps>(
         </form>
       </div>
     );
-  }
+  },
 );
 
 // Add display name to fix ESLint warning

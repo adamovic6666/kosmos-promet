@@ -9,10 +9,7 @@ const SimilarProducts = ({ similarProducts }: SimilarProductsProps) => {
     <section className={styles.similarProducts}>
       <div className="container-small">
         <h2>Ostali proizvodi</h2>
-        <CustomSwiper 
-          products={similarProducts} 
-          id="similar-products-swiper" 
-        />
+        <CustomSwiper products={similarProducts} id="similar-products-swiper" />
       </div>
     </section>
   );

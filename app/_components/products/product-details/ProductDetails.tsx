@@ -37,7 +37,7 @@ const ProductDetails = ({ productDetails }: ProductDetailsProps) => {
   const rightSide = useRef<HTMLDivElement>(null);
   const descriptionRef = useRef<HTMLDivElement>(null);
   const [descriptionHeight, setDescriptionHeight] = useState<number | null>(
-    null
+    null,
   );
 
   // For opening the additional images

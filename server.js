@@ -19,11 +19,17 @@ app.prepare().then(() => {
   createServer(async (req, res) => {
     try {
       // Add cache control headers
-      res.setHeader('Cache-Control', 'public, max-age=3600, stale-while-revalidate=86400');
-      
+      res.setHeader(
+        "Cache-Control",
+        "public, max-age=3600, stale-while-revalidate=86400",
+      );
+
       // Handle image files with stronger caching
       if (req.url.match(/\.(jpg|jpeg|png|gif|webp|svg|ico)$/i)) {
-        res.setHeader('Cache-Control', 'public, max-age=86400, stale-while-revalidate=604800');
+        res.setHeader(
+          "Cache-Control",
+          "public, max-age=86400, stale-while-revalidate=604800",
+        );
       }
 
       // This tells it to parse the query portion of the URL.

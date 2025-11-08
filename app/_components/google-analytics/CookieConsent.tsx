@@ -44,7 +44,7 @@ export default function CookieConsent({
     if (typeof window !== "undefined") {
       localStorage.setItem(
         "cookie-consent-preferences",
-        JSON.stringify(newPreferences)
+        JSON.stringify(newPreferences),
       );
     }
     setPreferences(newPreferences);

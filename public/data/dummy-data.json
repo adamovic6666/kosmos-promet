@@ -17,19 +17,19 @@
     "image": "/images/filteri.webp",
     "alias": "filteri"
   },
-    {
+  {
     "id": 4,
     "name": "Bure",
     "image": "/images/bure.webp",
     "alias": "bure"
   },
-    {
+  {
     "id": 5,
     "name": "Dizne i sita",
     "image": "/images/dizne-i-sita.webp",
     "alias": "dizne i sita"
   },
-    {
+  {
     "id": 6,
     "name": "Nosači dizne",
     "image": "/images/nosaci-dizne.webp",
@@ -48,4 +48,3 @@
     "alias": "membrane i zaptivke"
   }
 ]
- 

@@ -47,7 +47,7 @@ const ContactForm = () => {
           subject: data.reason,
           message: data.message,
         },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
       );
 
       if (response.status === 200) {
@@ -55,12 +55,12 @@ const ContactForm = () => {
         reset();
       } else {
         setSubmitError(
-          "Postoji problem prilikom slanja poruke. Molimo pokušajte ponovo."
+          "Postoji problem prilikom slanja poruke. Molimo pokušajte ponovo.",
         );
       }
     } catch (error) {
       setSubmitError(
-        "Postoji problem prilikom slanja poruke. Molimo pokušajte ponovo."
+        "Postoji problem prilikom slanja poruke. Molimo pokušajte ponovo.",
       );
       console.error("EmailJS error:", error);
     } finally {

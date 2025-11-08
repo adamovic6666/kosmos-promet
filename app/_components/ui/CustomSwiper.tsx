@@ -118,7 +118,7 @@ const CustomSwiper = ({
                     >
                       <Image
                         src={`https://img.youtube.com/vi/${getYouTubeVideoId(
-                          origMedia
+                          origMedia,
                         )}/hqdefault.jpg`}
                         alt={`YouTube video thumbnail ${index + 2}`}
                         fill

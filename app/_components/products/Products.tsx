@@ -22,7 +22,7 @@ const Products = ({
   const products = isMainPage ? dummyData?.slice(0, 6) : dummyData;
   // const products = dummyData;
   const isProductPage = allProducts?.some((products) =>
-    products.alias.includes("/proizvod/")
+    products.alias.includes("/proizvod/"),
   );
   const description = isMainPage ? (
     <p className={styles.description}>
