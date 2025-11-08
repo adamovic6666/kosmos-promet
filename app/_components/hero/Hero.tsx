@@ -26,8 +26,8 @@ const Hero = () => {
           <div className={styles.image}>
             <Image
               src={"/images/kosmos-hero-image.webp"}
-              width={600}
-              height={320}
+              width={1600}
+              height={1200}
               layout="responsive"
               alt="hero-image"
               priority={true}
