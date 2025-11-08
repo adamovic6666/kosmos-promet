@@ -1,51 +1,51 @@
 [
   {
     "id": 1,
-    "name": "Atomizeri",
-    "image": "https://dummyimage.com/300",
-    "alias": "atomizeri"
+    "name": "Regulatori",
+    "image": "/images/regulatori.webp",
+    "alias": "regulatori"
   },
   {
     "id": 2,
-    "name": "Prskalice",
-    "image": "https://dummyimage.com/300",
-    "alias": "prskalice"
+    "name": "Pumpe",
+    "image": "/images/pumpe.webp",
+    "alias": "pumpe"
   },
   {
     "id": 3,
-    "name": "Bure",
-    "image": "https://dummyimage.com/300",
-    "alias": "bure"
+    "name": "Filteri",
+    "image": "/images/filteri.webp",
+    "alias": "filteri"
   },
     {
     "id": 4,
-    "name": "Bure2",
-    "image": "https://dummyimage.com/300",
-    "alias": "regulatori"
+    "name": "Bure",
+    "image": "/images/bure.webp",
+    "alias": "bure"
   },
     {
     "id": 5,
-    "name": "Bure3",
-    "image": "https://dummyimage.com/300",
-    "alias": "grane"
+    "name": "Dizne i sita",
+    "image": "/images/dizne-i-sita.webp",
+    "alias": "dizne i sita"
   },
     {
     "id": 6,
-    "name": "Bure4",
-    "image": "https://dummyimage.com/300",
-    "alias": "dizne"
+    "name": "Nosači dizne",
+    "image": "/images/nosaci-dizne.webp",
+    "alias": "nosaci dizne"
   },
   {
     "id": 7,
-    "name": "Bure5",
-    "image": "https://dummyimage.com/300",
-    "alias": "sita"
+    "name": "Grane",
+    "image": "/images/grane.webp",
+    "alias": "grane"
   },
   {
     "id": 8,
-    "name": "Bure6",
-    "image": "https://dummyimage.com/300",
-    "alias": "ostali proizvodi"
+    "name": "Membrane i zaptivke",
+    "image": "/images/membrane-i-zaptivke.webp",
+    "alias": "membrane i zaptivke"
   }
 ]
  

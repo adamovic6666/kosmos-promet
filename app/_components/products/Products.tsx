@@ -25,14 +25,18 @@ const Products = ({
     products.alias.includes("/proizvod/")
   );
   const description = isMainPage ? (
-    <p>
-      Širok izbor delova i opreme za prskalice i atomizere na jednom mestu.{" "}
-      <br /> Provereni kvalitet, dostupnost i brza isporuka.
+    <p className={styles.description}>
+      <span>
+        Širok izbor delova i opreme za prskalice i atomizere na jednom mestu.
+      </span>{" "}
+      <span>Provereni kvalitet, dostupnost i brza isporuka.</span>
     </p>
   ) : (
-    <p>
-      Širok izbor delova i opreme za prskalice i atomizere na jednom mestu.{" "}
-      <br /> Provereni kvalitet, dostupnost i pouzdana isporuka.
+    <p className={styles.description}>
+      <span>
+        Širok izbor delova i opreme za prskalice i atomizere na jednom mestu.
+      </span>{" "}
+      <span>Provereni kvalitet, dostupnost i pouzdana isporuka.</span>
     </p>
   );
 

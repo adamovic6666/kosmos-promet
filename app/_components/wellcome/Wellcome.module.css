@@ -19,6 +19,10 @@
   margin-top: 2.4rem;
 }
 
+.wellcomeImage img {
+  border-radius: .8rem;
+}
+
 .wellcome h2 {
   color: var(--color-navy-dark);
   max-width: 52rem;
@@ -58,12 +62,16 @@
   padding-bottom: 4em;
 }
 
+.logosMobile {
+  display: block;
+  margin: 2.4rem 0;
+  position: relative;
+  overflow: visible;
+  padding-bottom: 4rem;
+}
+
 .logos {
-  display: flex;
-  margin-top: 2.4rem;
-  gap: 1.6rem;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: none;
 }
 
 .logos > div {
@@ -76,7 +84,6 @@
 .pdfs {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
   gap: .8rem;
   margin-top: 1.6rem;
 }
@@ -95,8 +102,16 @@
     gap: 1.6rem;
   }
 
+  .logosMobile {
+    display: none;
+  }
+
   .logos {
+    display: flex;
+    gap: 1.6rem;
     flex-wrap: unset;
+    justify-content: center;
+    margin-top: 2.4rem;
   }
 
   .logos > div {

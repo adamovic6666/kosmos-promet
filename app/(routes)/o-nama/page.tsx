@@ -1,6 +1,6 @@
 import Contact from "@/app/_components/contact/Contact";
 import GotQuestions from "@/app/_components/got-questions/GotQuestions";
-import ContactHero from "@/app/_components/hero/ContactHero";
+import AboutUsHero from "@/app/_components/hero/AboutUsHero";
 import Wellcome from "@/app/_components/wellcome/Wellcome";
 import type { Metadata } from "next";
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ const page = async () => {
 
   return (
     <>
-      <ContactHero />
+      <AboutUsHero />
       <Wellcome allProducts={[]} />
       <GotQuestions />
       <Contact />

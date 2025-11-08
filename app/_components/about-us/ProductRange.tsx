@@ -10,15 +10,12 @@ const ProductRange = ({ allProducts }: { allProducts: Product[] }) => {
 
   return (
     <div className={styles.productRange}>
-      <div className="container-small">
-        <h2>Proizvodi</h2>
-        <p className={styles.productRangeText}>
-          Širok izbor delova i opreme za prskalice i atomizere na jednom mestu.
-          <br />
-          Provereni kvalitet, dostupnost i pouzdana isporuka.
-        </p>
-        <CustomSwiper products={products} />
-      </div>
+      <h2>Proizvodi</h2>
+      <p className={styles.productRangeText}>
+        Širok izbor delova i opreme za prskalice i atomizere na jednom mestu.
+        Provereni kvalitet, dostupnost i pouzdana isporuka.
+      </p>
+      <CustomSwiper products={products} id="product-range" />
     </div>
   );
 };

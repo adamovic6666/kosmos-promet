@@ -57,7 +57,7 @@ const CustomSwiper = ({
         slidesPerView={3}
         breakpoints={{
           320: {
-            slidesPerView: images ? 3 : 2,
+            slidesPerView: 2,
             spaceBetween: 16,
           },
           768: {

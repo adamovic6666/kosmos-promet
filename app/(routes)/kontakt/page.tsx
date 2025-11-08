@@ -1,7 +1,7 @@
 import Contact from "@/app/_components/contact/Contact";
 import ContactForm from "@/app/_components/forms/ContactForm";
 import GotQuestions from "@/app/_components/got-questions/GotQuestions";
-import AboutUsHero from "@/app/_components/hero/AboutUsHero";
+import ContactUsHero from "@/app/_components/hero/ContactUsHero";
 import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Kosmos Promet | Kontakt",
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const page = () => {
   return (
     <>
-      <AboutUsHero />
+      <ContactUsHero />
       <ContactForm />
       <GotQuestions />
       <Contact />

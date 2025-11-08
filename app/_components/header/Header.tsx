@@ -115,7 +115,7 @@ const Header = () => {
                 >
                   {label}
                 </Link>
-                {label === "proizvodi" && (
+                {/* {label === "proizvodi" && (
                   <div
                     className={`${styles.productsDropdown} ${
                       isDropdownOpen ? styles.open : ""
@@ -165,7 +165,7 @@ const Header = () => {
                       </li>
                     </ul>
                   </div>
-                )}
+                )} */}
               </li>
             ))}
           </ul>

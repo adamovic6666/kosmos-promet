@@ -4,8 +4,17 @@ import Checkmark from "@/app/_svg/Checkmark";
 import styles from "./Wellcome.module.css";
 import Image from "next/image";
 import PDFLink from "../pdf-link/PDFLink";
+import CustomSwiper from "../ui/CustomSwiper";
 
 const Wellcome = ({ allProducts }: { allProducts: Product[] }) => {
+  const logoData = [
+    { src: "/images/morava.webp", alt: "Morava" },
+    { src: "/images/agromehanika.webp", alt: "Agromehanika" },
+    { src: "/images/geoline.webp", alt: "Geoline" },
+    { src: "/images/arag.webp", alt: "ARAG" },
+    { src: "/images/lechler.webp", alt: "Lechler" },
+  ];
+
   return (
     <section className={styles.wellcome}>
       <div className="container-small">
@@ -61,52 +70,28 @@ const Wellcome = ({ allProducts }: { allProducts: Product[] }) => {
             saradnji sa ovim proizvođačima, našim kupcima obezbeđujemo širok
             izborkvalitetnih i pouzdanih delova.
           </p>
+          <div className={styles.logosMobile}>
+            <CustomSwiper
+              images={{
+                thumb: logoData.map((logo) => logo.src),
+                orig: logoData.map((logo) => logo.src),
+              }}
+              imageBasePath=""
+              id="logos-swiper"
+            />
+          </div>
           <div className={styles.logos}>
-            <div>
-              <Image
-                alt="Morava"
-                src={"/images/morava.webp"}
-                width={150}
-                height={75}
-                layout="responsive"
-              />
-            </div>
-            <div>
-              <Image
-                alt="Agromehanika"
-                src={"/images/agromehanika.webp"}
-                width={150}
-                height={75}
-                layout="responsive"
-              />
-            </div>
-            <div>
-              <Image
-                alt="Geoline"
-                src={"/images/geoline.webp"}
-                width={150}
-                height={75}
-                layout="responsive"
-              />
-            </div>
-            <div>
-              <Image
-                alt="ARAG"
-                src={"/images/arag.webp"}
-                width={150}
-                height={75}
-                layout="responsive"
-              />
-            </div>
-            <div>
-              <Image
-                alt="Lechler"
-                src={"/images/lechler.webp"}
-                width={150}
-                height={75}
-                layout="responsive"
-              />
-            </div>
+            {logoData.map((logo, index) => (
+              <div key={index}>
+                <Image
+                  alt={logo.alt}
+                  src={logo.src}
+                  width={150}
+                  height={75}
+                  layout="responsive"
+                />
+              </div>
+            ))}
           </div>
         </div>
 

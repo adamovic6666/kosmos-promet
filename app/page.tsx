@@ -16,7 +16,7 @@ export default async function Home() {
   // const data = await res.json();
   return (
     <>
-      <Hero title="Hero" maxWidth="520px" />
+      <Hero />
       <Products allProducts={[]} />
       <MainAboutUs />
       <GotQuestions />

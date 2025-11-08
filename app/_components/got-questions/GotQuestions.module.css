@@ -44,8 +44,14 @@
   color: var(--color-gray-dark);
 }
 
+
 @media screen and (min-width: 768px) {
   .gotQuestions {
     padding: 12rem 0;
+  }
+
+  .gotQuestions p {
+    display: flex;
+    flex-direction: column;
   }
 }

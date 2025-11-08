@@ -149,9 +149,9 @@ h4 {
 }
 
 h1 {
-  font-size: clamp(2.8rem, 2.143vw + 2.41rem, 5.6rem);
+  font-size: clamp(3.4rem, 2.143vw + 3.41rem, 5.6rem);
   max-width: 58rem;
-  line-height: 1.2;
+  line-height: 1.1;
 }
 
 h2 {
@@ -223,10 +223,15 @@ th {
   font-size: 1.6rem;
 }
 
-@media (min-width: 112rem) {
+@media (min-width: 1024px) {
   .container-small,
   .container {
     padding: 0;
   }
+
+
+p {
+  font-size: 1.6rem;
+}
 
 }

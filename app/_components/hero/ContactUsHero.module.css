@@ -1,0 +1,26 @@
+.hero {
+  background: url("/images/contact-hero.webp") no-repeat right center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  aspect-ratio: 1920 / 785;
+  padding-top: 7rem;
+  transition: all 0.3s ease;
+  min-height: 50dvh;
+  width: 100%;
+  background-size: cover;
+}
+
+.hero > div {
+  position: relative;
+  z-index: 1;
+}
+
+@media screen and (min-width: 768px) {
+  .hero {
+    min-height: 0;
+    background: url("/images/contact-hero.webp") no-repeat center center;
+  }
+}

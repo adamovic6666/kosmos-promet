@@ -7,14 +7,16 @@ const GotQuestions = () => {
     <div className={styles.gotQuestions}>
       <div className="container-small">
         <h2>Imate pitanje?</h2>
-        <p>Pošaljite nam poruku putem Vibera ili WhatsAppa.</p>
-        <p>
-          Uz tekst možete poslati i sliku dela ili opreme za koji vam je
-          potrebna pomoć.
-        </p>
-        <p>
-          Naš tim će vam brzo odgovoriti i pomoći da pronađete pravi proizvod
-          ili rešenje.
+        <p className={styles.gotQuestionsText}>
+          <span>Pošaljite nam poruku putem Vibera ili WhatsAppa.</span>
+          <span>
+            Uz tekst možete poslati i sliku dela ili opreme za koji vam je
+            potrebna pomoć.
+          </span>
+          <span>
+            Naš tim će vam brzo odgovoriti i pomoći da pronađete pravi proizvod
+            ili rešenje.
+          </span>
         </p>
         <div className={styles.gotQuestionsSocials}>
           <a href="viber://chat?number=+38163647205">

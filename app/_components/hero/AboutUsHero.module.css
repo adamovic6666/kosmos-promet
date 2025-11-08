@@ -1,7 +1,5 @@
 .hero {
-  background: url("/images/contact-hero.webp") no-repeat right center;
   display: flex;
-  align-items: center;
   justify-content: center;
   text-align: center;
   position: relative;
@@ -13,14 +11,12 @@
   background-size: cover;
 }
 
-.hero > div {
-  position: relative;
-  z-index: 1;
-}
-
-@media screen and (min-width: 768px) {
-  .hero {
-    min-height: 0;
-    background: url("/images/contact-hero.webp") no-repeat center center;
-  }
+.hero video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }

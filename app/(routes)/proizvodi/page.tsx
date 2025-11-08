@@ -1,5 +1,4 @@
 import Contact from "@/app/_components/contact/Contact";
-// import Hero from "@/app/_components/hero/Hero";
 import Products from "@/app/_components/products/Products";
 import type { Metadata } from "next";
 export const metadata: Metadata = {
@@ -20,7 +19,6 @@ const page = async () => {
 
   return (
     <>
-      {/* <Hero maxWidth="50vw" rotate={true} title="PROIZVODNI ASORTIMAN" /> */}
       <Products allProducts={[]} />
       <Contact />
     </>

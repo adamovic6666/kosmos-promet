@@ -1,43 +1,43 @@
 "use client";
 import Image from "next/image";
 import styles from "./Hero.module.css";
+import Link from "next/link";
 
-const Hero = ({
-  title,
-  maxWidth,
-  rotate,
-}: {
-  title: string;
-  maxWidth: string;
-  rotate?: boolean;
-}) => {
+const Hero = () => {
   return (
     <section className={styles.hero}>
-      <div className={`${styles.heroImage} ${rotate ? styles.rotate : ""}`}>
-        <Image
-          src={"/images/hero.webp"}
-          width={1920}
-          height={785}
-          alt="hero-image"
-          priority={true}
-          loading="eager"
-        />
-      </div>
       <div className={`container ${styles.heroContent}`}>
-        <h1
-          style={{
-            maxWidth: maxWidth,
-          }}
-        >
-          {title}
-        </h1>
-        <a
-          href="/pdf/AutoFrogyKatalog2025.pdf"
-          target="_blank"
-          className="link-red"
-        >
-          Preuzmi katalog proizvoda
-        </a>
+        <div className={`${styles.heroText}`}>
+          <div>
+            <h1>Kosmos regulatori</h1>
+            <p>
+              Najveća ponuda regulatora za prskalice i atomizere, uz veliki
+              izbor rezervnih delova i prateće opreme. Pouzdana tehnička podrška
+              za pravilan izbor i bezbedan rad sistema.
+            </p>
+          </div>
+
+          <Link className="button-blue" href="">
+            Pogledaj sve regulatore
+          </Link>
+        </div>
+
+        <div className={`${styles.heroImage}`}>
+          <div className={styles.image}>
+            <Image
+              src={"/images/kosmos-hero-image.webp"}
+              width={1024}
+              height={418}
+              layout="responsive"
+              alt="hero-image"
+              priority={true}
+              loading="eager"
+            />
+          </div>
+        </div>
+        <Link className={`button-blue ${styles.mobileButton}`} href="">
+          Pogledaj sve regulatore
+        </Link>
       </div>
     </section>
   );

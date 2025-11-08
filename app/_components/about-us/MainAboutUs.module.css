@@ -25,6 +25,11 @@
     aspect-ratio: 16  / 9;
 }
 
+.image img {
+    border-radius: .8rem;
+
+}
+
 .text {
     text-align: center;
     text-align: justify;
