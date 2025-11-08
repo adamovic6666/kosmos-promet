@@ -118,9 +118,12 @@
 
   .logos > div {
     max-width: unset;
+    border-radius: .8rem;
+    overflow: hidden;
   }
 
   .wellcomeList {
     padding-left: 3.2rem;
+    font-size: 1.6rem;
   }
 }

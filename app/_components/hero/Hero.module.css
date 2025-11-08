@@ -9,7 +9,6 @@
   transition: all 0.3s ease;
   height: 100dvh;
   width: 100%;
-  background-size: cover;
 }
 
 .hero h1 {
@@ -45,7 +44,7 @@
 }
 
 .heroText p {
-  max-width: 80dvw;
+  max-width: 40rem;
   margin-top: 2.4rem;
 }
 
@@ -62,28 +61,32 @@
 .image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
   max-width: 90dvw;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 640px) {
+.image img {
+
+  max-width: 75dvw;
+}
+}
+
+@media screen and (min-width: 920px) {
   .hero {
-    min-height: 50dvh;
+    min-height: 60dvh;
     height: auto;
   }
 
   .heroContent {
     flex-direction: row-reverse;
     margin: auto;
-    height: 50%;
     gap: 2.4rem;
     padding: 0;
   }
 
   .hero h1 {
     text-align: left;
-    margin-bottom: 3.2rem;
-    margin: 0 0 2.4rem;
+    margin: 0 0 3.2rem;
   }
 
   .heroText {
@@ -91,14 +94,12 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    aspect-ratio: 16 / 9;
     width: 38%;
     height: 100%;
   }
 
   .heroText p {
     text-align: left;
-    max-width: 40rem;
   }
 
   .heroImage {
@@ -114,5 +115,25 @@
   }
   .image img {
     max-width: 92rem;
+  }
+}
+
+
+@media screen and (min-width: 1024px) {
+  .image img {
+    max-width: 50dvw;
+  }
+
+  .heroContent a {
+    margin-top: 2.4rem;
+  }
+
+
+}
+
+@media screen and (min-width: 1440px) {
+
+  .heroContent {
+        height: 50%;
   }
 }

@@ -1,4 +1,5 @@
 import Contact from "@/app/_components/contact/Contact";
+import GotQuestions from "@/app/_components/got-questions/GotQuestions";
 import Products from "@/app/_components/products/Products";
 import type { Metadata } from "next";
 export const metadata: Metadata = {
@@ -20,6 +21,7 @@ const page = async () => {
   return (
     <>
       <Products allProducts={[]} />
+      <GotQuestions />
       <Contact />
     </>
   );
