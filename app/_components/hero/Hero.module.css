@@ -33,8 +33,7 @@
   align-items: center;
   flex-direction: column;
   gap: 4rem;
-  justify-content: space-between;
-  padding: 8rem 1.6rem;
+  justify-content: center;
 }
 
 .heroContent p {
@@ -46,7 +45,7 @@
 }
 
 .heroText p {
-  max-width: 36rem;
+  max-width: 80dvw;
   margin-top: 2.4rem;
 }
 
