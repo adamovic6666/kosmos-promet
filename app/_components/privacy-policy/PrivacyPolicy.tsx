@@ -4,9 +4,9 @@ import styles from "./PrivacyPolicy.module.css";
 const PrivacyPolicy = () => {
   return (
     <section className={styles.privacyPolicy}>
-      <div className="container-small">
+      <div className="container-medium">
         <div className={styles.policyContainer}>
-          <h1 className={styles.policyTitle}>POLITIKA PRIVATNOSTI</h1>
+          <h1 className={styles.policyTitle}>Politika privatnosti</h1>
           <p className={styles.policyDate}>
             Datum stupanja na snagu: 1. januar 2025. godine
           </p>
@@ -208,7 +208,7 @@ const PrivacyPolicy = () => {
 
           {/* POLITIKA KOLAČIĆA */}
           <div className={styles.cookiePolicyContainer}>
-            <h1 className={styles.policyTitle}>POLITIKA KOLAČIĆA</h1>
+            <h1 className={styles.policyTitle}>Politika kolačića</h1>
             <p className={styles.policyDate}>
               Datum stupanja na snagu: 1. januar 2025.
             </p>

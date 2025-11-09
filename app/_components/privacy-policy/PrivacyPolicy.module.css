@@ -2,8 +2,12 @@
   padding: 10.4rem 0 8rem;
 }
 
-.privacyPolicy p {
-  color: #333;
+.privacyPolicy h1 {
+  color: var(--color-navy-dark);
+}
+
+.privacyPolicy h4 {
+  color: var(--color-gray-darker);
 }
 
 .policyContainer {
@@ -51,6 +55,7 @@
   padding: 0;
   padding-left: 1.8rem;
   color: #333;
+  font-size: 1.4rem;
 }
 
 .bulletList li {
@@ -82,7 +87,7 @@
 
 .contactInfo {
   background-color: #f8f8f8;
-  padding: 1.6rem;
+  padding: 1.4rem;
   border-radius: 0.4rem;
   margin: 2.4rem 0;
   border-radius: 1.6rem;
@@ -100,7 +105,7 @@
   }
 
   .policyTitle {
-    font-size: 2.4rem;
+    font-size: 4rem;
   }
 
   .sectionTitle {
@@ -114,4 +119,12 @@
   .policyContainer {
     max-width: 90%;
   }
+
+  .link,
+  .webiste,
+  .bulletList {
+    font-size: 1.6rem;
+  }
+
+
 }

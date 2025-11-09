@@ -8,10 +8,10 @@ const GotQuestions = () => {
       <div className="container-small">
         <h2>Imate pitanje?</h2>
         <p className={styles.gotQuestionsText}>
-          <span>Pošaljite nam poruku putem Vibera ili WhatsAppa.</span>
+          <span>Pošaljite nam poruku putem Vibera ili WhatsAppa.&nbsp;</span>
           <span>
             Uz tekst možete poslati i sliku dela ili opreme za koji vam je
-            potrebna pomoć.
+            potrebna pomoć.{" "}
           </span>
           <span>
             Naš tim će vam brzo odgovoriti i pomoći da pronađete pravi proizvod

@@ -134,10 +134,6 @@ p {
   color: var(--color-gray-dark);
 }
 
-li {
-  letter-spacing: -0.02rem;
-}
-
 h1,
 h2,
 h3,
@@ -167,8 +163,7 @@ h5 {
   font-size: clamp(1.4rem, 0.406vw + 1.018rem, 1.6rem);
 }
 
-.button-blue,
-.link-red {
+.button-blue {
   background-color: var(--color-navy-dark);
   color: var(--color-white);
   padding: 0.6rem 2.4rem;
@@ -181,10 +176,6 @@ h5 {
 
 .button-blue:hover {
   background-color: var(--color-navy-darker);
-}
-
-.link-red:hover {
-  background-color: var(--red-dark);
 }
 
 .swiper {
