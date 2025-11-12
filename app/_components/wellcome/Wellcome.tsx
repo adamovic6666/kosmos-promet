@@ -76,7 +76,7 @@ const Wellcome = ({ allProducts }: { allProducts: Product[] }) => {
                 thumb: logoData.map((logo) => logo.src),
                 orig: logoData.map((logo) => logo.src),
               }}
-              imageBasePath=""
+              // imageBasePath=""
               id="logos-swiper"
             />
           </div>

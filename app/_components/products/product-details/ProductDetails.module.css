@@ -1,16 +1,17 @@
 .productDetails {
   padding: 8rem 0 2.4rem;
+  background-color: var(--color-gray-light)
 }
 
-.details h1 {
+.details h2 {
   text-align: start;
   text-transform: unset;
+  color: var(--color-navy-dark);
 }
 
 .details > div {
   display: flex;
   flex-direction: column;
-  margin-bottom: 2rem;
   color: #333;
 }
 
@@ -19,10 +20,14 @@
   line-height: 1.2;
 }
 
-.productDetails > div {
+.productGrid {
   display: flex;
-  gap: 4rem;
+  gap: .8rem;
   flex-direction: column;
+}
+
+.imageSection {
+  width: 100%;
 }
 
 .productCode {
@@ -40,6 +45,7 @@
   max-width: 6rem;
   line-height: 1.1;
   text-transform: uppercase;
+  color: var(--color-gray-dark);
 }
 
 .productCode span {
@@ -47,8 +53,11 @@
 }
 
 .productCode span:nth-of-type(1) {
-  font-weight: 500;
-  font-size: 1.8rem;
+  font-weight: 700;
+  font-size: 1.4rem;
+  background-color: #ccc;
+  border-radius: 0.8rem;
+  padding: 0.6rem 0.8rem;
 }
 
 .images {
@@ -57,22 +66,104 @@
   gap: 1.2rem;
   height: auto;
   align-self: flex-start;
-}
-
-.images,
-.details {
   width: 100%;
 }
 
 .details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   align-self: flex-start;
+  padding-top: 3.2rem;
 }
 
 .additionalImages {
   display: flex;
   gap: 1.2rem;
   width: 100%;
-  margin: 0.8rem 0 3.2rem;
+  margin: 0.8rem 0 0;
+}
+
+.orderSection {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.price {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 2.4rem;
+}
+
+.originalPrice {
+  font-size: 1.4rem;
+  color: var(--color-gray-dark);
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.currentPrice {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--color-navy-dark);
+}
+
+.orderControls {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.quantityControl {
+  display: flex;
+  align-items: center;
+  border: 0.1rem solid #ccc;
+  border-radius: 0.4rem;
+  overflow: hidden;
+}
+
+.quantityBtn {
+  background: var(--color-gray-light);
+  border: none;
+  padding: 0.8rem 1.2rem;
+  cursor: pointer;
+  font-size: 1.6rem;
+  color: var(--color-gray-dark);
+  transition: background-color 0.2s ease;
+}
+
+.quantityBtn:hover {
+  background: #ddd;
+}
+
+.quantityInput {
+  border: none;
+  width: 1.6rem;
+  text-align: center;
+  padding: 0.8rem 0.4rem;
+  font-size: 1.4rem;
+  outline: none;
+  background-color: transparent;
+}
+
+.orderBtn {
+  background: var(--color-blue-light);
+  color: white;
+  border: none;
+  padding: 1rem 2.4rem;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease;
+}
+
+.orderBtn:hover {
+  background: var(--color-navy-dark);
 }
 
 .additionalImages :global(.swiper) {
@@ -97,7 +188,7 @@
 }
 
 .mainImage {
-  border-radius: 1.6rem;
+  border-radius: .8rem;
   overflow: hidden;
   transition: transform 0.3s ease;
   position: relative;
@@ -132,10 +223,10 @@
   position: absolute;
   top: 1.2rem;
   right: 1.2rem;
-  background-color: var(--red);
-  color: var(--white);
+  background-color: var(--color-navy-dark);
+  color: var(--color-white);
   padding: 0.4rem 1.4rem;
-  border-radius: 1.6rem;
+  border-radius: 0.8rem;
   font-size: 1.4rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -146,7 +237,7 @@
   position: relative;
   width: 100%;
   aspect-ratio: 1 / 1;
-  border-radius: 1.6rem;
+  border-radius: 0.8rem;
   overflow: hidden;
 }
 
@@ -162,18 +253,53 @@
   border-radius: 50%;
 }
 
+.currency {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--color-gray-dark);
+  opacity: .6;
+}
+
+.orderSection {
+  margin-top: auto;
+}
+
 @media screen and (min-width: 768px) {
   .productDetails {
     padding: 16rem 0 0;
   }
 
-  .productDetails > div {
-    flex-direction: row;
+  .productGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    column-gap: 4rem;
+    grid-template-areas: 
+      "images details"
+      "additionalImages additionalImages";
   }
 
-  .images,
+  .imageSection {
+    grid-area: images;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    gap: 1.6rem;
+  }
+
+  .images {
+    grid-row: 1;
+  }
+
+  .additionalImages {
+    grid-row: 2;
+    margin: 0;
+    max-width: 44.4rem;
+  }
+
   .details {
-    width: 50%;
+    grid-area: details;
+    height: 100%;
+    padding-top: 0;
   }
 
   .description {
@@ -183,4 +309,18 @@
   .descriptionContainer {
     gap: 1.6rem;
   }
+
+  .orderControls {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .details > div {
+    margin-bottom: 1.6rem;
+  }
+
+  .price {
+    margin-top: 0;
+  }
+
 }

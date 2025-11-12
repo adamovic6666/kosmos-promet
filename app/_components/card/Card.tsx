@@ -35,7 +35,7 @@ const Card = ({
           <span>{productCode}</span>
         </div>
       )}
-      <Link href={alias} className={styles.link}>
+      <Link href={"/proizvod" + "/" + alias} className={styles.link}>
         <article className={styles.card}>
           <div
             className={`${styles.image} ${isProduct ? styles.imageBig : ""}`}
@@ -50,7 +50,7 @@ const Card = ({
             <h4>
               {name && name.length > 52
                 ? name.slice(0, 52) + "..."
-                : (name ?? "No name")}
+                : name ?? "No name"}
             </h4>
           </div>
         </article>

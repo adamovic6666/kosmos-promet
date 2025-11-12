@@ -18,7 +18,7 @@ type CustomSwiperProps = {
     orig: string[];
   };
   onImageClick?: (index: number) => void;
-  imageBasePath?: string;
+  // imageBasePath?: string;
   id?: string;
 };
 
@@ -26,7 +26,7 @@ const CustomSwiper = ({
   products,
   images,
   onImageClick,
-  imageBasePath = process.env.NEXT_PUBLIC_API_URL,
+  // imageBasePath = process.env.NEXT_PUBLIC_API_URL,
   id = "swiper-" + Math.random().toString(36).substring(2, 9),
 }: CustomSwiperProps) => {
   const showArrows =
@@ -118,7 +118,7 @@ const CustomSwiper = ({
                     >
                       <Image
                         src={`https://img.youtube.com/vi/${getYouTubeVideoId(
-                          origMedia,
+                          origMedia
                         )}/hqdefault.jpg`}
                         alt={`YouTube video thumbnail ${index + 2}`}
                         fill
@@ -131,7 +131,8 @@ const CustomSwiper = ({
                     </div>
                   ) : (
                     <Image
-                      src={imageBasePath + media}
+                      // src={imageBasePath + media}
+                      src={media}
                       alt={`Product view ${index + 2}`}
                       fill
                       style={{ objectFit: "cover" }}

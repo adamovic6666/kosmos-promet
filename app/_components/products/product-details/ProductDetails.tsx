@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import styles from "./ProductDetails.module.css";
 import LightGallery from "@/app/_components/ui/LightGallery";
 import CustomSwiper from "@/app/_components/ui/CustomSwiper";
@@ -8,14 +8,15 @@ import { ProductDetailsProps } from "@/app/_types";
 
 const ProductDetails = ({ productDetails }: ProductDetailsProps) => {
   const mainPhoto = productDetails.main_photo || "";
-  const updatedAt = productDetails.media_updated_at || 0;
-  const mainImage = `${process.env.NEXT_PUBLIC_API_URL}${mainPhoto}${
-    mainPhoto.includes("?") ? "&" : "?"
-  }t=${updatedAt}`;
+  // const updatedAt = productDetails.media_updated_at || 0;
+  // const mainImage = `${process.env.NEXT_PUBLIC_API_URL}${mainPhoto}${
+  //   mainPhoto.includes("?") ? "&" : "?"
+  // }t=${updatedAt}`;
 
   const isNew = productDetails.is_new;
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [quantity, setQuantity] = useState(1);
 
   // Create an array that includes the main image plus the gallery images
   // Make sure to properly handle YouTube URLs by preserving them exactly as they are
@@ -35,10 +36,6 @@ const ProductDetails = ({ productDetails }: ProductDetailsProps) => {
   ];
   const leftSide = useRef<HTMLDivElement>(null);
   const rightSide = useRef<HTMLDivElement>(null);
-  const descriptionRef = useRef<HTMLDivElement>(null);
-  const [descriptionHeight, setDescriptionHeight] = useState<number | null>(
-    null,
-  );
 
   // For opening the additional images
   const openGallery = (index: number) => {
@@ -57,52 +54,37 @@ const ProductDetails = ({ productDetails }: ProductDetailsProps) => {
     setIsGalleryOpen(false);
   };
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth > 768) {
-        if (descriptionRef.current && rightSide.current && leftSide.current) {
-          // Get the heights of left and right sides
-          const leftSideHeight = leftSide.current.clientHeight;
-          const rightSideWithoutDescription =
-            rightSide.current.clientHeight -
-            descriptionRef.current.scrollHeight;
-          const deduction = !!productDetails.photo_gallery.thumb.length
-            ? -18
-            : 16;
-          // Calculate available space for description
-          const availableHeight =
-            leftSideHeight - (rightSideWithoutDescription - deduction);
+  const incrementQuantity = () => {
+    setQuantity((prev) => prev + 1);
+  };
 
-          // Set max height for description (minimum 100px to ensure some content is visible)
-          const newHeight = Math.max(availableHeight, 30);
-          setDescriptionHeight(newHeight);
-        }
-      } else {
-        setDescriptionHeight(null);
-      }
-    };
+  const decrementQuantity = () => {
+    setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
+  };
 
-    window.addEventListener("resize", handleResize);
-    handleResize(); // Call it once to set the initial height
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [descriptionRef, rightSide, leftSide]);
+  const handleOrder = () => {
+    console.log(
+      `Ordering ${quantity} of product ${productDetails.product_code}`
+    );
+  };
 
   return (
     <section className={styles.productDetails}>
-      <div className="container-small">
-        <div className={styles.images} ref={leftSide}>
-          <div
-            className={styles.mainImage}
-            onClick={openMainImage}
-            role="button"
-            tabIndex={0}
-            aria-label="View main product image"
-          >
-            {isNew && <span className={styles.newBadge}>Novo</span>}
-            <Image src={mainImage} alt="Product main view" fill />
+      <div className="container-medium">
+        <div className={styles.productGrid}>
+          <div className={styles.imageSection}>
+            <div className={styles.images} ref={leftSide}>
+              <div
+                className={styles.mainImage}
+                onClick={openMainImage}
+                role="button"
+                tabIndex={0}
+                aria-label="View main product image"
+              >
+                {isNew && <span className={styles.newBadge}>Novo</span>}
+                <Image src={mainPhoto} alt="Product main view" fill />
+              </div>
+            </div>
           </div>
           {!!productDetails?.photo_gallery?.thumb.length && (
             <div className={styles.additionalImages}>
@@ -113,48 +95,63 @@ const ProductDetails = ({ productDetails }: ProductDetailsProps) => {
               />
             </div>
           )}
-        </div>
-        <div className={styles.details} ref={rightSide}>
-          <h1>{productDetails.title}</h1>
-          {productDetails.product_code && (
-            <p className={styles.productCode}>
-              <span className="link-red">{productDetails.product_code}</span>
-              <span>Šifra proizvoda</span>
-            </p>
-          )}
-          <div
-            ref={descriptionRef}
-            className={styles.descriptionContainer}
-            style={
-              productDetails?.description
-                ? {
-                    maxHeight: `${descriptionHeight}px`,
-                    overflowY: "auto",
-                  }
-                : undefined
-            }
-          >
-            {productDetails?.description && (
-              <div className={styles.description}>
-                <span
-                  dangerouslySetInnerHTML={{
-                    __html: productDetails?.description,
-                  }}
-                />
-              </div>
+          <div className={styles.details} ref={rightSide}>
+            {productDetails.product_code && (
+              <p className={styles.productCode}>
+                <span className="link-red">{productDetails.product_code}</span>
+                <span>Šifra proizvoda</span>
+              </p>
             )}
-            {productDetails?.tip_vozila && (
-              <div>
-                <p className={styles.bold}>Marka i model vozila:</p>
-                <p>{productDetails?.tip_vozila}</p>
+            <h2>{productDetails.title}</h2>
+            <div className={styles.orderSection}>
+              <div className={styles.price}>
+                {productDetails.actionPrice && (
+                  <span className={styles.originalPrice}>
+                    {productDetails.price},00{" "}
+                    <span className={styles.currency}>RSD</span>
+                  </span>
+                )}
+                <span className={styles.currentPrice}>
+                  <h2>
+                    {productDetails.actionPrice || productDetails.price},00{" "}
+                    <span className={styles.currency}>RSD</span>
+                  </h2>
+                </span>
               </div>
-            )}
-            {productDetails?.fabric_number && (
-              <div>
-                <p className={styles.bold}>OEM Fabrički broj:</p>
-                <p>{productDetails?.fabric_number}</p>
+              <div className={styles.orderControls}>
+                <div className={styles.quantityControl}>
+                  <button
+                    onClick={decrementQuantity}
+                    className={styles.quantityBtn}
+                    type="button"
+                  >
+                    -
+                  </button>
+                  <input
+                    value={quantity}
+                    onChange={(e) =>
+                      setQuantity(Math.max(1, parseInt(e.target.value) || 1))
+                    }
+                    className={styles.quantityInput}
+                    min="1"
+                  />
+                  <button
+                    onClick={incrementQuantity}
+                    className={styles.quantityBtn}
+                    type="button"
+                  >
+                    +
+                  </button>
+                </div>
+                <button
+                  onClick={handleOrder}
+                  className={styles.orderBtn}
+                  type="button"
+                >
+                  Poruči
+                </button>
               </div>
-            )}
+            </div>
           </div>
         </div>
       </div>
