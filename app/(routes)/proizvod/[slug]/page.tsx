@@ -12,7 +12,7 @@ import InteractiveDiagram from "@/app/_components/interactive-diagram/Interactiv
 // Cached data fetching function to eliminate duplicate API calls
 const getProductData = cache(async (slug: string): Promise<ProductDetail> => {
   const response = await fetch(
-    `${process.env.BASE_URL}/api/v1/get-product?p=/proizvod/${slug}&cc=W4E)C9($8n=n*S(OBJMUR_hQ0.$t6P/xOx4a3v/|D@>U3LU8a,`
+    `${process.env.BASE_URL}/api/v1/get-product?p=/proizvod/${slug}&cc=W4E)C9($8n=n*S(OBJMUR_hQ0.$t6P/xOx4a3v/|D@>U3LU8a,`,
   );
 
   return await response.json();

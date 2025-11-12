@@ -118,7 +118,7 @@
 
   .logos > div {
     max-width: unset;
-    border-radius: .8rem;
+    border-radius: 0.8rem;
     overflow: hidden;
   }
 

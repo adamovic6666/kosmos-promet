@@ -7,11 +7,11 @@ interface ArrowDownProps {
   className?: string;
 }
 
-const ArrowDown = ({ 
-  width = 24, 
-  height = 24, 
+const ArrowDown = ({
+  width = 24,
+  height = 24,
   strokeWidth = 2,
-  className 
+  className,
 }: ArrowDownProps) => {
   return (
     <svg

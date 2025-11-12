@@ -64,7 +64,7 @@ const ProductDetails = ({ productDetails }: ProductDetailsProps) => {
 
   const handleOrder = () => {
     console.log(
-      `Ordering ${quantity} of product ${productDetails.product_code}`
+      `Ordering ${quantity} of product ${productDetails.product_code}`,
     );
   };
 
