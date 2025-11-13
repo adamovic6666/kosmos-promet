@@ -21,7 +21,6 @@
 .heroImage {
   text-align: center;
   position: relative;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -78,7 +77,7 @@
   .heroContent {
     flex-direction: row-reverse;
     margin: auto;
-    gap: 2.4rem;
+    gap: 4rem;
     padding: 5dvh 0;
     height: 100%;
   }
@@ -93,7 +92,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    width: 38%;
+    width: 40%;
     height: 100%;
     max-height: 36rem;
   }
@@ -103,7 +102,7 @@
   }
 
   .heroImage {
-    width: 62%;
+    width: 60%;
   }
 
   .mobileButton {
@@ -113,24 +112,9 @@
   .heroText a {
     display: block;
   }
+
   .image img {
-    max-width: 92rem;
+    max-width: 64rem;
     height: 100%;
   }
 }
-
-/* @media screen and (min-width: 1024px) {
-  .image img {
-    max-width: 50dvw;
-  }
-
-  .heroContent a {
-    margin-top: 2.4rem;
-  }
-
-
-}
-
-@media screen and (min-width: 1440px) {
-
-} */
