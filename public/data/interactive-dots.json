@@ -9,8 +9,8 @@
             "image": "/images/regulatori.webp"
         },
         {
-            "x": 46.2128,
-            "y": 68.006,
+            "x": 45.9128,
+            "y": 68.406,
             "name": "Test regulator",
             "productCode": "NY1002",
             "color": "yellow",
@@ -27,6 +27,134 @@
         {
             "x": 89.6895,
             "y": 40.6917,
+            "name": "Test regulator",
+            "productCode": "TK1004",
+            "color": "yellow",
+            "image": "/images/regulatori.webp"
+        },
+                {
+            "x": 77.6895,
+            "y": 18.6917,
+            "name": "Test regulator",
+            "productCode": "TK1004",
+            "color": "yellow",
+            "image": "/images/regulatori.webp"
+        },
+        {
+            "x": 57.6895,
+            "y": 40.6917,
+            "name": "Test regulator",
+            "productCode": "TK1004",
+            "color": "yellow",
+            "image": "/images/regulatori.webp"
+        },
+        {
+            "x": 70.6895,
+            "y": 46.6917,
+            "name": "Test regulator",
+            "productCode": "TK1004",
+            "color": "yellow",
+            "image": "/images/regulatori.webp"
+        },
+        {
+            "x": 64.6895,
+            "y": 60.6917,
+            "name": "Test regulator",
+            "productCode": "TK1004",
+            "color": "yellow",
+            "image": "/images/regulatori.webp"
+        },
+        {
+            "x": 22.6895,
+            "y": 51.6917,
+            "name": "Test regulator",
+            "productCode": "TK1004",
+            "color": "yellow",
+            "image": "/images/regulatori.webp"
+        },
+        {
+            "x": 10.6895,
+            "y": 4.6917,
+            "name": "Test regulator",
+            "productCode": "TK1004",
+            "color": "yellow",
+            "image": "/images/regulatori.webp"
+        },
+        {
+            "x": 13.6895,
+            "y": 30.6917,
+            "name": "Test regulator",
+            "productCode": "TK1004",
+            "color": "yellow",
+            "image": "/images/regulatori.webp"
+        },
+        {
+            "x": 45.9895,
+            "y": 40.6917,
+            "name": "Test regulator",
+            "productCode": "TK1004",
+            "color": "yellow",
+            "image": "/images/regulatori.webp"
+        },
+        {
+            "x": 45.9895,
+            "y": 57.917,
+            "name": "Test regulator",
+            "productCode": "TK1004",
+            "color": "yellow",
+            "image": "/images/regulatori.webp"
+        },
+        {
+            "x": 45.9895,
+            "y": 93.917,
+            "name": "Test regulator",
+            "productCode": "TK1004",
+            "color": "yellow",
+            "image": "/images/regulatori.webp"
+        },
+        {
+            "x": 37.9895,
+            "y": 82.6917,
+            "name": "Test regulator",
+            "productCode": "TK1004",
+            "color": "yellow",
+            "image": "/images/regulatori.webp"
+        },
+        {
+            "x": 28.6895,
+            "y": 41.6917,
+            "name": "Test regulator",
+            "productCode": "TK1004",
+            "color": "yellow",
+            "image": "/images/regulatori.webp"
+        },
+        {
+            "x": 63.9895,
+            "y": 26.6917,
+            "name": "Test regulator",
+            "productCode": "TK1004",
+            "color": "yellow",
+            "image": "/images/regulatori.webp"
+        },
+        {
+            "x": 41.9895,
+            "y": 5.6917,
+            "name": "Test regulator",
+            "productCode": "TK1004",
+            "color": "yellow",
+            "image": "/images/regulatori.webp"
+        },
+        {
+            "x": 78.9895,
+            "y": 39.6917,
+            "name": "Test regulator",
+            "productCode": "TK1004",
+            "color": "yellow",
+            "image": "/images/regulatori.webp"
+        },
+        {
+            "x": 16.6895,
+            "y": 59.6917,
             "name": "Test regulator",
             "productCode": "TK1004",
             "color": "yellow",
