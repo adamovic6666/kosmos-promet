@@ -25,7 +25,7 @@ const InteractiveImage = ({ image, dataId = "1" }: InteractiveImageProps) => {
   const [activeDot, setActiveDot] = useState<Dot | null>(null);
 
   const handleDotClick = (dot: Dot) => {
-    setActiveDot(activeDot?.productCode === dot.productCode ? null : dot);
+    setActiveDot(dot);
   };
 
   return (
@@ -36,7 +36,7 @@ const InteractiveImage = ({ image, dataId = "1" }: InteractiveImageProps) => {
           <div className={styles.dotsOverlay}>
             {dots.map((dot) => (
               <div
-                key={dot.productCode}
+                key={dot.x + dot.y}
                 className={styles.dot}
                 style={{
                   left: `${dot.x}%`,
@@ -48,25 +48,42 @@ const InteractiveImage = ({ image, dataId = "1" }: InteractiveImageProps) => {
             ))}
 
             {activeDot && (
-              <div
-                className={styles.modal}
-                style={{
-                  left: `${activeDot.x}%`,
-                  top: `${activeDot.y}%`,
-                }}
-              >
-                <div className={styles.modalContent}>
-                  {activeDot.image && (
-                    <div className={styles.modalImage}>
-                      <Image src={activeDot.image} alt={activeDot.name} fill />
+              <>
+                <div
+                  className={styles.modalBackdrop}
+                  onClick={() => setActiveDot(null)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Escape") setActiveDot(null);
+                  }}
+                  role="button"
+                  tabIndex={0}
+                  aria-label="Close modal"
+                />
+                <div
+                  key={activeDot.x + activeDot.y}
+                  className={styles.modal}
+                  style={{
+                    left: `${activeDot.x}%`,
+                    top: `${activeDot.y}%`,
+                  }}
+                >
+                  <div className={styles.modalContent}>
+                    {activeDot.image && (
+                      <div className={styles.modalImage}>
+                        <Image
+                          src={activeDot.image}
+                          alt={activeDot.name}
+                          fill
+                        />
+                      </div>
+                    )}
+                    <div className={styles.modalInfo}>
+                      <h3>{activeDot.name}</h3>
                     </div>
-                  )}
-                  <div className={styles.modalInfo}>
-                    <h3>{activeDot.name}</h3>
                   </div>
+                  <div className={styles.modalPointer}></div>
                 </div>
-                <div className={styles.modalPointer}></div>
-              </div>
+              </>
             )}
           </div>
         </div>

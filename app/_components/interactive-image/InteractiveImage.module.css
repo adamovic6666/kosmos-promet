@@ -38,7 +38,7 @@
   cursor: pointer;
   transition: all 0.2s ease;
   transform: translate(-50%, -50%);
-  z-index: 2;
+  z-index: 9;
   animation: pulse 2s infinite;
   box-shadow: .1rem .1rem .25rem .5rem var(--color-navy-dark);
 }
@@ -53,6 +53,17 @@
 .dot:focus-visible {
   outline: 0.3rem solid var(--color-navy-dark);
   outline-offset: 0.2rem;
+}
+
+.modalBackdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 8;
+  pointer-events: all;
+  cursor: default;
 }
 
 .modal {
@@ -132,11 +143,11 @@
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translate(-50%, calc(-100% - 4rem));
+    transform: translate(-50%, calc(-100% - 4.4rem));
   }
   to {
     opacity: 1;
-    transform: translate(-50%, calc(-100% - 3rem));
+    transform: translate(-50%, calc(-100% - 3.6rem));
   }
 }
 
