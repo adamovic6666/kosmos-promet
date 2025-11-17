@@ -1,0 +1,36 @@
+{
+    "1": [
+        {
+            "x": 4.34,
+            "y": 41.3437,
+            "name": "Test regulator",
+            "productCode": "LA1001",
+            "color": "yellow",
+            "image": "/images/regulatori.webp"
+        },
+        {
+            "x": 46.2128,
+            "y": 68.006,
+            "name": "Test regulator",
+            "productCode": "NY1002",
+            "color": "yellow",
+            "image": "/images/regulatori.webp"
+        },
+        {
+            "x": 46.5074,
+            "y": 15.1278,
+            "name": "Test regulator",
+            "productCode": "LD1003",
+            "color": "yellow",
+            "image": "/images/regulatori.webp"
+        },
+        {
+            "x": 89.6895,
+            "y": 40.6917,
+            "name": "Test regulator",
+            "productCode": "TK1004",
+            "color": "yellow",
+            "image": "/images/regulatori.webp"
+        }
+    ]
+}

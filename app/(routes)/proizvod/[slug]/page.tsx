@@ -7,7 +7,7 @@ import SimilarProducts from "@/app/_components/products/similar-products/Similar
 import GotQuestions from "@/app/_components/got-questions/GotQuestions";
 import dummyData from "../../../../public/data/dummy-data.json";
 import AboutProduct from "@/app/_components/about-product/AboutProduct";
-import InteractiveDiagram from "@/app/_components/interactive-diagram/InteractiveDiagram";
+import InteractiveDiagram from "@/app/_components/interactive-image/InteractiveImage";
 
 // Cached data fetching function to eliminate duplicate API calls
 // const getProductData = cache(async (slug: string): Promise<ProductDetail> => {
@@ -93,7 +93,7 @@ const Page = async ({ params }: PageProps) => {
           actionPrice: "799",
         }}
       />
-      <InteractiveDiagram svgPath="/images/cluster-example.svg" />
+      <InteractiveDiagram image={"/images/kosmos-hero-image.webp"} />
       <AboutProduct />
       <SimilarProducts similarProducts={dummyData} />
       <GotQuestions />
