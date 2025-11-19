@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import calculationData from "../../../public/data/data.json";
 import productData from "../../../public/data/proizvodi.json";
@@ -112,6 +112,25 @@ const Calculator = () => {
   const [showActualAmount, setShowActualAmount] = useState(false);
   const [tableResults, setTableResults] = useState<CalculationData[]>([]);
   const [finalProducts, setFinalProducts] = useState<ProductData[]>([]);
+
+  // Reset all input values when spray type changes
+  useEffect(() => {
+    setValue("kolicina", 0);
+    setValue("brzina", 0);
+    setValue("razmak", 0);
+    setValue("brojdizni", 0);
+    setValue("povrsina", 0);
+    setValue("sirinamlaza", 0);
+    setValue("brojredova", 0);
+    setValue("izmerenaKolicina", 0);
+    setValue("vremeKolicina", 0);
+    setValue("pritisak", 0);
+    setValue("actualAmount", 0);
+    setResults(null);
+    setShowActualAmount(false);
+    setTableResults([]);
+    setFinalProducts([]);
+  }, [selectedType, setValue]);
 
   const sprayTypes: SelectOption[] = [
     { value: "standardno", label: "1.Prskanje standardno" },
@@ -532,7 +551,7 @@ const Calculator = () => {
           return null;
         }
         return (
-          <div className="results">
+          <div className={styles.results}>
             {directedResults.protok && (
               <>
                 <div>
@@ -562,7 +581,7 @@ const Calculator = () => {
       case "usmereno-vise":
         const multipleDirectedResults = results as DirectedSprayResults;
         return (
-          <div className="results">
+          <div className={styles.results}>
             <div>
               Potreban protok dizne u minuti je :{" "}
               {multipleDirectedResults.protok} litara
@@ -588,7 +607,7 @@ const Calculator = () => {
       case "atomizer-dizne":
         const atomizerResults = results as DirectedSprayResults;
         return (
-          <div className="results">
+          <div className={styles.results}>
             <div>
               Protok jedne dizne u minuti je : {atomizerResults.protok} litara
             </div>
@@ -613,7 +632,7 @@ const Calculator = () => {
       case "atomizer-keramika":
         const ceramicResults = results as AtomizerCeramicResults;
         return (
-          <div className="results">
+          <div className={styles.results}>
             <div>
               Protok jedne dizne dobijen testom je : {ceramicResults.protok}{" "}
               litara
