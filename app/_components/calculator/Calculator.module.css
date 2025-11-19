@@ -1,0 +1,96 @@
+.calculator {
+  padding: 12rem 0 6.4rem;
+  background-color: var(--color-gray-light);
+  color: var(--color-white);
+}
+
+.title, .subTitle {
+    color: var(--color-navy-dark);
+    margin-bottom: 1.6rem;
+}
+
+.subTitle {
+    font-size: 2.4rem;
+    padding: 2.4rem 0 0;
+}
+
+.description {
+    color: var(--color-gray-dark);
+    text-align: center;
+    padding-bottom: 4rem;
+}
+
+.tableSection label,
+.form label {
+    padding: 2rem 0 0.4rem;
+    display: block;
+    color: var(--color-gray-dark);
+}
+
+.productSelection button,
+.form button {
+    margin-top: 3.2rem;
+}
+
+.results {
+    background-color: var(--color-blue-light);
+    margin: 2.4rem 0 4rem;
+    border-radius: 0.8rem;
+    padding: 2.4rem;
+}
+
+.tableSection {
+    margin-top: 6rem;
+}
+
+.tableSection h5 {
+    margin-bottom: 0.8rem;
+    color: var(--color-gray-dark);
+    text-align: center;
+}
+
+.tableSection table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 0.8rem;
+    overflow: hidden;
+}
+
+.tableSection table thead {
+    background-color: var(--color-blue-light);
+    color: var(--color-white);
+}
+
+.tableSection table tbody {
+    background-color: var(--color-white);
+    color: var(--color-gray-dark);
+}
+
+.tableSection table tbody tr {
+    border-bottom: 1px solid var(--color-gray-light);
+}
+
+.tableSection table tbody tr td:nth-of-type(1) {
+    border-right: 1px solid var(--color-gray-light);
+}
+
+.instructions h4 {
+    text-align: left;
+    color: var(--color-navy-dark);
+    margin: 2.4rem 0 .8rem;
+}
+
+.instructions h4 + p {
+    margin-bottom: 1.6rem;
+}
+
+@media screen and (min-width: 768px) {
+  .calculator {
+    padding: 16rem 0 8rem;
+  }
+
+  .subTitle {
+    font-size: 2.4rem;
+    padding: 4rem 0 2.4rem;
+}
+}

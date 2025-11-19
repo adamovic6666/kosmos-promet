@@ -17,7 +17,7 @@ const Select = ({
   label: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   control: Control<any>;
-  options?: string[];
+  options?: string[] | { value: string; label: string }[];
 }) => {
   return (
     <Controller
@@ -38,11 +38,16 @@ const Select = ({
             <option value="" disabled>
               {label}
             </option>
-            {options.map((option) => (
-              <option key={option} value={option}>
-                {option}
-              </option>
-            ))}
+            {options.map((option) => {
+              const isString = typeof option === "string";
+              const value = isString ? option : option.value;
+              const label = isString ? option : option.label;
+              return (
+                <option key={value} value={value}>
+                  {label}
+                </option>
+              );
+            })}
           </select>
           {fieldState.error && (
             <span className={styles.SelectError}>

@@ -10,7 +10,6 @@ interface Dot {
   y: number;
   name: string;
   productCode: string;
-  color: string;
   image?: string;
   description?: string;
 }
@@ -23,6 +22,7 @@ interface InteractiveImageProps {
 const InteractiveImage = ({ image, dataId = "1" }: InteractiveImageProps) => {
   const dots: Dot[] = dotsData[dataId as keyof typeof dotsData] || [];
   const [activeDot, setActiveDot] = useState<Dot | null>(null);
+  const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
 
   const handleDotClick = (dot: Dot) => {
     setActiveDot(dot);
@@ -41,7 +41,6 @@ const InteractiveImage = ({ image, dataId = "1" }: InteractiveImageProps) => {
                 style={{
                   left: `${dot.x}%`,
                   top: `${dot.y}%`,
-                  backgroundColor: dot.color,
                 }}
                 onClick={() => handleDotClick(dot)}
               />
@@ -62,10 +61,14 @@ const InteractiveImage = ({ image, dataId = "1" }: InteractiveImageProps) => {
                 <div
                   key={activeDot.x + activeDot.y}
                   className={styles.modal}
-                  style={{
-                    left: `${activeDot.x}%`,
-                    top: `${activeDot.y}%`,
-                  }}
+                  style={
+                    isMobile
+                      ? {}
+                      : {
+                          left: `${activeDot.x}%`,
+                          top: `${activeDot.y}%`,
+                        }
+                  }
                 >
                   <div className={styles.modalContent}>
                     {activeDot.image && (
@@ -79,6 +82,9 @@ const InteractiveImage = ({ image, dataId = "1" }: InteractiveImageProps) => {
                     )}
                     <div className={styles.modalInfo}>
                       <h3>{activeDot.name}</h3>
+                      <button className={styles.viewProductBtn}>
+                        Saznaj više
+                      </button>
                     </div>
                   </div>
                   <div className={styles.modalPointer}></div>
