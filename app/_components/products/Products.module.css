@@ -65,16 +65,20 @@
   }
 
   .grid {
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 2.4rem;
+    margin-top: 1.6rem;
+  }
+
+  .grid > div {
+    flex: 0 0 calc(33.333% - 1.6rem);
+    max-width: calc(33.333% - 1.6rem);
   }
 
   .smallPadding {
     padding: 16rem 0 12rem;
-  }
-
-  .grid {
-    margin-top: 1.6rem;
   }
 
   .description p {
