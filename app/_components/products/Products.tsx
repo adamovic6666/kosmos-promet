@@ -5,7 +5,6 @@ import Card from "../card/Card";
 import styles from "./Products.module.css";
 import { usePathname } from "next/navigation";
 import { Product } from "@/app/_types";
-import dummyData from "../../../public/data/dummy-data.json";
 
 const Products = ({
   allProducts,
@@ -18,11 +17,10 @@ const Products = ({
 }) => {
   const pathname = usePathname();
   const isMainPage = pathname === "/";
-  const isProductsPage = pathname === "/proizvodi";
-  const products = isMainPage ? dummyData?.slice(0, 6) : dummyData;
-  // const products = dummyData;
+  const isProductsPage = pathname === "/prodavnica";
+  const products = isMainPage ? allProducts?.slice(0, 6) : allProducts;
   const isProductPage = allProducts?.some((products) =>
-    products.alias.includes("/proizvod/"),
+    products.alias.includes("/proizvod/")
   );
   const description = isMainPage ? (
     <p className={styles.description}>
@@ -47,31 +45,40 @@ const Products = ({
       } ${isProductsPage ? styles.productsIncreasedTop : ""}`}
     >
       <div className="container-small">
-        <h2>Proizvodi</h2>
+        {(isProductsPage || isMainPage) && <h2>Proizvodi</h2>}
         {parentDetails?.title && !isMainPage && <h2>{parentDetails?.title}</h2>}
-        {!parentDetails?.description && !isProductPage && (
-          <div className={styles.description}>{description}</div>
-        )}
+        {!parentDetails?.description &&
+          !isProductPage &&
+          products.length !== 0 && (
+            <div className={styles.description}>{description}</div>
+          )}
         {parentDetails?.description && (
           <div
             dangerouslySetInnerHTML={{ __html: parentDetails?.description }}
           />
         )}
         <div className={styles.grid}>
-          {products.map((product: Product) => (
-            <Card
-              key={product.id || product.alias}
-              name={(product?.title || product?.name) as string}
-              image={product.image}
-              alias={product.alias}
-              isNew={product.is_new}
-              productCode={product.product_code}
-              // mediaUpdatedAt={product.media_updated_at || 0}
-            />
-          ))}
+          {products &&
+            products.length > 0 &&
+            products.map((product: Product) => (
+              <Card
+                key={product.id || product.alias}
+                name={(product?.title || product?.name) as string}
+                image={product.image}
+                alias={product.alias}
+                isNew={product.is_new}
+                productCode={product.product_code}
+                mediaUpdatedAt={product.media_updated_at || 0}
+              />
+            ))}
         </div>
+        {products.length === 0 && (
+          <div className={styles.noProducts}>
+            Nema dostupnih proizvoda u ovoj kategoriji.
+          </div>
+        )}
         {isMainPage && (
-          <Link href="/proizvodi" className="button-blue">
+          <Link href="/prodavnica" className="button-blue button">
             Poseti prodavnicu
           </Link>
         )}

@@ -28,7 +28,7 @@ const MainAboutUs = () => {
               Lechler.
             </p>
           </div>
-          <Link href="/o-nama" className="button-blue">
+          <Link href="/o-nama" className="button-blue button">
             Saznaj više
           </Link>
         </div>

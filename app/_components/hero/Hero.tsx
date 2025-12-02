@@ -17,7 +17,7 @@ const Hero = () => {
             </p>
           </div>
 
-          <Link className="button-blue" href="">
+          <Link className="button-blue button" href="">
             Pogledaj sve regulatore
           </Link>
         </div>
@@ -35,7 +35,7 @@ const Hero = () => {
             />
           </div>
         </div>
-        <Link className={`button-blue ${styles.mobileButton}`} href="">
+        <Link className={`button-blue button ${styles.mobileButton}`} href="">
           Pogledaj sve regulatore
         </Link>
       </div>

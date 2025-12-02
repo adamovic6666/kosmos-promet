@@ -4,6 +4,7 @@ import Footer from "./_components/footer/Footer";
 import type { Metadata } from "next";
 import ogImage from "../public/images/og.webp";
 import GoogleAnalytics from "./_components/google-analytics/GoogleAnalytics";
+import { CartProvider } from "./_context/CartContext";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.kosmospromet.com/"),
@@ -45,9 +46,11 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <GoogleAnalytics />
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <CartProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   );

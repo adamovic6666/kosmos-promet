@@ -9,7 +9,7 @@ export default async function SearchResultsPage({
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
   const { q = "" } = await searchParams;
-  const url = `https://backend.autofrogy.com/api/v1/search?q=${q}&cc=W4E)C9($8n=n*S(OBJMUR_hQ0.$t6P/xOx4a3v/|D@>U3LU8a,`;
+  const url = `${process.env.NEXT_PUBLIC_API_URL}/api/v1/search?q=${q}&cc=${process.env.API_HASH}`;
   const response = await fetch(url);
   const data = await response.json();
 

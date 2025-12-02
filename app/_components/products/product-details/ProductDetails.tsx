@@ -5,18 +5,25 @@ import LightGallery from "@/app/_components/ui/LightGallery";
 import CustomSwiper from "@/app/_components/ui/CustomSwiper";
 import Image from "next/image";
 import { ProductDetailsProps } from "@/app/_types";
+import { useCart } from "@/app/_context/CartContext";
+import OrderSection from "./OrderSection";
 
 const ProductDetails = ({ productDetails }: ProductDetailsProps) => {
   const mainPhoto = productDetails.main_photo || "";
-  // const updatedAt = productDetails.media_updated_at || 0;
-  // const mainImage = `${process.env.NEXT_PUBLIC_API_URL}${mainPhoto}${
-  //   mainPhoto.includes("?") ? "&" : "?"
-  // }t=${updatedAt}`;
+  const updatedAt = productDetails.media_updated_at || 0;
+  const mainImage = `${process.env.NEXT_PUBLIC_API_URL}${mainPhoto}${
+    mainPhoto.includes("?") ? "&" : "?"
+  }t=${updatedAt}`;
 
+  const { addToCart } = useCart();
+
+  // Helper function to format price with comma instead of period
+  const formatPrice = (price: string) => {
+    return price?.replace(/\./g, ",");
+  };
   const isNew = productDetails.is_new;
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [quantity, setQuantity] = useState(1);
 
   // Create an array that includes the main image plus the gallery images
   // Make sure to properly handle YouTube URLs by preserving them exactly as they are
@@ -54,17 +61,31 @@ const ProductDetails = ({ productDetails }: ProductDetailsProps) => {
     setIsGalleryOpen(false);
   };
 
-  const incrementQuantity = () => {
-    setQuantity((prev) => prev + 1);
-  };
+  const handleOrder = (quantity: number) => {
+    const priceString = productDetails.akcijska_cena || productDetails.cena;
 
-  const decrementQuantity = () => {
-    setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
-  };
+    const productId = productDetails.product_code
+      ? productDetails.product_code.split("").reduce((acc, char) => {
+          return acc + char.charCodeAt(0);
+        }, 0)
+      : 0;
 
-  const handleOrder = () => {
+    addToCart(
+      {
+        productId,
+        name: productDetails.title,
+        image: productDetails.main_photo,
+        price: priceString,
+        productCode: productDetails.product_code,
+        slug: "",
+        categorySlug: "",
+        subcategorySlug: "",
+      },
+      quantity
+    );
+
     console.log(
-      `Ordering ${quantity} of product ${productDetails.product_code}`,
+      `Added ${quantity} of product ${productDetails.product_code} to cart`
     );
   };
 
@@ -82,7 +103,9 @@ const ProductDetails = ({ productDetails }: ProductDetailsProps) => {
                 aria-label="View main product image"
               >
                 {isNew && <span className={styles.newBadge}>Novo</span>}
-                <Image src={mainPhoto} alt="Product main view" fill />
+                {mainImage && (
+                  <Image src={mainImage} alt="Product main view" fill />
+                )}{" "}
               </div>
             </div>
           </div>
@@ -103,55 +126,12 @@ const ProductDetails = ({ productDetails }: ProductDetailsProps) => {
               </p>
             )}
             <h2>{productDetails.title}</h2>
-            <div className={styles.orderSection}>
-              <div className={styles.price}>
-                {productDetails.actionPrice && (
-                  <span className={styles.originalPrice}>
-                    {productDetails.price},00{" "}
-                    <span className={styles.currency}>RSD</span>
-                  </span>
-                )}
-                <span className={styles.currentPrice}>
-                  <h2>
-                    {productDetails.actionPrice || productDetails.price},00{" "}
-                    <span className={styles.currency}>RSD</span>
-                  </h2>
-                </span>
-              </div>
-              <div className={styles.orderControls}>
-                <div className={styles.quantityControl}>
-                  <button
-                    onClick={decrementQuantity}
-                    className={styles.quantityBtn}
-                    type="button"
-                  >
-                    -
-                  </button>
-                  <input
-                    value={quantity}
-                    onChange={(e) =>
-                      setQuantity(Math.max(1, parseInt(e.target.value) || 1))
-                    }
-                    className={styles.quantityInput}
-                    min="1"
-                  />
-                  <button
-                    onClick={incrementQuantity}
-                    className={styles.quantityBtn}
-                    type="button"
-                  >
-                    +
-                  </button>
-                </div>
-                <button
-                  onClick={handleOrder}
-                  className={styles.orderBtn}
-                  type="button"
-                >
-                  Poruči
-                </button>
-              </div>
-            </div>
+            <OrderSection
+              price={productDetails.cena}
+              discountPrice={productDetails.akcijska_cena}
+              formatPrice={formatPrice}
+              onOrder={handleOrder}
+            />
           </div>
         </div>
       </div>

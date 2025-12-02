@@ -47,7 +47,7 @@ export const searchProducts = cache(
         (c) => "%" + c.charCodeAt(0).toString(16).toUpperCase(),
       );
 
-      const url = `https://backend.autofrogy.com/api/v1/search?q=${encodeURIComponent(
+      const url = `${process.env.NEXT_PUBLIC_API_URL}/api/v1/search?q=${encodeURIComponent(
         query,
       )}&cc=${encodedHash}${isDropdown ? "&type=dropdown" : ""}`;
 

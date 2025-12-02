@@ -9,12 +9,14 @@ import SearchDropdown from "@/app/_components/ui/SearchDropdown";
 import Burger from "@/app/_svg/Burger";
 import Search from "@/app/_svg/Search";
 import Cart from "@/app/_svg/Cart";
+import { useCart } from "@/app/_context/CartContext";
 
 const Header = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const [searchIsOpen, setSearchIsOpen] = useState(false);
   const pathname = usePathname();
   const [isMobile, setIsMobile] = useState(false);
+  const { cart } = useCart();
   // const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   // const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   type SearchDropdownRef = {
@@ -179,7 +181,12 @@ const Header = () => {
               className={styles.headerSearch}
             />
           </div>
-          <Cart className={styles.cart} />
+          <Link href="/korpa" className={styles.cartLink}>
+            <Cart className={styles.cart} />
+            {cart.itemCount > 0 && (
+              <span className={styles.cartBadge}>{cart.itemCount}</span>
+            )}
+          </Link>
         </div>
       </div>
 

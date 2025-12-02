@@ -9,7 +9,7 @@ export const navLinks = [
   },
   {
     label: "proizvodi",
-    href: "/proizvodi",
+    href: "/prodavnica",
   },
   {
     label: "kalkulator",

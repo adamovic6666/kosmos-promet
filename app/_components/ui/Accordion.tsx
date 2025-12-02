@@ -2,10 +2,11 @@
 import React, { useState } from "react";
 import styles from "./Accordion.module.css";
 import ArrowDown from "@/app/_svg/ArrowDown";
+import PDFLink from "../pdf-link/PDFLink";
 
 interface AccordionItem {
   title: string;
-  content: string;
+  content: string | undefined;
 }
 
 interface AccordionProps {
@@ -21,32 +22,44 @@ const Accordion = ({ items }: AccordionProps) => {
 
   return (
     <div className={styles.Accordion}>
-      {items.map((item, index) => (
-        <div key={index} className={styles.AccordionItem}>
-          <div
-            className={styles.AccordionHeader}
-            onClick={() => toggleAccordion(index)}
-          >
-            <h3 className={styles.AccordionTitle}>{item.title}</h3>
+      {items
+        .filter((item) => item.content)
+        .map((item, index) => (
+          <div key={index} className={styles.AccordionItem}>
             <div
-              className={`${styles.AccordionArrow} ${
-                activeIndex === index ? styles.AccordionArrowOpen : ""
+              className={styles.AccordionHeader}
+              onClick={() => toggleAccordion(index)}
+            >
+              <h3 className={styles.AccordionTitle}>{item.title}</h3>
+              <div
+                className={`${styles.AccordionArrow} ${
+                  activeIndex === index ? styles.AccordionArrowOpen : ""
+                }`}
+              >
+                <ArrowDown />
+              </div>
+            </div>
+            <div
+              className={`${styles.AccordionContent} ${
+                activeIndex === index ? styles.AccordionContentOpen : ""
               }`}
             >
-              <ArrowDown />
+              <div className={styles.AccordionContentInner}>
+                {item.title === "Tehnička dokumentacija" ? (
+                  <PDFLink
+                    href={
+                      process.env.NEXT_PUBLIC_API_URL + (item.content || "#")
+                    }
+                  >
+                    {item.content?.split("/").pop() || "Preuzmi dokumentaciju"}
+                  </PDFLink>
+                ) : (
+                  <p dangerouslySetInnerHTML={{ __html: item.content || "" }} />
+                )}
+              </div>
             </div>
           </div>
-          <div
-            className={`${styles.AccordionContent} ${
-              activeIndex === index ? styles.AccordionContentOpen : ""
-            }`}
-          >
-            <div className={styles.AccordionContentInner}>
-              <p>{item.content}</p>
-            </div>
-          </div>
-        </div>
-      ))}
+        ))}
     </div>
   );
 };

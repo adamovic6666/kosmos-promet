@@ -8,21 +8,22 @@ const Card = ({
   alias,
   isNew = false,
   productCode = "",
-}: // mediaUpdatedAt,
-{
+  mediaUpdatedAt = 0,
+}: {
   image: string;
   name: string;
   alias: string;
   isNew?: boolean;
   productCode?: string;
-  // mediaUpdatedAt?: number;
+  mediaUpdatedAt?: number;
 }) => {
   // Force cache busting with current timestamp for cPanel deployment
-  // const timestamp = mediaUpdatedAt || Date.now(); // Use current timestamp if mediaUpdatedAt not available
-  // const imageSrc = `${process.env.NEXT_PUBLIC_API_URL}${image}${
-  //   image.includes("?") ? "&" : "?"
-  // }t=${timestamp}`;
+  const timestamp = mediaUpdatedAt || Date.now(); // Use current timestamp if mediaUpdatedAt not available
+  const imageSrc = `${process.env.NEXT_PUBLIC_API_URL}${image}${
+    image.includes("?") ? "&" : "?"
+  }t=${timestamp}`;
   const isProduct = alias.split("/").includes("proizvod");
+  console.log(imageSrc, "imageSrc");
   return (
     <div className={styles.cardWrapper}>
       {isNew && (
@@ -35,12 +36,12 @@ const Card = ({
           <span>{productCode}</span>
         </div>
       )}
-      <Link href={"/proizvod" + "/" + alias} className={styles.link}>
+      <Link href={alias} className={styles.link}>
         <article className={styles.card}>
           <div
             className={`${styles.image} ${isProduct ? styles.imageBig : ""}`}
           >
-            <Image src={image} alt={name} fill />
+            <Image src={imageSrc} alt={name} fill />
           </div>
           <div
             className={`${styles.title}  ${
@@ -50,7 +51,7 @@ const Card = ({
             <h4>
               {name && name.length > 52
                 ? name.slice(0, 52) + "..."
-                : (name ?? "No name")}
+                : name ?? "No name"}
             </h4>
           </div>
         </article>

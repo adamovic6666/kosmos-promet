@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   images: {
-    domains: ["backend.autofrogy.com", "placehold.co", "img.youtube.com"],
+    domains: ["backend.kosmos-promet.com", "placehold.co", "img.youtube.com"],
     unoptimized: true, // Keep unoptimized for cPanel (change to false if cPanel supports image optimization)
     minimumCacheTTL: 60, // Cache images for at least 60 seconds
   },

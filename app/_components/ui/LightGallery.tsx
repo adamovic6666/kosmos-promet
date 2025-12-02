@@ -134,7 +134,7 @@ const LightGallery = ({
           {isYouTubeVideo ? (
             <iframe
               src={`https://www.youtube.com/embed/${getYouTubeVideoId(
-                currentMedia,
+                currentMedia
               )}`}
               className={styles.galleryVideo}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -159,8 +159,7 @@ const LightGallery = ({
           ) : currentMedia.startsWith("/sites") ? (
             <Image
               className={styles.galleryImage}
-              // src={process.env.NEXT_PUBLIC_API_URL + currentMedia}
-              src={currentMedia}
+              src={process.env.NEXT_PUBLIC_API_URL + currentMedia}
               alt={`Gallery image ${activeIndex + 1}`}
               fill
               sizes="100vw"
@@ -169,8 +168,7 @@ const LightGallery = ({
           ) : (
             <Image
               className={styles.galleryImage}
-              // src={process.env.NEXT_PUBLIC_API_URL + currentMedia}
-              src={currentMedia}
+              src={process.env.NEXT_PUBLIC_API_URL + currentMedia}
               alt={`Gallery image ${activeIndex + 1}`}
               fill
               sizes="100vw"

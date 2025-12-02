@@ -3,7 +3,173 @@
     "id": 1,
     "name": "Regulatori",
     "image": "/images/regulatori.webp",
-    "alias": "regulatori"
+    "alias": "regulatori",
+    "description": "Profesionalni regulatori pritiska za preciznu kontrolu prskanja",
+    "hasSubProducts": true,
+    "subProducts": [
+      {
+        "id": 101,
+        "name": "Regulatori pritiska",
+        "slug": "regulatori-pritiska",
+        "description": "Profesionalni regulatori pritiska za preciznu kontrolu prskanja",
+        "image": "/images/regulatori.webp",
+        "alias": "regulatori/regulatori-pritiska",
+        "products": [
+          {
+            "id": 1001,
+            "name": "Regulator pritiska 3-smerski",
+            "slug": "regulator-pritiska-3-smerski",
+            "description": "Profesionalni 3-smerski regulator pritiska sa manometrom. Izrađen od kvalitetnih materijala otpornih na hemikalije. Precizna regulacija pritiska od 1-10 bara. Jednostavna montaža i održavanje.",
+            "shortDescription": "3-smerski regulator sa manometrom, 1-10 bara",
+            "image": "/images/regulator-3way.webp",
+            "images": [
+              "/images/regulator-3way.webp",
+              "/images/regulator-3way-detail.webp"
+            ],
+            "alias": "regulatori/regulatori-pritiska/regulator-pritiska-3-smerski",
+            "price": 8500,
+            "oldPrice": 9500,
+            "inStock": true,
+            "stockQuantity": 25,
+            "isNew": true,
+            "isFeatured": true,
+            "productCode": "REG-3SM-001",
+            "specifications": {
+              "Tip": "3-smerski",
+              "Opseg pritiska": "1-10 bara",
+              "Materijal": "Mesing/Plastika",
+              "Priključak": "3/4 inča",
+              "Manometar": "Da"
+            },
+            "relatedProducts": [1002, 1003]
+          },
+          {
+            "id": 1002,
+            "name": "Regulator pritiska 2-smerski",
+            "slug": "regulator-pritiska-2-smerski",
+            "description": "Kompaktan 2-smerski regulator pritiska sa preciznom regulacijom. Idealan za manje prskalice. Otporan na koroziju i hemikalije. Opseg regulacije 1-8 bara.",
+            "shortDescription": "2-smerski regulator, 1-8 bara",
+            "image": "/images/regulator-2way.webp",
+            "alias": "regulatori/regulatori-pritiska/regulator-pritiska-2-smerski",
+            "price": 6800,
+            "inStock": true,
+            "stockQuantity": 18,
+            "isNew": false,
+            "isFeatured": false,
+            "productCode": "REG-2SM-001",
+            "specifications": {
+              "Tip": "2-smerski",
+              "Opseg pritiska": "1-8 bara",
+              "Materijal": "Mesing",
+              "Priključak": "3/4 inča"
+            },
+            "relatedProducts": [1001, 1003]
+          },
+          {
+            "id": 1003,
+            "name": "Regulator pritiska elektronski",
+            "slug": "regulator-pritiska-elektronski",
+            "description": "Najsavremeniji elektronski regulator pritiska sa digitalnim ekranom. Automatska kontrola i održavanje konstantnog pritiska. Kompatibilan sa GPS sistemima.",
+            "shortDescription": "Elektronski regulator sa digitalnim ekranom",
+            "image": "/images/regulator-electronic.webp",
+            "alias": "regulatori/regulatori-pritiska/regulator-pritiska-elektronski",
+            "price": 15200,
+            "inStock": true,
+            "stockQuantity": 8,
+            "isNew": true,
+            "isFeatured": true,
+            "productCode": "REG-EL-001",
+            "specifications": {
+              "Tip": "Elektronski",
+              "Opseg pritiska": "0-15 bara",
+              "Napajanje": "12V DC",
+              "Ekran": "LCD digitalni",
+              "GPS kompatibilan": "Da"
+            },
+            "relatedProducts": [1001, 1002]
+          }
+        ]
+      },
+      {
+        "id": 102,
+        "name": "Dizne i nosači",
+        "slug": "dizne-i-nosaci",
+        "description": "Kvalitetne dizne i nosači za sve tipove prskalica",
+        "image": "/images/dizne-i-sita.webp",
+        "alias": "regulatori/dizne-i-nosaci",
+        "products": [
+          {
+            "id": 1011,
+            "name": "Keramička dizna 03",
+            "slug": "keramicka-dizna-03",
+            "description": "Profesionalna keramička dizna sa anti-drift sistemom. Dugotrajnost i otpornost na habanje. Idealna za herbicide i fungicide. Ravnomerna raspodela tečnosti.",
+            "shortDescription": "Keramička anti-drift dizna 03",
+            "image": "/images/nozzle-ceramic-03.webp",
+            "alias": "regulatori/dizne-i-nosaci/keramicka-dizna-03",
+            "price": 850,
+            "oldPrice": 950,
+            "inStock": true,
+            "stockQuantity": 150,
+            "isNew": false,
+            "isFeatured": true,
+            "productCode": "DIZ-CER-03",
+            "specifications": {
+              "Materijal": "Keramika",
+              "Veličina": "03",
+              "Ugao prskanja": "110°",
+              "Pritisak": "2-4 bara",
+              "Boja": "Žuta"
+            },
+            "relatedProducts": [1012, 1013, 1014]
+          },
+          {
+            "id": 1012,
+            "name": "Keramička dizna 04",
+            "slug": "keramicka-dizna-04",
+            "description": "Keramička dizna sa povećanim protokom. Izvrsna za tretmane sa većim količinama tečnosti. Anti-drift tehnologija.",
+            "shortDescription": "Keramička dizna 04 sa povećanim protokom",
+            "image": "/images/nozzle-ceramic-04.webp",
+            "alias": "regulatori/dizne-i-nosaci/keramicka-dizna-04",
+            "price": 850,
+            "inStock": true,
+            "stockQuantity": 120,
+            "isNew": false,
+            "isFeatured": false,
+            "productCode": "DIZ-CER-04",
+            "specifications": {
+              "Materijal": "Keramika",
+              "Veličina": "04",
+              "Ugao prskanja": "110°",
+              "Pritisak": "2-4 bara",
+              "Boja": "Crvena"
+            },
+            "relatedProducts": [1011, 1013]
+          },
+          {
+            "id": 1013,
+            "name": "Nosač dizne 3-delni",
+            "slug": "nosac-dizne-3-delni",
+            "description": "Univerzalni nosač dizne 3-delni sa anti-kap sistemom. Brza izmena dizni bez alata. Otporan na hemikalije i UV zračenje.",
+            "shortDescription": "3-delni nosač sa anti-kap sistemom",
+            "image": "/images/nozzle-holder-3part.webp",
+            "alias": "regulatori/dizne-i-nosaci/nosac-dizne-3-delni",
+            "price": 620,
+            "inStock": true,
+            "stockQuantity": 95,
+            "isNew": false,
+            "isFeatured": false,
+            "productCode": "NOS-3D-001",
+            "specifications": {
+              "Tip": "3-delni",
+              "Materijal": "Plastika ojačana",
+              "Anti-kap": "Da",
+              "Priključak": "1/2 inča"
+            },
+            "relatedProducts": [1011, 1012, 1014]
+          }
+        ]
+      }
+    ]
   },
   {
     "id": 2,

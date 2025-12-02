@@ -1,3 +1,4 @@
+// Legacy Product types (keeping for backwards compatibility)
 export interface Product {
   id: number;
   name?: string;
@@ -28,8 +29,69 @@ export interface ProductDetail {
   };
   similar_products?: Product[];
   media_updated_at?: number;
+  cena: string;
+  akcijska_cena?: string;
+  documentation?: string;
+}
+
+// New Category/Subcategory/Product structure
+export interface Category {
+  id: number;
+  name: string;
+  slug: string;
+  description: string;
+  image: string;
+  subcategories: Subcategory[];
+}
+
+export interface Subcategory {
+  id: number;
+  name: string;
+  slug: string;
+  description: string;
+  image: string;
+  categorySlug: string;
+  products: ProductItem[];
+}
+
+export interface ProductItem {
+  id: number;
+  name: string;
+  slug: string;
+  description: string;
+  shortDescription?: string;
+  image: string;
+  images?: string[];
+  price: number;
+  oldPrice?: number;
+  inStock: boolean;
+  stockQuantity?: number;
+  isNew?: boolean;
+  isFeatured?: boolean;
+  productCode: string;
+  categorySlug: string;
+  subcategorySlug: string;
+  specifications?: { [key: string]: string };
+  relatedProducts?: number[];
+}
+
+// Cart types
+export interface CartItem {
+  productId: number;
+  name: string;
+  image: string;
   price: string;
-  actionPrice?: string;
+  quantity: number;
+  productCode: string;
+  slug: string;
+  categorySlug: string;
+  subcategorySlug: string;
+}
+
+export interface Cart {
+  items: CartItem[];
+  total: number;
+  itemCount: number;
 }
 
 export interface ProductDetailsProps {

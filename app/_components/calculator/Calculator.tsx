@@ -690,7 +690,7 @@ const Calculator = () => {
             {renderInputFields()}
 
             <button
-              className="button-blue"
+              className="button-blue button"
               onClick={
                 selectedType === "usmereno-jedna" && !showActualAmount
                   ? calculateDirectedSingle
@@ -762,7 +762,7 @@ const Calculator = () => {
                 />
               </div>
 
-              <button className="button-blue" onClick={searchProducts}>
+              <button className="button-blue button" onClick={searchProducts}>
                 Pretraga
               </button>
             </div>

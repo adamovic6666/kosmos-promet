@@ -36,6 +36,7 @@
   --color-navy-darker: #000044; /* very dark navy blue */
   --color-blue-primary: #4267b0; /* Facebook-like blue */
   --color-blue-light: #3579d5; /* lighter accent blue */
+  --color-red: #cc0000; /* bright red / error color */
 
   /* Neutrals */
   --color-white: #ffffff; /* pure white */
@@ -164,15 +165,36 @@ h5 {
   font-size: clamp(1.4rem, 0.406vw + 1.018rem, 1.6rem);
 }
 
-.button-blue {
-  background-color: var(--color-navy-dark);
-  color: var(--color-white);
+/* Base button - shared properties */
+.button {
   padding: 0.6rem 2.4rem;
   border-radius: 2.4rem;
   text-decoration: none;
   font-weight: 300;
   font-size: 1.6rem;
   transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-block;
+  border: none;
+}
+
+/* Transparent variant - unique properties */
+.button-transparent {
+  background-color: transparent;
+  color: var(--color-navy-dark);
+  border: 1px solid var(--color-navy-dark);
+}
+
+.button-transparent:hover {
+  background-color: var(--color-navy-dark);
+  color: var(--color-white);
+}
+
+/* Blue variant - unique properties */
+.button-blue {
+  background-color: var(--color-navy-dark);
+  color: var(--color-white);
+  border: 1px solid var(--color-navy-dark);
 }
 
 .button-blue:hover {

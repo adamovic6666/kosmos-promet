@@ -8,7 +8,7 @@
 }
 
 .smallPadding {
-  padding: 10.4rem 0 8rem;
+  padding: 14.4rem 0 10.4rem;
 }
 
 .products h2 {
@@ -48,6 +48,13 @@
   margin-top: 4.8rem;
 }
 
+.noProducts {
+  text-align: center;
+  color: #666;
+  font-size: 1.6rem;
+  padding: 4rem 0;
+}
+
 @media screen and (min-width: 768px) {
   .products {
     padding: 12rem 0;
@@ -63,7 +70,7 @@
   }
 
   .smallPadding {
-    padding: 12rem 0 6.4rem;
+    padding: 16rem 0 12rem;
   }
 
   .grid {
