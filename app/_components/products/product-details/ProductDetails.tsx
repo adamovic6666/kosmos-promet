@@ -83,10 +83,6 @@ const ProductDetails = ({ productDetails }: ProductDetailsProps) => {
       },
       quantity
     );
-
-    console.log(
-      `Added ${quantity} of product ${productDetails.product_code} to cart`
-    );
   };
 
   return (

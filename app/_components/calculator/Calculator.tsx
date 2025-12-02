@@ -292,7 +292,6 @@ const Calculator = () => {
 
   const searchTable = (protok: number) => {
     const rezultat = protok.toFixed(2);
-    console.log(rezultat, "rezultat");
     const matchingResults = calculationData.filter(
       (item) => item.potrosnja === rezultat
     );
