@@ -23,7 +23,13 @@ const Card = ({
     image.includes("?") ? "&" : "?"
   }t=${timestamp}`;
   const isProduct = alias.split("/").includes("proizvod");
-  console.log(imageSrc, "imageSrc");
+  const nameContainsDelovi = name.toLowerCase().includes("[delovi]");
+
+  // Extract [delovi] part and clean name
+  const deloviMatch = name.match(/\[delovi\]/gi);
+  const cleanName = nameContainsDelovi
+    ? name.replace(/\[delovi\]/gi, "").trim()
+    : name;
   return (
     <div className={styles.cardWrapper}>
       {isNew && (
@@ -49,9 +55,12 @@ const Card = ({
             }`}
           >
             <h4>
-              {name && name.length > 52
-                ? name.slice(0, 52) + "..."
-                : name ?? "No name"}
+              {cleanName && cleanName.length > 52
+                ? cleanName.slice(0, 52) + "..."
+                : cleanName ?? "No name"}
+              {deloviMatch && (
+                <span className={styles.deloviLabel}>{deloviMatch[0]}</span>
+              )}
             </h4>
           </div>
         </article>

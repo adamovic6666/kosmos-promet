@@ -66,6 +66,13 @@
   max-width: 16rem;
 }
 
+.deloviLabel {
+  font-size: 0.75em;
+  font-weight: 400;
+  margin-top: 0.4rem;
+  display: block;
+}
+
 .cardWrapper {
   position: relative;
 }
