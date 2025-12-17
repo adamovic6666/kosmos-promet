@@ -1,6 +1,7 @@
 import Products from "@/app/_components/products/Products";
 import type { Metadata } from "next";
 import { Product } from "@/app/_types";
+import GotQuestions from "@/app/_components/got-questions/GotQuestions";
 
 // Shared data fetching function to eliminate duplicate API calls
 const getProductsData = async (pathname: string) => {
@@ -43,11 +44,14 @@ const page = async ({ params }: { params?: Promise<{ slug: string[] }> }) => {
   });
 
   return (
-    <Products
-      allProducts={sortedByNewField || []}
-      parentDetails={parent ?? {}}
-      smallPadding
-    />
+    <>
+      <Products
+        allProducts={sortedByNewField || []}
+        parentDetails={parent ?? {}}
+        smallPadding
+      />
+      <GotQuestions />
+    </>
   );
 };
 

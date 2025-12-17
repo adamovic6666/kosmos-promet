@@ -29,7 +29,7 @@ export default function CartPage() {
     <section className={styles.cart}>
       <div className="container-medium">
         <div className={styles.header}>
-          <h2>Korpa ({cart.itemCount} proizvoda)</h2>
+          <h2>Korpa</h2>
         </div>
 
         <div className={styles.cartGrid}>

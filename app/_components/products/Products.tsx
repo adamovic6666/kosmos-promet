@@ -16,6 +16,8 @@ const Products = ({
   smallPadding?: boolean;
 }) => {
   const pathname = usePathname();
+  const params = pathname.split("/");
+  const isStoreOrMainGroup = params.length <= 3;
   const isMainPage = pathname === "/";
   const isProductsPage = pathname === "/prodavnica";
   const products = isMainPage ? allProducts?.slice(0, 6) : allProducts;
@@ -42,14 +44,17 @@ const Products = ({
     <section
       className={` ${smallPadding ? styles.smallPadding : ""} ${
         styles.products
-      } ${isProductsPage ? styles.productsIncreasedTop : ""}`}
+      } ${isProductsPage ? styles.productsIncreasedTop : ""} ${
+        !isStoreOrMainGroup ? styles.storeOrMainGroup : ""
+      }`}
     >
       <div className="container-small">
         {(isProductsPage || isMainPage) && <h2>Proizvodi</h2>}
         {parentDetails?.title && !isMainPage && <h2>{parentDetails?.title}</h2>}
         {!parentDetails?.description &&
           !isProductPage &&
-          products.length !== 0 && (
+          products.length !== 0 &&
+          isStoreOrMainGroup && (
             <div className={styles.description}>{description}</div>
           )}
         {parentDetails?.description && (
