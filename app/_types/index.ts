@@ -32,6 +32,11 @@ export interface ProductDetail {
   cena: string;
   akcijska_cena?: string;
   documentation?: string;
+  breadcrumbs: {
+    name: string;
+    link: string;
+  }[],
+  is_available: boolean;
 }
 
 // New Category/Subcategory/Product structure

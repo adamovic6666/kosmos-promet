@@ -8,7 +8,7 @@
 }
 
 .smallPadding {
-  padding: 14.4rem 0 10.4rem;
+  padding: 4.8rem 0 10.4rem;
 }
 
 .products h2 {
@@ -52,7 +52,7 @@
   text-align: center;
   color: #666;
   font-size: 1.6rem;
-  padding: 4rem 0;
+  padding: 10.4rem 0 0;
 }
 
 .storeOrMainGroup h2 {
@@ -82,7 +82,7 @@
   }
 
   .smallPadding {
-    padding: 16rem 0 12rem;
+    padding: 6.4rem 0 10.4rem;
   }
 
   .description p {
@@ -92,6 +92,12 @@
 
   .storeOrMainGroup h2 {
     margin-bottom: 6.4rem;
+  }
+
+
+  .noProducts {
+    font-size: 1.8rem;
+    padding: 12rem 0 4rem;
   }
 
 }

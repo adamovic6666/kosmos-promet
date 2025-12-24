@@ -138,7 +138,7 @@
 
 .activeThumbnail {
   opacity: 1;
-  border-color: var(--white, white);
+  border-color: var(--color-white, white);
   transform: scale(1.05);
 }
 

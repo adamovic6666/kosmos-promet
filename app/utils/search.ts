@@ -39,7 +39,7 @@ export const searchProducts = cache(
 
     try {
       // Hard-code the hash with special characters correctly escaped
-      const hash = "W4E)C9($8n=n*S(OBJMUR_hQ0.$t6P/xOx4a3v/|D@>U3LU8a,";
+      const hash = "d0ad3f69ea63fe0405bdb7d849281d2d448fd850";
 
       // Manually encode the hash to preserve all special characters exactly
       const encodedHash = encodeURIComponent(hash).replace(

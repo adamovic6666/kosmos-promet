@@ -139,9 +139,9 @@ export default function CartPage() {
               <button onClick={clearCart} className="button-transparent button">
                 Isprazni korpu
               </button>
-              <button className="button-blue button">
+              <Link href="/korpa/checkout" className="button-blue button">
                 Nastavi sa porudžbinom
-              </button>
+              </Link>
             </div>
 
             <Link href="/prodavnica" className={styles.continueShoppingLink}>

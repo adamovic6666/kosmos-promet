@@ -4,7 +4,6 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import emailjs from "@emailjs/browser";
 import Input from "../ui/Input";
 import Button from "../ui/Button";
 import Select from "../ui/Select";
@@ -37,20 +36,20 @@ const ContactForm = () => {
     setSubmitSuccess(false);
 
     try {
-      // Using EmailJS configuration from environment variables
-      const response = await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
-        {
-          from_name: data.fullName,
-          email: data.email,
-          subject: data.reason,
-          message: data.message,
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
-      );
+        body: JSON.stringify({
+          fullName: data.fullName,
+          email: data.email,
+          reason: data.reason,
+          message: data.message,
+        }),
+      });
 
-      if (response.status === 200) {
+      if (response.ok) {
         setSubmitSuccess(true);
         reset();
       } else {
@@ -62,7 +61,7 @@ const ContactForm = () => {
       setSubmitError(
         "Postoji problem prilikom slanja poruke. Molimo pokušajte ponovo.",
       );
-      console.error("EmailJS error:", error);
+      console.error("Contact form error:", error);
     } finally {
       setIsSubmitting(false);
     }

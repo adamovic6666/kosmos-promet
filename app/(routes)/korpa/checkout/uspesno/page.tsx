@@ -1,0 +1,54 @@
+import Link from "next/link";
+import styles from "./success.module.css";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Kosmos Promet | Porudžbina uspešna",
+  description: "Vaša porudžbina je uspešno poslata.",
+};
+
+export default function SuccessPage() {
+  return (
+    <section className={styles.success}>
+      <div className="container-small">
+        <div className={styles.successContent}>
+          <div className={styles.iconWrapper}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <path d="m9 12 2 2 4-4" />
+            </svg>
+          </div>
+
+          <h1>Porudžbina je uspešno poslata!</h1>
+
+          <p>
+            Hvala Vam što ste se opredelili za Kosmos Promet. Vaša porudžbina
+            je primljena i biće obrađena u najkraćem mogućem roku.
+          </p>
+
+          <p>
+            Dobićete email potvrdu sa detaljima Vaše porudžbine. Naš tim će Vas
+            kontaktirati u vezi dostave i plaćanja.
+          </p>
+
+          <div className={styles.actions}>
+            <Link href="/prodavnica" className="button-blue button">
+              Nastavi kupovinu
+            </Link>
+            <Link href="/" className="button-transparent button">
+              Vrati se na početnu
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

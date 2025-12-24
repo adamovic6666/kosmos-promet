@@ -83,7 +83,7 @@
   .navigationButtons .arrowLeftImages,
   .navigationButtons .arrowRightImages {
     border-radius: 50%;
-    background-color: var(--white);
+    background-color: var(--color-white);
     width: 2.8rem;
     height: 2.8rem;
     display: flex;

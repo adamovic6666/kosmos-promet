@@ -1,5 +1,5 @@
 .productDetails {
-  padding: 8rem 0 2.4rem;
+  padding: 6.4rem 0 2.4rem;
   background-color: var(--color-gray-light);
 }
 
@@ -174,7 +174,7 @@
 }
 
 .additionalImages :global(.swiper-slide) {
-  background-color: var(--white);
+  background-color: var(--color-white);
   border-radius: 0.8rem;
   overflow: hidden;
   cursor: pointer;
@@ -386,7 +386,7 @@
 
 @media screen and (min-width: 768px) {
   .productDetails {
-    padding: 16rem 0 0;
+    padding: 8rem 0 0;
   }
 
   .productGrid {

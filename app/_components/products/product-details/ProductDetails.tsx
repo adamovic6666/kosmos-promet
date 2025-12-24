@@ -7,8 +7,11 @@ import Image from "next/image";
 import { ProductDetailsProps } from "@/app/_types";
 import { useCart } from "@/app/_context/CartContext";
 import OrderSection from "./OrderSection";
+import Breadcrumbs from "../../breadcrumbs/Breadcrumbs";
+import { buildBreadcrumbs } from "../../breadcrumbs/buildBreadcrumbs";
 
 const ProductDetails = ({ productDetails }: ProductDetailsProps) => {
+  const isAvailable = productDetails.is_available;
   const mainPhoto = productDetails.main_photo || "";
   const updatedAt = productDetails.media_updated_at || 0;
   const mainImage = `${process.env.NEXT_PUBLIC_API_URL}${mainPhoto}${
@@ -86,59 +89,70 @@ const ProductDetails = ({ productDetails }: ProductDetailsProps) => {
   };
 
   return (
-    <section className={styles.productDetails}>
-      <div className="container-medium">
-        <div className={styles.productGrid}>
-          <div className={styles.imageSection}>
-            <div className={styles.images} ref={leftSide}>
-              <div
-                className={styles.mainImage}
-                onClick={openMainImage}
-                role="button"
-                tabIndex={0}
-                aria-label="View main product image"
-              >
-                {isNew && <span className={styles.newBadge}>Novo</span>}
-                {mainImage && (
-                  <Image src={mainImage} alt="Product main view" fill />
-                )}{" "}
+    <>
+      <Breadcrumbs
+        items={buildBreadcrumbs(
+          productDetails.breadcrumbs,
+          productDetails.title
+        )}
+      />
+      <section className={styles.productDetails}>
+        <div className="container-medium">
+          <div className={styles.productGrid}>
+            <div className={styles.imageSection}>
+              <div className={styles.images} ref={leftSide}>
+                <div
+                  className={styles.mainImage}
+                  onClick={openMainImage}
+                  role="button"
+                  tabIndex={0}
+                  aria-label="View main product image"
+                >
+                  {isNew && <span className={styles.newBadge}>Novo</span>}
+                  {mainImage && (
+                    <Image src={mainImage} alt="Product main view" fill />
+                  )}{" "}
+                </div>
               </div>
             </div>
-          </div>
-          {!!productDetails?.photo_gallery?.thumb.length && (
-            <div className={styles.additionalImages}>
-              <CustomSwiper
-                images={productDetails.photo_gallery}
-                onImageClick={openGallery}
-                id="product-details-swiper"
+            {!!productDetails?.photo_gallery?.thumb.length && (
+              <div className={styles.additionalImages}>
+                <CustomSwiper
+                  images={productDetails.photo_gallery}
+                  onImageClick={openGallery}
+                  id="product-details-swiper"
+                />
+              </div>
+            )}
+            <div className={styles.details} ref={rightSide}>
+              {productDetails.product_code && (
+                <p className={styles.productCode}>
+                  <span className="link-red">
+                    {productDetails.product_code}
+                  </span>
+                  <span>Šifra proizvoda</span>
+                </p>
+              )}
+              <h2>{productDetails.title}</h2>
+              <OrderSection
+                price={productDetails.cena}
+                discountPrice={productDetails.akcijska_cena}
+                formatPrice={formatPrice}
+                onOrder={handleOrder}
+                isAvailable={isAvailable}
               />
             </div>
-          )}
-          <div className={styles.details} ref={rightSide}>
-            {productDetails.product_code && (
-              <p className={styles.productCode}>
-                <span className="link-red">{productDetails.product_code}</span>
-                <span>Šifra proizvoda</span>
-              </p>
-            )}
-            <h2>{productDetails.title}</h2>
-            <OrderSection
-              price={productDetails.cena}
-              discountPrice={productDetails.akcijska_cena}
-              formatPrice={formatPrice}
-              onOrder={handleOrder}
-            />
           </div>
         </div>
-      </div>
 
-      <LightGallery
-        media={allGalleryImages}
-        isOpen={isGalleryOpen}
-        currentIndex={currentImageIndex}
-        onClose={closeGallery}
-      />
-    </section>
+        <LightGallery
+          media={allGalleryImages}
+          isOpen={isGalleryOpen}
+          currentIndex={currentImageIndex}
+          onClose={closeGallery}
+        />
+      </section>
+    </>
   );
 };
 

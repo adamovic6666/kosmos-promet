@@ -9,6 +9,7 @@ interface OrderSectionProps {
   discountPrice?: string;
   formatPrice: (price: string) => string;
   onOrder: (quantity: number) => void;
+  isAvailable: boolean;
 }
 
 const OrderSection = ({
@@ -16,6 +17,7 @@ const OrderSection = ({
   discountPrice,
   formatPrice,
   onOrder,
+  isAvailable,
 }: OrderSectionProps) => {
   const [quantity, setQuantity] = useState(1);
   const [isContactPopupOpen, setIsContactPopupOpen] = useState(false);
@@ -37,7 +39,7 @@ const OrderSection = ({
   return (
     <>
       <div className={styles.orderSection}>
-        {hasPrice ? (
+        {isAvailable && hasPrice ? (
           <>
             <PriceDisplay
               price={price!}

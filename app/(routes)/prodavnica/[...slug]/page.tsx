@@ -38,7 +38,7 @@ const page = async ({ params }: { params?: Promise<{ slug: string[] }> }) => {
   const pathname = `/prodavnica/${resolvedParams?.slug?.join("/") || ""}`;
 
   // Reuse the same cached data fetching function
-  const { products, parent } = await getProductsData(pathname);
+  const { products, parent, breadcrumbs } = await getProductsData(pathname);
   const sortedByNewField = products?.sort((a: Product, b: Product) => {
     return a.is_new === b.is_new ? 0 : a.is_new ? -1 : 1;
   });
@@ -48,6 +48,7 @@ const page = async ({ params }: { params?: Promise<{ slug: string[] }> }) => {
       <Products
         allProducts={sortedByNewField || []}
         parentDetails={parent ?? {}}
+        breadcrumbs={breadcrumbs}
         smallPadding
       />
       <GotQuestions />

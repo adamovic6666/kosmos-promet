@@ -37,6 +37,7 @@
   --color-blue-primary: #4267b0; /* Facebook-like blue */
   --color-blue-light: #3579d5; /* lighter accent blue */
   --color-red: #cc0000; /* bright red / error color */
+  --color-error: #ff4d4d; /* softer red for errors */
 
   /* Neutrals */
   --color-white: #ffffff; /* pure white */
@@ -195,6 +196,9 @@ h5 {
   background-color: var(--color-navy-dark);
   color: var(--color-white);
   border: 1px solid var(--color-navy-dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .button-blue:hover {
