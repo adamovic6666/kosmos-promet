@@ -9,7 +9,7 @@ import { CartProvider } from "./_context/CartContext";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.kosmospromet.com/"),
   applicationName: "Kosmos Promet",
-  title: "Delovi za prskalice i atomizere | Kosmos Promet",
+  title: "Delovi za prskalice i atomizere",
   description:
     "Širok asortiman delova za prskalice i atomizere po povoljnim cenama. Dostupni odmah uz brzu isporuku i stručnu tehničku podršku Kosmos Promet.",
   icons: {

@@ -9,15 +9,15 @@ export const metadata: Metadata = {
     "Od 1993. godine Kosmos Promet proizvodi i distribuira potrošne delove za traktorske prskalice i atomizere. Širok asortiman, kvalitetni brendovi, brza isporuka i stručna podrška širom regiona.",
 };
 const page = async () => {
-  // const res = await fetch(
-  //   `${process.env.BASE_URL}/api/v1/list-products?data=all&cc=W4E)C9($8n=n*S(OBJMUR_hQ0.$t6P/xOx4a3v/|D@>U3LU8a,`
-  // );
-  // const data = await res.json();
+  const res = await fetch(
+    `${process.env.BASE_URL}/api/v1/list-products?data=all&cc=${process.env.API_HASH}`
+  );
+  const data = await res.json();
 
   return (
     <>
       <AboutUsHero />
-      <Wellcome allProducts={[]} />
+      <Wellcome allProducts={data} />
       <GotQuestions />
       <Contact />
     </>

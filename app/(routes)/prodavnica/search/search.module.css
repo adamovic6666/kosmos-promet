@@ -1,10 +1,12 @@
 .searchResults {
-  padding: 10.4rem 0 8rem;
+  padding: 12rem 0 8rem;
   min-height: calc(100vh - 5.2rem);
+  background-color: var(--color-gray-light);
 }
 
-.searchResults h1 {
-  margin-bottom: 4rem;
+.searchResults h2 {
+  margin-bottom: 6.4rem;
+  color: var(--color-navy-dark);
 }
 
 .loading {
@@ -145,7 +147,7 @@
   width: 100%;
   overflow: hidden;
   aspect-ratio: 1 / 1;
-  max-width: 12rem;
+  max-width: 14rem;
 }
 
 @media (min-width: 768px) {
@@ -160,12 +162,13 @@
   }
 
   .searchResults {
-    padding: 12rem 0 8rem;
+    padding: 16rem 0 12rem;
   }
 
-  .searchResults h1 {
+  .searchResults h2 {
     text-align: center;
     max-width: unset;
+    margin-bottom: 8rem;
   }
 
   .resultsList {

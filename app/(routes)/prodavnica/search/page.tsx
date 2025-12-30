@@ -16,7 +16,7 @@ export default async function SearchResultsPage({
   return (
     <main className={styles.searchResults}>
       <div className="container-small">
-        <h1>Rezultati pretrage: &quot;{q}&quot;</h1>
+        <h2>Rezultati pretrage: &quot;{q}&quot;</h2>
 
         {data.length > 0 ? (
           <div className={styles.resultsList}>
@@ -40,7 +40,9 @@ export default async function SearchResultsPage({
                     <div className={styles.productDetails}>
                       <h2>{product.title}</h2>
                       <p className={styles.productCode}>
-                        <span className="link-red">{product.product_code}</span>
+                        <span className="button-blue button">
+                          {product.product_code}
+                        </span>
                         <span>Šifra proizvoda</span>
                       </p>
                     </div>

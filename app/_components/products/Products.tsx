@@ -74,7 +74,11 @@ const Products = ({
               dangerouslySetInnerHTML={{ __html: parentDetails?.description }}
             />
           )}
-          <div className={styles.grid}>
+          <div
+            className={`${styles.grid} ${
+              products.length < 3 ? styles.justifyCenter : ""
+            }`}
+          >
             {products &&
               products.length > 0 &&
               products.map((product: Product) => (

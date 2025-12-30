@@ -79,10 +79,13 @@ const CheckoutForm = () => {
         throw new Error("Failed to send order");
       }
 
-      // Clear cart and redirect to success page
+      const result = await response.json();
+      const orderNumber = result.orderNumber;
+
+      // Clear cart and redirect to success page with order number
       clearCart();
       reset();
-      router.push("/korpa/checkout/uspesno");
+      router.push(`/korpa/checkout/uspesno?order=${encodeURIComponent(orderNumber)}`);
     } catch (error) {
       setSubmitError(
         "Postoji problem prilikom slanja porudžbine. Molimo pokušajte ponovo."

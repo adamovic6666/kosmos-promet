@@ -63,7 +63,7 @@ const OrderSection = ({
             </div>
           </>
         ) : (
-          <>
+          <div className={styles.unavailableSection}>
             <div className={styles.stockStatus}>
               <p className={styles.outOfStock}>Nema na stanju</p>
             </div>
@@ -74,7 +74,7 @@ const OrderSection = ({
             >
               Proverite mogućnost poručivanja
             </button>
-          </>
+          </div>
         )}
       </div>
 

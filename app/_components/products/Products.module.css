@@ -71,9 +71,12 @@
   .grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 2.4rem;
     margin-top: 1.6rem;
+  }
+
+  .justifyCenter {
+    justify-content: center;
   }
 
   .grid > div {

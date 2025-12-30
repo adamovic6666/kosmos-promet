@@ -1,13 +1,14 @@
+"use client";
+
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import styles from "./success.module.css";
-import type { Metadata } from "next";
+import { Suspense } from "react";
 
-export const metadata: Metadata = {
-  title: "Kosmos Promet | Porudžbina uspešna",
-  description: "Vaša porudžbina je uspešno poslata.",
-};
+function SuccessContent() {
+  const searchParams = useSearchParams();
+  const orderNumber = searchParams.get("order");
 
-export default function SuccessPage() {
   return (
     <section className={styles.success}>
       <div className="container-small">
@@ -28,6 +29,13 @@ export default function SuccessPage() {
           </div>
 
           <h1>Porudžbina je uspešno poslata!</h1>
+
+          {orderNumber && (
+            <div className={styles.orderNumber}>
+              <span className={styles.orderLabel}>Broj porudžbine:</span>
+              <span className={styles.orderValue}>{orderNumber}</span>
+            </div>
+          )}
 
           <p>
             Hvala Vam što ste se opredelili za Kosmos Promet. Vaša porudžbina
@@ -50,5 +58,13 @@ export default function SuccessPage() {
         </div>
       </div>
     </section>
+  );
+}
+
+export default function SuccessPage() {
+  return (
+    <Suspense fallback={<div>Učitavanje...</div>}>
+      <SuccessContent />
+    </Suspense>
   );
 }
