@@ -1,3 +1,10 @@
 .AboutProduct {
   background-color: var(--color-gray-light);
+  padding-bottom: 4.8rem;
+}
+
+@media (min-width: 768px) {
+  .AboutProduct {
+    padding-bottom: 8rem;
+  }
 }
