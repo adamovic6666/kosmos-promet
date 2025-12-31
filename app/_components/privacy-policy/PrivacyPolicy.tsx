@@ -184,8 +184,11 @@ const PrivacyPolicy = () => {
               Golubinačka 28, 22320 Inđija
               <br />
               Email:{" "}
-              <a href="mailto:office@kosmospromet.com" className={styles.link}>
-                office@kosmospromet.com
+              <a
+                href="mailto:kosmosindjija93@gmail.com"
+                className={styles.link}
+              >
+                kosmosindjija93@gmail.com
               </a>
               <br />
               Telefon: +381-22-557-651
@@ -396,10 +399,10 @@ const PrivacyPolicy = () => {
                 <br />
                 Email:{" "}
                 <a
-                  href="mailto:office@kosmospromet.com"
+                  href="mailto:kosmosindjija93@gmail.com"
                   className={styles.link}
                 >
-                  office@kosmospromet.com
+                  kosmosindjija93@gmail.com
                 </a>
                 <br />
                 Telefon: +381-22-557-651

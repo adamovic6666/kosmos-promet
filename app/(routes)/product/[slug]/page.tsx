@@ -6,7 +6,7 @@ import { cache } from "react";
 import type { Metadata } from "next";
 import GotQuestions from "@/app/_components/got-questions/GotQuestions";
 import AboutProduct from "@/app/_components/about-product/AboutProduct";
-import InteractiveDiagram from "@/app/_components/interactive-image/InteractiveImage";
+// import InteractiveDiagram from "@/app/_components/interactive-image/InteractiveImage";
 
 // Cached data fetching function to eliminate duplicate API calls
 const getProductData = cache(async (slug: string): Promise<ProductDetail> => {
@@ -64,7 +64,7 @@ const Page = async ({ params }: PageProps) => {
   return (
     <>
       <ProductDetails productDetails={product} />
-      <InteractiveDiagram image={"/images/kosmos-hero-image.webp"} />
+      {/* <InteractiveDiagram image={"/images/kosmos-hero-image.webp"} /> */}
       <AboutProduct description={description} documentation={documentation} />
       <SimilarProducts similarProducts={product.similar_products || []} />
       <GotQuestions />

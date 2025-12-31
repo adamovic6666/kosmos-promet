@@ -49,7 +49,7 @@ const ContactPopup = ({ isOpen, onClose }: ContactPopupProps) => {
             <span>Telefon</span>
           </a>
           <a
-            href="mailto:office@kosmospromet.com"
+            href="mailto:kosmosindjija93@gmail.com"
             className={styles.contactOption}
           >
             <Email />
