@@ -3,7 +3,7 @@ import GotQuestions from "@/app/_components/got-questions/GotQuestions";
 import Products from "@/app/_components/products/Products";
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Kosmos Promet | Proizvodi",
+  title: "Proizvodi | Kosmos Promet",
   description:
     "Najveći izbor delova za traktorske prskalice i atomizere u Srbiji po najpovoljnijim cenama.",
 };

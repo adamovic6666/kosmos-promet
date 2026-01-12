@@ -7,6 +7,10 @@
   background-color: var(--color-white);
 }
 
+.mainPageHeader {
+  top: 3.6rem;
+}
+
 .header > div {
   display: flex;
   align-items: center;
@@ -28,6 +32,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.mainPageHeader .nav {
+  top: 3.6rem;
+  height: calc(100vh - 3.6rem);
 }
 
 .header .nav .navList {

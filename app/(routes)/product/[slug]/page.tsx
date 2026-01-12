@@ -36,8 +36,8 @@ export async function generateMetadata({
   const title = metatag?.title?.split?.(" | ")[0] || "Kosmos promet";
   return {
     title: metatag?.title
-      ? `Kosmos promet | ${title}`
-      : "Kosmos promet | Delovi za prskalice i atomizere",
+      ? `${title} | Kosmos Promet`
+      : "Delovi za prskalice i atomizere | Kosmos Promet",
     description:
       metatag?.description ??
       "Širok asortiman delova za prskalice i atomizere po povoljnim cenama. Dostupni odmah uz brzu isporuku i stručnu tehničku podršku Kosmos Promet.",

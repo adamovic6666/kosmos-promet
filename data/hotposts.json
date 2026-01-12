@@ -1,0 +1,50 @@
+[
+  {
+    "sifra": "",
+    "image": "/images/hotspots/rezervni-delovi-za-regulatore-serije-a.webp",
+    "category": "regulatori-A",
+    "aspectRatio": "1350 / 850"
+  },
+  {
+    "sifra": "",
+    "image": "/images/hotspots/rezervni-delovi-za-regulatore-serije-pr1.webp",
+    "category": "regulatori-PR1",
+    "aspectRatio": "1350 / 850"
+  },
+  {
+    "sifra": "",
+    "image": "/images/hotspots/rezervni-delovi-za-regulatore-serije-pr3.webp",
+    "category": "regulatori-PR3",
+    "aspectRatio": "1350 / 850"
+  },
+  {
+    "sifra": "",
+    "image": "/images/hotspots/rezervni-delovi-za-injektore.webp",
+    "category": "injektori",
+    "aspectRatio": "1351 / 851"
+  },
+  {
+    "sifra": "",
+    "image": "/images/hotspots/rezervni-delovi-za-sifone.webp",
+    "category": "sifoni",
+    "aspectRatio": "1350 / 850"
+  },
+  {
+    "sifra": "",
+    "image": "/images/hotspots/rezervni-delovi-za-pumpu-bm-60-30.webp",
+    "category": "pumpa-BM-60-30",
+      "aspectRatio": "1350 / 850"
+  },
+  {
+    "sifra": "",
+    "image": "/images/hotspots/rezervni-delovi-za-pumpu-mp-60.webp",
+    "category": "pumpa-MP-60",
+    "aspectRatio": "1351 / 2145"
+  },
+  {
+    "sifra": "",
+    "image": "/images/hotspots/rezervni-delovi-za-pumpu-mp-25.webp",
+    "category": "pumpa-MP-25",
+    "aspectRatio": "1351 / 2145"
+  }
+]

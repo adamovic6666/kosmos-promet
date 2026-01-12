@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import ogImage from "../public/images/og.webp";
 import GoogleAnalytics from "./_components/google-analytics/GoogleAnalytics";
 import { CartProvider } from "./_context/CartContext";
+import TopBar from "./_components/top-bar/TopBar";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.kosmospromet.com/"),
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "Kosmos Promet | Delovi za prskalice i atomizere",
+    title: "Delovi za prskalice i atomizere | Kosmos Promet",
     description:
       "Širok asortiman delova za prskalice i atomizere po povoljnim cenama. Dostupni odmah uz brzu isporuku i stručnu tehničku podršku Kosmos Promet.",
     url: "https://www.kosmospromet.com/",
@@ -47,6 +48,7 @@ export default function RootLayout({
       <body>
         <GoogleAnalytics />
         <CartProvider>
+          <TopBar />
           <Header />
           <main>{children}</main>
           <Footer />

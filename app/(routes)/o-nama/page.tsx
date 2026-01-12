@@ -4,7 +4,7 @@ import AboutUsHero from "@/app/_components/hero/AboutUsHero";
 import Wellcome from "@/app/_components/wellcome/Wellcome";
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Kosmos Promet | O nama",
+  title: "O nama | Kosmos Promet",
   description:
     "Od 1993. godine Kosmos Promet proizvodi i distribuira potrošne delove za traktorske prskalice i atomizere. Širok asortiman, kvalitetni brendovi, brza isporuka i stručna podrška širom regiona.",
 };

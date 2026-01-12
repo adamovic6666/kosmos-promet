@@ -17,6 +17,7 @@ const Header = () => {
   const pathname = usePathname();
   const [isMobile, setIsMobile] = useState(false);
   const { cart } = useCart();
+  const isMainPage = pathname === "/";
   // const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   // const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   type SearchDropdownRef = {
@@ -73,7 +74,9 @@ const Header = () => {
   }, [menuIsOpen, searchIsOpen, isMobile]);
 
   return (
-    <header className={styles.header}>
+    <header
+      className={`${styles.header} ${isMainPage ? styles.mainPageHeader : ""}`}
+    >
       <div className="container">
         <div className={styles.mobileIcons}>
           <Burger onClick={handleOpenMenu} className={styles.burger} />

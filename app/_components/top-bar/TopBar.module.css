@@ -1,0 +1,16 @@
+.TopBar {
+    width: 100%;
+    background-color: var(--color-navy-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-white);
+    font-size: 1.2rem;
+    height: 4rem;
+}
+
+.TopBar a {
+    color: var(--color-white);
+    transform: translateY(-0.4rem);
+    display: block;
+}

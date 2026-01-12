@@ -4,7 +4,7 @@ import GotQuestions from "@/app/_components/got-questions/GotQuestions";
 import ContactUsHero from "@/app/_components/hero/ContactUsHero";
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Kosmos Promet | Kontakt",
+  title: "Kontakt | Kosmos Promet",
   description:
     "Kontaktirajte Kosmos tehničku podršku za više informacija o delovima za prskalice i atomizere.",
 };

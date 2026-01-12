@@ -55,8 +55,8 @@ const Contact = () => {
                 <div>
                   <h5>E:</h5>
                   <span>
-                    <a href="mailto:kosmosindjija93@gmail.com">
-                      &nbsp;kosmosindjija93@gmail.com
+                    <a href="mailto:office@kosmospromet.com">
+                      &nbsp;office@kosmospromet.com
                     </a>
                   </span>
                 </div>
