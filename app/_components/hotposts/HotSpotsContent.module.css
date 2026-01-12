@@ -36,8 +36,6 @@
 
 .item {
   border-radius: 0.8rem;
-  background-color: var(--color-white);
-  padding: 1.6rem;
 }
 
 .imageWrapper {
