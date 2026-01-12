@@ -15,7 +15,11 @@ const QuantityControl = ({
 }: QuantityControlProps) => {
   return (
     <div className={styles.quantityControl}>
-      <button onClick={onDecrement} className={styles.quantityBtn} type="button">
+      <button
+        onClick={onDecrement}
+        className={styles.quantityBtn}
+        type="button"
+      >
         -
       </button>
       <input
@@ -26,7 +30,11 @@ const QuantityControl = ({
         className={styles.quantityInput}
         min="1"
       />
-      <button onClick={onIncrement} className={styles.quantityBtn} type="button">
+      <button
+        onClick={onIncrement}
+        className={styles.quantityBtn}
+        type="button"
+      >
         +
       </button>
     </div>

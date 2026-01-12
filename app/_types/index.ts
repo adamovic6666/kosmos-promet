@@ -35,7 +35,7 @@ export interface ProductDetail {
   breadcrumbs: {
     name: string;
     link: string;
-  }[],
+  }[];
   is_available: boolean;
 }
 

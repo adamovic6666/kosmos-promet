@@ -57,7 +57,7 @@ const Card = ({
             <h4>
               {cleanName && cleanName.length > 52
                 ? cleanName.slice(0, 52) + "..."
-                : cleanName ?? "No name"}
+                : (cleanName ?? "No name")}
               {deloviMatch && (
                 <span className={styles.deloviLabel}>{deloviMatch[0]}</span>
               )}

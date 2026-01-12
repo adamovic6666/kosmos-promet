@@ -29,12 +29,12 @@ export async function POST(request: NextRequest) {
 
     // Generate temporary order number (format: KP-YYYYMMDD-XXXXX)
     const now = new Date();
-    const dateStr = now.toISOString().slice(0, 10).replace(/-/g, '');
+    const dateStr = now.toISOString().slice(0, 10).replace(/-/g, "");
     const randomNum = Math.floor(10000 + Math.random() * 90000);
     const orderNumber = `KP-${dateStr}-${randomNum}`;
 
     // Logo URL (update this to match your production domain)
-    const logoUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://kosmospromet.com'}/images/logo.svg`;
+    const logoUrl = `${process.env.NEXT_PUBLIC_SITE_URL || "https://kosmospromet.com"}/images/logo.svg`;
 
     // Email to Owner
     const ownerEmailHtml = `

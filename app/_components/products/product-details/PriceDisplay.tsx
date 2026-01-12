@@ -6,7 +6,11 @@ interface PriceDisplayProps {
   formatPrice: (price: string) => string;
 }
 
-const PriceDisplay = ({ price, discountPrice, formatPrice }: PriceDisplayProps) => {
+const PriceDisplay = ({
+  price,
+  discountPrice,
+  formatPrice,
+}: PriceDisplayProps) => {
   return (
     <div className={styles.price}>
       {discountPrice && (

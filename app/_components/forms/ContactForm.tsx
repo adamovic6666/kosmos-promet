@@ -54,12 +54,12 @@ const ContactForm = () => {
         reset();
       } else {
         setSubmitError(
-          "Postoji problem prilikom slanja poruke. Molimo pokušajte ponovo.",
+          "Postoji problem prilikom slanja poruke. Molimo pokušajte ponovo."
         );
       }
     } catch (error) {
       setSubmitError(
-        "Postoji problem prilikom slanja poruke. Molimo pokušajte ponovo.",
+        "Postoji problem prilikom slanja poruke. Molimo pokušajte ponovo."
       );
       console.error("Contact form error:", error);
     } finally {

@@ -34,20 +34,20 @@
   max-width: 2.4rem;
   max-height: 2.4rem;
   border-radius: 50%;
-  border: .2rem solid #ffffff;
+  border: 0.2rem solid #ffffff;
   cursor: pointer;
   transition: all 0.2s ease;
   transform: translate(-50%, -50%);
   z-index: 9;
   animation: pulse 2s infinite;
-  box-shadow: .1rem .1rem .25rem .5rem var(--color-navy-dark);
+  box-shadow: 0.1rem 0.1rem 0.25rem 0.5rem var(--color-navy-dark);
   background-color: var(--color-blue-primary);
 }
 
 .dot:hover,
 .dot:focus {
   transform: translate(-50%, -50%) scale(1.2);
-  filter: drop-shadow(0 0 .8rem rgba(0, 0, 0, 0.4));
+  filter: drop-shadow(0 0 0.8rem rgba(0, 0, 0, 0.4));
   outline: none;
 }
 
@@ -80,13 +80,12 @@
 
 .modalContent {
   background: white;
-  border-radius: .8rem;
+  border-radius: 0.8rem;
   overflow: hidden;
-  box-shadow: 0 .8rem 2.4rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.8rem 2.4rem rgba(0, 0, 0, 0.15);
   width: 100%;
   max-width: 24rem;
   pointer-events: all;
-
 }
 
 .modalImage {
@@ -214,13 +213,12 @@
   }
 }
 
-
 @keyframes pulse {
   0% {
     box-shadow: 0 0 0 0 var(--color-navy-dark);
   }
   70% {
-    box-shadow: 0 0 0 .8rem transparent;
+    box-shadow: 0 0 0 0.8rem transparent;
   }
   100% {
     box-shadow: 0 0 0 0 transparent;

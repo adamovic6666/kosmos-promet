@@ -38,8 +38,8 @@ function SuccessContent() {
           )}
 
           <p>
-            Hvala Vam što ste se opredelili za Kosmos Promet. Vaša porudžbina
-            je primljena i biće obrađena u najkraćem mogućem roku.
+            Hvala Vam što ste se opredelili za Kosmos Promet. Vaša porudžbina je
+            primljena i biće obrađena u najkraćem mogućem roku.
           </p>
 
           <p>

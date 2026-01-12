@@ -1,5 +1,6 @@
 /* Mobile-first base styles */
-.cart, .emptyCart {
+.cart,
+.emptyCart {
   padding: 12rem 0 6.4rem;
   min-height: calc(100dvh - 5.2rem);
   background-color: var(--color-gray-light);
@@ -47,7 +48,7 @@
 
 .itemImage {
   object-fit: contain;
-  border-radius: .8rem;
+  border-radius: 0.8rem;
 }
 
 .itemInfo {
@@ -170,7 +171,7 @@
 .summaryRow {
   display: flex;
   justify-content: space-between;
-  padding: .8rem 0;
+  padding: 0.8rem 0;
   color: #333;
   font-size: 1.3rem;
 }
@@ -222,7 +223,6 @@
   text-decoration: underline;
 }
 
-
 .emptyContent {
   text-align: center;
   margin: 0 auto;
@@ -266,7 +266,8 @@
 
 /* Tablet and up (768px+) */
 @media (min-width: 768px) {
-  .cart, .emptyCart {
+  .cart,
+  .emptyCart {
     padding: 16rem 0 8rem;
   }
 
@@ -332,7 +333,7 @@
   }
 
   .summaryRow {
-    padding: .8rem 0;
+    padding: 0.8rem 0;
   }
 
   .summaryTotal {
@@ -365,7 +366,6 @@
 
 /* Desktop (992px+) */
 @media (min-width: 992px) {
-
   .cartGrid {
     grid-template-columns: 1fr 40rem;
     gap: 4rem;

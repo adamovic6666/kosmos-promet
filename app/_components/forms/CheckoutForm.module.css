@@ -134,7 +134,6 @@
 }
 
 @media screen and (min-width: 768px) {
-
   .inputGroup {
     flex-direction: row;
     gap: 2.4rem;
@@ -147,11 +146,9 @@
   .formSection form {
     gap: 3.2rem;
   }
-
 }
 
 @media screen and (min-width: 1024px) {
-
   .checkoutForm {
     padding: 16rem 0 12rem;
   }

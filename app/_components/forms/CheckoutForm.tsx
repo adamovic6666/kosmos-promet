@@ -52,7 +52,9 @@ const CheckoutForm = () => {
         productCode: item.productCode,
         quantity: item.quantity,
         price: formatPrice(item.price),
-        total: formatPrice((Number.parseFloat(item.price) * item.quantity).toFixed(2)),
+        total: formatPrice(
+          (Number.parseFloat(item.price) * item.quantity).toFixed(2)
+        ),
       }));
 
       // Send request to API route
@@ -85,7 +87,9 @@ const CheckoutForm = () => {
       // Clear cart and redirect to success page with order number
       clearCart();
       reset();
-      router.push(`/korpa/checkout/uspesno?order=${encodeURIComponent(orderNumber)}`);
+      router.push(
+        `/korpa/checkout/uspesno?order=${encodeURIComponent(orderNumber)}`
+      );
     } catch (error) {
       setSubmitError(
         "Postoji problem prilikom slanja porudžbine. Molimo pokušajte ponovo."
@@ -102,13 +106,13 @@ const CheckoutForm = () => {
         <div className={styles.formWrapper}>
           <div className={styles.formSection}>
             <h2>Podaci za dostavu</h2>
-            <p>Molimo popunite sve neophodne podatke za dostavu Vaše porudžbine.</p>
+            <p>
+              Molimo popunite sve neophodne podatke za dostavu Vaše porudžbine.
+            </p>
 
             <form onSubmit={handleSubmit(onSubmit)}>
               {submitError && (
-                <div className={styles.errorMessage}>
-                  {submitError}
-                </div>
+                <div className={styles.errorMessage}>{submitError}</div>
               )}
 
               <div className={styles.inputGroup}>
@@ -132,18 +136,10 @@ const CheckoutForm = () => {
                 type="tel"
               />
 
-              <Input
-                name="address"
-                placeholder="Adresa *"
-                control={control}
-              />
+              <Input name="address" placeholder="Adresa *" control={control} />
 
               <div className={styles.inputGroup}>
-                <Input
-                  name="city"
-                  placeholder="Grad *"
-                  control={control}
-                />
+                <Input name="city" placeholder="Grad *" control={control} />
                 <Input
                   name="postalCode"
                   placeholder="Poštanski broj *"
@@ -173,7 +169,9 @@ const CheckoutForm = () => {
                   <div className={styles.itemDetails}>
                     <p className={styles.itemName}>{item.name}</p>
                     <p className={styles.itemCode}>Šifra: {item.productCode}</p>
-                    <p className={styles.itemQuantity}>Količina: {item.quantity}</p>
+                    <p className={styles.itemQuantity}>
+                      Količina: {item.quantity}
+                    </p>
                   </div>
                   <p className={styles.itemPrice}>
                     {formatPrice(

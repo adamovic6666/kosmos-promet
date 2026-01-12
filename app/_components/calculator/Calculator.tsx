@@ -694,10 +694,10 @@ const Calculator = () => {
                 selectedType === "usmereno-jedna" && !showActualAmount
                   ? calculateDirectedSingle
                   : selectedType === "usmereno-jedna" &&
-                    showActualAmount &&
-                    !(results as DirectedSprayResults)?.protok
-                  ? continueDirectedSingle
-                  : handleCalculate
+                      showActualAmount &&
+                      !(results as DirectedSprayResults)?.protok
+                    ? continueDirectedSingle
+                    : handleCalculate
               }
             >
               {selectedType === "usmereno-jedna" &&

@@ -1,7 +1,7 @@
 // Throttle function
 export const debounce = <T extends unknown[]>(
   func: (...args: T) => void,
-  delay: number,
+  delay: number
 ) => {
   let timeoutId: NodeJS.Timeout;
   return function (this: unknown, ...args: T) {
@@ -30,7 +30,7 @@ import { cache } from "react";
 export const searchProducts = cache(
   async (
     query: string,
-    isDropdown: boolean = false,
+    isDropdown: boolean = false
   ): Promise<SearchResult[]> => {
     // Return empty array if query is less than 2 characters
     if (query.length < 2) {
@@ -44,11 +44,11 @@ export const searchProducts = cache(
       // Manually encode the hash to preserve all special characters exactly
       const encodedHash = encodeURIComponent(hash).replace(
         /[!'()*]/g,
-        (c) => "%" + c.charCodeAt(0).toString(16).toUpperCase(),
+        (c) => "%" + c.charCodeAt(0).toString(16).toUpperCase()
       );
 
       const url = `${process.env.NEXT_PUBLIC_API_URL}/api/v1/search?q=${encodeURIComponent(
-        query,
+        query
       )}&cc=${encodedHash}${isDropdown ? "&type=dropdown" : ""}`;
 
       const response = await fetch(url, {
@@ -57,7 +57,7 @@ export const searchProducts = cache(
 
       if (!response.ok) {
         throw new Error(
-          `Search API returned ${response.status}: ${response.statusText}`,
+          `Search API returned ${response.status}: ${response.statusText}`
         );
       }
 
@@ -67,5 +67,5 @@ export const searchProducts = cache(
       console.error("Search API error:", error);
       return [];
     }
-  },
+  }
 );
