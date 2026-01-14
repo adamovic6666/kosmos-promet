@@ -57,6 +57,19 @@ export default function HotPostsContent() {
                           />
                         </div>
                       )}
+                      {item.additionalImage && (
+                        <div
+                          className={styles.imageWrapper}
+                          style={{ aspectRatio: item.aspectRatio }}
+                        >
+                          <Image
+                            src={item.additionalImage}
+                            alt={item.sifra || "Rezervni deo dodatna slika"}
+                            fill
+                            className="object-cover"
+                          />
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>
