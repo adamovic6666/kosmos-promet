@@ -46,6 +46,7 @@
   --color-gray-dark: #3c3c3c; /* dark gray / headings */
   --color-gray-darker: #333333; /* darker gray / backgrounds */
   --color-black: #000000; /* pure black */
+  --color-green: #28a745; /* success color */
 
   /* Font Variables */
   --font-rawline: "Rawline", sans-serif;

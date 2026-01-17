@@ -3,11 +3,19 @@
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import styles from "./success.module.css";
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
+import { useCart } from "@/app/_context/CartContext";
 
 function SuccessContent() {
   const searchParams = useSearchParams();
   const orderNumber = searchParams.get("order");
+  const { clearCart } = useCart();
+
+  // Clear cart when success page loads
+  useEffect(() => {
+    clearCart();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <section className={styles.success}>

@@ -10,8 +10,8 @@
 }
 
 .checkoutForm p {
-  color: var(--color-gray-dark);
-  margin-bottom: 1.2rem;
+  color: #333;
+  margin-bottom: .8rem;
 }
 
 .formWrapper {
@@ -45,9 +45,82 @@
 .errorMessage {
   color: red;
   padding: 1.2rem;
-  background-color: rgba(255, 0, 0, 0.1);
   border-radius: 0.4rem;
   border: 1px solid rgba(255, 0, 0, 0.2);
+}
+
+/* Payment Method Section */
+.paymentMethodSection {
+  margin: 2.4rem 0 0;
+}
+
+.paymentMethodSection h3 {
+  color: var(--color-navy-dark);
+  font-size: 1.8rem;
+  margin-bottom: 2.4rem;
+}
+
+.paymentOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.paymentOption {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  padding: 1.6rem;
+  border: 2px solid var(--color-gray-medium);
+  border-radius: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: white;
+}
+
+.paymentOption:hover {
+  border-color: var(--color-blue);
+  background-color: rgba(66, 103, 176, 0.03);
+}
+
+.paymentOption input[type="radio"] {
+  margin-top: 0.2rem;
+  cursor: pointer;
+  width: 1.8rem;
+  height: 1.8rem;
+  accent-color: var(--color-blue);
+}
+
+.paymentOption input[type="radio"]:checked + .paymentDetails {
+  color: var(--color-navy-dark);
+}
+
+.paymentOption:has(input[type="radio"]:checked) {
+  border-color: var(--color-blue);
+  background-color: rgba(66, 103, 176, 0.05);
+}
+
+.paymentDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.paymentTitle {
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: var(--color-navy-dark);
+}
+
+.paymentDescription {
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.vatNote {
+  text-align: right;
+  color: #333;
+  font-style: italic;
 }
 
 /* Order Summary */
@@ -55,7 +128,6 @@
   background-color: white;
   padding: 3.2rem;
   border-radius: 0.8rem;
-  box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.05);
   height: fit-content;
   position: sticky;
   top: 2rem;
@@ -116,8 +188,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.2rem 0;
-  color: var(--color-gray-dark);
+  padding: .4rem 0;
+  color: #333;
   font-size: 1.5rem;
 }
 
@@ -161,6 +233,7 @@
   .orderSummary {
     grid-column: 2;
     grid-row: 1;
+    top: 12rem;
   }
 
   .formSection {

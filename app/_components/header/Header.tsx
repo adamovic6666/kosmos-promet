@@ -18,8 +18,8 @@ const Header = () => {
   const [isMobile, setIsMobile] = useState(false);
   const { cart } = useCart();
   const isMainPage = pathname === "/";
-  // const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  // const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   type SearchDropdownRef = {
     clearSearch: () => void;
   };
@@ -51,19 +51,19 @@ const Header = () => {
     setSearchIsOpen(false);
   };
 
-  // const handleOpenDropdown = () => {
-  //   if (dropdownTimeoutRef.current) {
-  //     clearTimeout(dropdownTimeoutRef.current);
-  //     dropdownTimeoutRef.current = null;
-  //   }
-  //   setIsDropdownOpen(true);
-  // };
+  const handleOpenDropdown = () => {
+    if (dropdownTimeoutRef.current) {
+      clearTimeout(dropdownTimeoutRef.current);
+      dropdownTimeoutRef.current = null;
+    }
+    setIsDropdownOpen(true);
+  };
 
-  // const handleCloseDropdown = () => {
-  //   dropdownTimeoutRef.current = setTimeout(() => {
-  //     setIsDropdownOpen(false);
-  //   }, 300); // Small delay to prevent flickering
-  // };
+  const handleCloseDropdown = () => {
+    dropdownTimeoutRef.current = setTimeout(() => {
+      setIsDropdownOpen(false);
+    }, 300); // Small delay to prevent flickering
+  };
 
   useEffect(() => {
     if ((menuIsOpen || searchIsOpen) && isMobile) {
@@ -103,15 +103,15 @@ const Header = () => {
                   onClick={handleOpenMenu}
                   onMouseOver={() => {
                     // Close search when hovering over a link
-                    // if (label === "proizvodi") {
-                    //   handleOpenDropdown();
-                    // }
+                    if (label === "proizvodi") {
+                      handleOpenDropdown();
+                    }
                   }}
                   onMouseLeave={() => {
                     // Close dropdown when mouse leaves the link
-                    // if (label === "proizvodi") {
-                    //   handleCloseDropdown();
-                    // }
+                    if (label === "proizvodi") {
+                      handleCloseDropdown();
+                    }
                   }}
                   href={href}
                   className={
@@ -120,7 +120,7 @@ const Header = () => {
                 >
                   {label}
                 </Link>
-                {/* {label === "proizvodi" && (
+                {label === "proizvodi" && (
                   <div
                     className={`${styles.productsDropdown} ${
                       isDropdownOpen ? styles.open : ""
@@ -130,47 +130,39 @@ const Header = () => {
                   >
                     <ul className={styles.productsList}>
                       <li>
-                        <Link href="/proizvodi/auto-kopce">Auto kopče</Link>
+                        <Link href="/prodavnica/regulatori">Regulatori</Link>
                       </li>
                       <li>
-                        <Link href="/proizvodi/kopce-podizaca-stakla">
-                          Kopče podizača stakla
-                        </Link>
+                        <Link href="/prodavnica/pumpe">Pumpe</Link>
                       </li>
                       <li>
-                        <Link href="/proizvodi/fiksatori-za-patosnice">
-                          Fiksatori za patosnice
-                        </Link>
+                        <Link href="/prodavnica/filteri">Filteri</Link>
                       </li>
 
                       <li>
-                        <Link href="/proizvodi/ukrasne-kapice-za-srafove">
-                          Ukrasne kapice za šrafove
+                        <Link href="/prodavnica/bure">Bure</Link>
+                      </li>
+                      <li>
+                        <Link href="/prodavnica/dizne-i-sita">
+                          Dizne i sita
                         </Link>
                       </li>
                       <li>
-                        <Link href="/proizvodi/univerzalni-nastavci">
-                          Univerzalni nastavci
+                        <Link href="/prodavnica/nosaci-dizne">
+                          Nosači dizne
                         </Link>
                       </li>
                       <li>
-                        <Link href="/proizvodi/nosaci-i-ramovi-za-tablice">
-                          Nosaci i ramovi za tablice
-                        </Link>
+                        <Link href="/prodavnica/grane">Grane</Link>
                       </li>
                       <li>
-                        <Link href="/proizvodi/alati-za-limare">
-                          Alati za limare
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/proizvodi/ostali-proizvodi">
-                          Ostali proizvodi
+                        <Link href="/prodavnica/membrane-i-zaptivke">
+                          Membrane i zaptivke
                         </Link>
                       </li>
                     </ul>
                   </div>
-                )} */}
+                )}
               </li>
             ))}
           </ul>

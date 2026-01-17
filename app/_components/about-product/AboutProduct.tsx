@@ -18,7 +18,7 @@ const AboutProduct = ({
     {
       title: "Uslovi plaćanja i isporuke",
       content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est.",
+        "Cene svih proizvoda izražene su u dinarima (RSD) i uključuju PDV. </br > Plaćanje se vrši uplatom na tekući račun prodavca ili pouzećem prilikom preuzimanja pošiljke. U slučaju plaćanja putem uplate na račun, roba se šalje nakon evidentirane uplate.  </br >Isporuku vrši kurirska služba na adresu navedenu u porudžbini. Troškovi isporuke su fiksni i iznose 660 RSD po porudžbini i dodaju se na ukupnu vrednost poručene robe. Kupac prilikom preuzimanja plaća ukupan iznos naveden u porudžbini, bez dodatnih troškova.",
     },
     {
       title: "Tehnička dokumentacija",

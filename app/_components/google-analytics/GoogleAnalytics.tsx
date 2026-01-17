@@ -26,7 +26,7 @@ export default function GoogleAnalytics() {
       {analyticsEnabled && (
         <>
           <Script
-            src="https://www.googletagmanager.com/gtag/js?id=G-1B95DXE85C"
+            src="https://www.googletagmanager.com/gtag/js?id=UA-88316506-1"
             strategy="afterInteractive"
           />
           <Script id="google-analytics" strategy="afterInteractive">
@@ -34,8 +34,7 @@ export default function GoogleAnalytics() {
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-
-              gtag('config', 'G-1B95DXE85C');
+              gtag('config', 'UA-88316506-1', { 'anonymize_ip': true });  
             `}
           </Script>
         </>
