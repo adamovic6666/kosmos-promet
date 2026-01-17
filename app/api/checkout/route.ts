@@ -47,9 +47,11 @@ async function generateWarehousePDF(
 
   let yPosition = height - 50;
 
-  // Company Header
-  page.drawText("KOSMOS PROMET D.O.O.", {
-    x: width / 2 - 120,
+  // Company Header - Properly centered
+  const companyName = "KOSMOS PROMET D.O.O.";
+  const companyNameWidth = boldFont.widthOfTextAtSize(companyName, 20);
+  page.drawText(companyName, {
+    x: (width - companyNameWidth) / 2,
     y: yPosition,
     size: 20,
     font: boldFont,
@@ -57,33 +59,41 @@ async function generateWarehousePDF(
   });
   yPosition -= 20;
 
-  page.drawText("Golubinačka 28, 22320 Inđija", {
-    x: width / 2 - 90,
+  const companyAddress = "Golubina\u010Dka 28, 22320 In\u0111ija";
+  const addressWidth = regularFont.widthOfTextAtSize(companyAddress, 10);
+  page.drawText(companyAddress, {
+    x: (width - addressWidth) / 2,
     y: yPosition,
     size: 10,
     font: regularFont,
   });
   yPosition -= 15;
 
-  page.drawText("T/F: 022 557 651 | M: 063 647 205", {
-    x: width / 2 - 95,
+  const contact = "T/F: 022 557 651 | M: 063 647 205";
+  const contactWidth = regularFont.widthOfTextAtSize(contact, 10);
+  page.drawText(contact, {
+    x: (width - contactWidth) / 2,
     y: yPosition,
     size: 10,
     font: regularFont,
   });
   yPosition -= 15;
 
-  page.drawText("PIB: 100699233 | MB: 08546100", {
-    x: width / 2 - 85,
+  const taxInfo = "PIB: 100699233 | MB: 08546100";
+  const taxInfoWidth = regularFont.widthOfTextAtSize(taxInfo, 10);
+  page.drawText(taxInfo, {
+    x: (width - taxInfoWidth) / 2,
     y: yPosition,
     size: 10,
     font: regularFont,
   });
   yPosition -= 30;
 
-  // Document Title
-  page.drawText("NALOG ZA MAGACIN", {
-    x: width / 2 - 90,
+  // Document Title - Properly centered
+  const docTitle = "NALOG ZA MAGACIN";
+  const docTitleWidth = boldFont.widthOfTextAtSize(docTitle, 16);
+  page.drawText(docTitle, {
+    x: (width - docTitleWidth) / 2,
     y: yPosition,
     size: 16,
     font: boldFont,
@@ -274,22 +284,59 @@ async function generateWarehousePDF(
 
   yPosition -= 20;
 
-  // Cost Summary
-  page.drawText(`Međuzbir: ${subtotal} RSD`, {
-    x: 350,
+  // Cost Summary with proper alignment
+  const labelX = 360;
+  const valueX = 520;
+
+  page.drawText("Međuzbir:", {
+    x: labelX,
+    y: yPosition,
+    size: 10,
+    font: boldFont,
+  });
+  const subtotalText = `${subtotal} RSD`;
+  const subtotalWidth = regularFont.widthOfTextAtSize(subtotalText, 10);
+  page.drawText(subtotalText, {
+    x: valueX - subtotalWidth,
     y: yPosition,
     size: 10,
     font: regularFont,
   });
-  page.drawText(`Troškovi isporuke: ${deliveryCost} RSD`, {
-    x: 350,
+
+  page.drawText("Troškovi isporuke:", {
+    x: labelX,
+    y: yPosition - 15,
+    size: 10,
+    font: boldFont,
+  });
+  const deliveryText = `${deliveryCost} RSD`;
+  const deliveryWidth = regularFont.widthOfTextAtSize(deliveryText, 10);
+  page.drawText(deliveryText, {
+    x: valueX - deliveryWidth,
     y: yPosition - 15,
     size: 10,
     font: regularFont,
   });
-  page.drawText(`UKUPNO: ${total} RSD`, {
-    x: 350,
-    y: yPosition - 35,
+
+  // Draw separator line
+  page.drawLine({
+    start: { x: 350, y: yPosition - 25 },
+    end: { x: 545, y: yPosition - 25 },
+    thickness: 2,
+    color: rgb(0, 0, 0.4),
+  });
+
+  page.drawText("UKUPNO:", {
+    x: labelX,
+    y: yPosition - 40,
+    size: 12,
+    font: boldFont,
+  });
+  const totalText = `${total} RSD`;
+  const totalWidth = boldFont.widthOfTextAtSize(totalText, 12);
+  page.drawText(totalText, {
+    x: valueX - totalWidth,
+    y: yPosition - 40,
     size: 12,
     font: boldFont,
   });
@@ -325,7 +372,7 @@ async function generateWarehousePDF(
     font: regularFont,
   });
 
-  yPosition -= 60;
+  yPosition -= 90;
 
   // Signature Fields
   page.drawText("Pripremio: ___________________", {
@@ -347,9 +394,11 @@ async function generateWarehousePDF(
     font: regularFont,
   });
 
-  // Footer
-  page.drawText("Ovaj dokument je automatski generisan iz sistema Kosmos Promet", {
-    x: width / 2 - 180,
+  // Footer - Properly centered
+  const footerText = "Ovaj dokument je automatski generisan iz sistema Kosmos Promet";
+  const footerWidth = regularFont.widthOfTextAtSize(footerText, 8);
+  page.drawText(footerText, {
+    x: (width - footerWidth) / 2,
     y: 30,
     size: 8,
     font: regularFont,
@@ -511,8 +560,8 @@ export async function POST(request: NextRequest) {
               </div>
               <div class="company-info">
                 <strong>Kosmos Promet d.o.o.</strong>
-                Golubinačka 28<br>
-                22320 Inđija<br>
+                Golubina\u010Dka 28<br>
+                22320 In\u0111ija<br>
                 T/F: 022 557 651<br>
                 M: 063 647 205<br>
                 PIB: 100699233<br>
@@ -572,18 +621,20 @@ export async function POST(request: NextRequest) {
                   </tbody>
                 </table>
 
-                <div class="cost-row subtotal">
-                  <span>Međuzbir:</span>
-                  <span>${subtotal} RSD</span>
-                </div>
-                <div class="cost-row">
-                  <span>Troškovi isporuke:</span>
-                  <span>${deliveryCost} RSD</span>
-                </div>
-                <div class="cost-row total">
-                  <span>UKUPNO ZA NAPLATU:</span>
-                  <span>${total} RSD</span>
-                </div>
+                <table style="width: 100%; margin-top: 20px; border-collapse: collapse;">
+                  <tr style="border-top: 1px solid #e0e0e0;">
+                    <td style="padding: 12px 10px; text-align: right; font-size: 15px; font-weight: 600; color: #333;">Međuzbir:</td>
+                    <td style="padding: 12px 10px; text-align: right; font-size: 15px; color: #333; width: 150px;">${subtotal} RSD</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 12px 10px; text-align: right; font-size: 15px; font-weight: 600; color: #333;">Troškovi isporuke:</td>
+                    <td style="padding: 12px 10px; text-align: right; font-size: 15px; color: #333;">${deliveryCost} RSD</td>
+                  </tr>
+                  <tr style="border-top: 2px solid #000066;">
+                    <td style="padding: 15px 10px; text-align: right; font-size: 20px; font-weight: bold; color: #000066;">UKUPNO ZA NAPLATU:</td>
+                    <td style="padding: 15px 10px; text-align: right; font-size: 20px; font-weight: bold; color: #000066;">${total} RSD</td>
+                  </tr>
+                </table>
               </div>
 
               <!-- PDF Attachment Note -->
@@ -706,8 +757,8 @@ export async function POST(request: NextRequest) {
               </div>
               <div class="company-info">
                 <strong>Kosmos Promet d.o.o.</strong>
-                Golubinačka 28<br>
-                22320 Inđija<br>
+                Golubina\u010Dka 28<br>
+                22320 In\u0111ija<br>
                 T/F: 022 557 651<br>
                 M: 063 647 205<br>
                 PIB: 100699233<br>
@@ -759,19 +810,23 @@ export async function POST(request: NextRequest) {
                 </table>
 
                 <!-- Cost Summary -->
-                <div class="cost-row subtotal">
-                  <span>Međuzbir:</span>
-                  <span>${subtotal} RSD</span>
-                </div>
-                <div class="cost-row">
-                  <span>Troškovi isporuke:</span>
-                  <span>${deliveryCost} RSD</span>
-                </div>
-                <div class="cost-row total">
-                  <span>UKUPNO:</span>
-                  <span>${total} RSD</span>
-                </div>
-                <div class="vat-note">* PDV uračunat u cenu</div>
+                <table style="width: 100%; margin-top: 20px; border-collapse: collapse;">
+                  <tr style="border-top: 1px solid #e0e0e0;">
+                    <td style="padding: 12px 10px; text-align: right; font-size: 15px; font-weight: 600; color: #333;">Međuzbir:</td>
+                    <td style="padding: 12px 10px; text-align: right; font-size: 15px; color: #333; width: 150px;">${subtotal} RSD</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 12px 10px; text-align: right; font-size: 15px; font-weight: 600; color: #333;">Troškovi isporuke:</td>
+                    <td style="padding: 12px 10px; text-align: right; font-size: 15px; color: #333;">${deliveryCost} RSD</td>
+                  </tr>
+                  <tr style="border-top: 2px solid #000066;">
+                    <td style="padding: 15px 10px; text-align: right; font-size: 20px; font-weight: bold; color: #000066;">UKUPNO:</td>
+                    <td style="padding: 15px 10px; text-align: right; font-size: 20px; font-weight: bold; color: #000066;">${total} RSD</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" style="padding: 10px; text-align: right; font-size: 12px; color: #666; font-style: italic;">* PDV uračunat u cenu</td>
+                  </tr>
+                </table>
               </div>
 
               <!-- Payment Instructions -->

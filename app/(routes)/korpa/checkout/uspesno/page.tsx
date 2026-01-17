@@ -1,14 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
 import styles from "./success.module.css";
 import { Suspense, useEffect } from "react";
 import { useCart } from "@/app/_context/CartContext";
 
 function SuccessContent() {
-  const searchParams = useSearchParams();
-  const orderNumber = searchParams.get("order");
   const { clearCart } = useCart();
 
   // Clear cart when success page loads
@@ -37,13 +34,6 @@ function SuccessContent() {
           </div>
 
           <h1>Porudžbina je uspešno poslata!</h1>
-
-          {orderNumber && (
-            <div className={styles.orderNumber}>
-              <span className={styles.orderLabel}>Broj porudžbine:</span>
-              <span className={styles.orderValue}>{orderNumber}</span>
-            </div>
-          )}
 
           <p>
             Hvala Vam što ste se opredelili za Kosmos Promet. Vaša porudžbina je

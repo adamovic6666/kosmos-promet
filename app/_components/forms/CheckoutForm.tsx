@@ -117,12 +117,15 @@ const CheckoutForm = () => {
   return (
     <section className={styles.checkoutForm}>
       <div className="container-medium">
+        <h2 className={styles.pageTitle}>Vaša porudžbina</h2>
         <div className={styles.formWrapper}>
           <div className={styles.formSection}>
-            <h2>Podaci za dostavu</h2>
-            <p>
-              Molimo popunite sve neophodne podatke za dostavu Vaše porudžbine.
-            </p>
+            <div className={styles.deliveryCard}>
+              <h2>Podaci za dostavu</h2>
+              <p className={styles.instructionText}>
+                Molimo popunite sve neophodne podatke za dostavu Vaše porudžbine.
+              </p>
+            </div>
 
             <form onSubmit={handleSubmit(onSubmit)}>
               {submitError && (
