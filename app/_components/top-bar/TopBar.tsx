@@ -15,7 +15,10 @@ export default function TopBar() {
     <div className={styles.TopBar}>
       <div className="container-small">
         <Link href="/rezervni-delovi-za-prskalice-i-atomizere">
-          Pogledajte specijalnu ponudu rezervnih delova
+          <span>Vizuelna pretraga delova:</span>{" "}
+          <span>
+            <b> Klikni na deo - naruči odmah!</b>
+          </span>
         </Link>
       </div>
     </div>

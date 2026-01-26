@@ -73,6 +73,12 @@ const Header = () => {
     }
   }, [menuIsOpen, searchIsOpen, isMobile]);
 
+  useEffect(() => {
+    // Close menu and search when URL changes
+    setMenuIsOpen(false);
+    setSearchIsOpen(false);
+  }, [pathname]);
+
   return (
     <header
       className={`${styles.header} ${isMainPage ? styles.mainPageHeader : ""}`}

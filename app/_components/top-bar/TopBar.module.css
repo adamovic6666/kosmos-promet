@@ -1,20 +1,44 @@
 .TopBar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
   width: 100%;
-  background-color: var(--color-navy-dark);
+  background: #ff5722;
   display: flex;
   justify-content: center;
   align-items: center;
   color: var(--color-white);
-  font-size: 1.2rem;
-  height: 3.6rem;
+  height: 4.8rem;
 }
 
 .TopBar a {
   color: var(--color-white);
   transform: translateY(-0.2rem);
-  display: block;
+  display: flex;
+  font-size: 1.4rem;
+  flex-direction: column;
+  gap: 0.2rem;
+  text-align: center;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 768px) {
+
+  .TopBar {
+
+  height: 4rem;
+}
+
+
+  .TopBar a {
+    font-size: 1.6rem;
+    flex-direction: row;
+    gap: 0
+  }
+
+    .TopBar a span:nth-of-type(2) {
+      padding-left: 0.2rem;
+    }
 }

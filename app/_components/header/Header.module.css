@@ -3,12 +3,12 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 10;
+  z-index: 10000;
   background-color: var(--color-white);
 }
 
 .mainPageHeader {
-  top: 3.6rem;
+  top: 4.8rem;
 }
 
 .header > div {
@@ -35,8 +35,8 @@
 }
 
 .mainPageHeader .nav {
-  top: 3.6rem;
-  height: calc(100vh - 3.6rem);
+  top: 4.8rem;
+  height: calc(100vh - 4.8rem);
 }
 
 .header .nav .navList {
@@ -256,6 +256,10 @@
   .mobileSearchContainer {
     left: 50%;
     transform: translateX(-50%);
+  }
+
+  .mainPageHeader {
+    top: 4rem;
   }
 }
 

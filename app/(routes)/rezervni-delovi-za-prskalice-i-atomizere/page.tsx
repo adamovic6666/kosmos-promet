@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Rezervni delovi za prskalice i atomizere | Kosmos Promet",
   description:
-    "Specijalna ponuda rezevrnih delova za prskalice i atomizere. Najpovoljnije cene, provereni kvalitet i brza isporuka!",
+    "Interaktivna mapa rezevrnih delova za prskalice i atomizere. Klikni na deo - naruči odmah!",
 };
 
 export default function RezerniDeloviPage() {
