@@ -75,6 +75,7 @@ const CustomSwiper = ({
                 image={product.image}
                 name={product.name || product.title || "no name"}
                 alias={product.alias}
+                mediaUpdatedAt={product.media_updated_at}
               />
             </SwiperSlide>
           ))}

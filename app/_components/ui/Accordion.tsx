@@ -22,10 +22,8 @@ const Accordion = ({ items }: AccordionProps) => {
 
   return (
     <div className={styles.Accordion}>
-      {items
-        .filter((item) => item.content)
-        .map((item, index) => (
-          <div key={index} className={styles.AccordionItem}>
+      {items.map((item, index) => (
+        <div key={`accordion-${item.title}-${index}`} className={styles.AccordionItem}>
             <div
               className={styles.AccordionHeader}
               onClick={() => toggleAccordion(index)}
@@ -54,7 +52,7 @@ const Accordion = ({ items }: AccordionProps) => {
                     {item.content?.split("/").pop() || "Preuzmi dokumentaciju"}
                   </PDFLink>
                 ) : (
-                  <p dangerouslySetInnerHTML={{ __html: item.content || "" }} />
+                  <div dangerouslySetInnerHTML={{ __html: item.content || "" }} />
                 )}
               </div>
             </div>
