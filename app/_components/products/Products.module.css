@@ -1,14 +1,14 @@
 .products {
-  padding: 8rem 0;
+  padding: 16rem 0 12rem;
   background-color: var(--color-gray-light);
 }
 
 .productsIncreasedTop {
-  padding: 12rem 0 8rem;
+  padding: 18.4rem 0 12rem;
 }
 
 .smallPadding {
-  padding: 4.8rem 0 10.4rem;
+  padding: 8.4rem 0 10.4rem;
 }
 
 .products h2 {
@@ -16,7 +16,7 @@
 }
 
 .smallPadding h2 {
-  margin-bottom: 3.2rem;
+  margin-bottom: 1.6rem;
 }
 
 .products > div {
@@ -61,11 +61,11 @@
 
 @media screen and (min-width: 768px) {
   .products {
-    padding: 12rem 0;
+    padding: 16rem 0;
   }
 
   .productsIncreasedTop {
-    padding: 16rem 0 12rem;
+    padding: 18.4rem 0 12rem;
   }
 
   .grid {

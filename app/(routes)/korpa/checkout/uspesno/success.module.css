@@ -1,5 +1,5 @@
 .success {
-  padding: 12rem 0 6.4rem;
+  padding: 16rem 0 6.4rem;
   background-color: var(--color-gray-light);
   min-height: calc(100dvh - 9.8rem);
   display: flex;
@@ -91,7 +91,7 @@
 
 @media screen and (min-width: 768px) {
   .success {
-    padding: 16rem 0 12rem;
+    padding: 18.4rem 0 12rem;
     min-height: calc(100dvh - 5.2rem);
   }
 

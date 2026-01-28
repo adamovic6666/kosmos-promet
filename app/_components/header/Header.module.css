@@ -1,14 +1,10 @@
 .header {
   position: fixed;
-  top: 0;
+  top: 4.8rem;
   left: 0;
   right: 0;
   z-index: 10000;
   background-color: var(--color-white);
-}
-
-.mainPageHeader {
-  top: 4.8rem;
 }
 
 .header > div {
@@ -34,7 +30,7 @@
   justify-content: center;
 }
 
-.mainPageHeader .nav {
+.header .nav {
   top: 4.8rem;
   height: calc(100vh - 4.8rem);
 }
@@ -258,7 +254,7 @@
     transform: translateX(-50%);
   }
 
-  .mainPageHeader {
+  .header {
     top: 4rem;
   }
 }

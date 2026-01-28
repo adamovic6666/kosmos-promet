@@ -1,6 +1,6 @@
 .breadcrumbs {
   width: 100%;
-  padding-top: 8rem;
+  padding-top: 14rem;
   background-color: var(--color-gray-light);
 }
 
@@ -45,10 +45,6 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .breadcrumbs {
-    padding-top: 10.4rem;
-  }
-
   .link,
   .current,
   .separator {

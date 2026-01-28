@@ -1,6 +1,5 @@
 import Products from "@/app/_components/products/Products";
 import type { Metadata } from "next";
-import { Product } from "@/app/_types";
 import GotQuestions from "@/app/_components/got-questions/GotQuestions";
 
 // Shared data fetching function to eliminate duplicate API calls
@@ -39,14 +38,11 @@ const page = async ({ params }: { params?: Promise<{ slug: string[] }> }) => {
 
   // Reuse the same cached data fetching function
   const { products, parent, breadcrumbs } = await getProductsData(pathname);
-  const sortedByNewField = products?.sort((a: Product, b: Product) => {
-    return a.is_new === b.is_new ? 0 : a.is_new ? -1 : 1;
-  });
 
   return (
     <>
       <Products
-        allProducts={sortedByNewField || []}
+        allProducts={products || []}
         parentDetails={parent ?? {}}
         breadcrumbs={breadcrumbs}
         smallPadding

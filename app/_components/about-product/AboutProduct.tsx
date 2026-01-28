@@ -10,7 +10,7 @@ const AboutProduct = ({
   description: string;
   documentation?: string;
 }) => {
-  const accordionItems = [
+  const allItems = [
     {
       title: "Opis proizvoda",
       content: description,
@@ -25,6 +25,9 @@ const AboutProduct = ({
       content: documentation,
     },
   ];
+
+  // Filter items with content to avoid hydration mismatch
+  const accordionItems = allItems.filter((item) => item.content);
 
   return (
     <div className={styles.AboutProduct}>
