@@ -1,5 +1,5 @@
 .HotSpotsContent {
-  padding: 12rem 0 8rem;
+  padding: 16rem 0 8rem;
   background-color: var(--color-gray-light);
 }
 
@@ -17,8 +17,6 @@
 .categories {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
-  padding-top: 3.2rem;
 }
 
 .category {
@@ -47,11 +45,10 @@
 
 @media screen and (min-width: 768px) {
   .HotSpotsContent {
-    padding: 16rem 0 12rem;
+    padding: 18.4rem 0 12rem;
   }
 
   .categories {
-    gap: 6.4rem;
     padding-top: 4.8rem;
   }
 

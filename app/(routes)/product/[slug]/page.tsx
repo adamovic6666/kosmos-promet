@@ -6,13 +6,19 @@ import { cache } from "react";
 import type { Metadata } from "next";
 import GotQuestions from "@/app/_components/got-questions/GotQuestions";
 import AboutProduct from "@/app/_components/about-product/AboutProduct";
-// import InteractiveDiagram from "@/app/_components/interactive-image/InteractiveImage";
+import ProductHotpost from "@/app/_components/interactive-image/ProductHotpost";
 
 // Cached data fetching function to eliminate duplicate API calls
 const getProductData = cache(async (slug: string): Promise<ProductDetail> => {
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/api/v1/get-product?p=/product/${slug}&cc=${process.env.API_HASH}`
   );
+
+  if (!response.ok) {
+    const text = await response.text();
+    console.error(`API error for slug ${slug}:`, response.status, text.slice(0, 200));
+    throw new Error(`Failed to fetch product: ${response.status}`);
+  }
 
   return await response.json();
 });
@@ -59,12 +65,12 @@ const Page = async ({ params }: PageProps) => {
 
   // Reuse the same cached data fetching function
   const product = await getProductData(slug);
-  const { description, documentation } = product;
-
+  const { description, documentation, product_code, main_photo } = product;
+  console.log(main_photo, "MAIN PHOTO");
   return (
     <>
       <ProductDetails productDetails={product} />
-      {/* <InteractiveDiagram image={"/images/kosmos-hero-image.webp"} /> */}
+      {product_code && <ProductHotpost productCode={product_code} noTitle />}
       <AboutProduct description={description} documentation={documentation} />
       <SimilarProducts similarProducts={product.similar_products || []} />
       <GotQuestions />

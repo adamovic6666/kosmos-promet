@@ -17,18 +17,20 @@ const Card = ({
   productCode?: string;
   mediaUpdatedAt?: number;
 }) => {
-  // Force cache busting with current timestamp for cPanel deployment
-  const timestamp = mediaUpdatedAt || Date.now(); // Use current timestamp if mediaUpdatedAt not available
-  const imageSrc = `${process.env.NEXT_PUBLIC_API_URL}${image}${
-    image.includes("?") ? "&" : "?"
-  }t=${timestamp}`;
+  // Force cache busting with timestamp for cPanel deployment
+  // Only add timestamp if mediaUpdatedAt is provided to avoid hydration mismatch
+  let imageSrc = `${process.env.NEXT_PUBLIC_API_URL}${image}`;
+  if (mediaUpdatedAt) {
+    const separator = image.includes("?") ? "&" : "?";
+    imageSrc = `${imageSrc}${separator}t=${mediaUpdatedAt}`;
+  }
   const isProduct = alias.split("/").includes("proizvod");
   const nameContainsDelovi = name.toLowerCase().includes("[delovi]");
 
   // Extract [delovi] part and clean name
   const deloviMatch = name.match(/\[delovi\]/gi);
   const cleanName = nameContainsDelovi
-    ? name.replace(/\[delovi\]/gi, "").trim()
+    ? name.replaceAll(/\[delovi\]/gi, "").trim()
     : name;
   return (
     <div className={styles.cardWrapper}>

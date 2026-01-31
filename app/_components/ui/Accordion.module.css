@@ -55,7 +55,7 @@
 }
 
 .AccordionContentInner {
-  padding-left: 0.4rem;
+  padding: .8rem 0 1.6rem 0.4rem;
 }
 
 .AccordionContentInner a,

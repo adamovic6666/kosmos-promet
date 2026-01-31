@@ -3,7 +3,28 @@
   margin: 0 auto;
   background-color: var(--color-gray-light);
   border-radius: 0.8rem;
-  padding: 8rem 0;
+  padding: 4rem 0;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 3.2rem;
+  font-size: 2.4rem;
+  color: var(--color-navy-dark);
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.swiperWrapper {
+  position: relative;
+  max-width: 40rem;
+  margin: 0 auto;
 }
 
 .image {
@@ -42,6 +63,10 @@
   animation: pulse 2s infinite;
   box-shadow: 0.1rem 0.1rem 0.25rem 0.5rem var(--color-navy-dark);
   background-color: var(--color-blue-primary);
+  padding: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
 .dot:hover,
@@ -62,10 +87,15 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 998;
+  z-index: 100000;
   pointer-events: all;
   cursor: default;
   background-color: rgba(0, 0, 0, 0.7);
+  border: none;
+  padding: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
 .modal {
@@ -73,7 +103,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 999;
+  z-index: 100000;
   pointer-events: none;
   animation: fadeInMobile 0.3s ease;
 }
@@ -81,48 +111,56 @@
 .modalContent {
   background: white;
   border-radius: 0.8rem;
-  overflow: hidden;
+  overflow: visible;
   box-shadow: 0 0.8rem 2.4rem rgba(0, 0, 0, 0.15);
-  width: 100%;
-  max-width: 24rem;
+  width: 75vw;
+  max-width: 75vw;
   pointer-events: all;
+}
+
+/* Single Product */
+.singleProduct {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 0.8rem;
 }
 
 .modalImage {
   position: relative;
   width: 100%;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 1;
   overflow: hidden;
   background: var(--color-white);
-  height: 20rem;
+  flex-shrink: 0;
 }
 
 .modalImage img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .modalInfo {
-  background: var(--color-navy-dark);
+  background: var(--color-blue-primary);
   color: white;
-  padding: 1.6rem;
+  padding: 1.6rem 1.2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1.2rem;
+  min-height: 11rem;
+  flex-shrink: 0;
 }
 
 .modalInfo h3 {
   font-weight: 600;
-  margin: 0;
-}
-
-.productCode {
-  margin: 0;
-  font-size: 1.2rem;
-  opacity: 0.8;
+  margin-bottom: 0.4rem;
+  text-align: center;
+  font-size: 1.6rem;
+  line-height: 1.4;
 }
 
 .description {
@@ -137,15 +175,114 @@
 
 .viewProductBtn {
   color: white;
-  border: none;
-  font-size: 1.4rem;
-  background-color: unset;
-  text-decoration: underline;
+  border: 0.1rem solid white;
+  font-size: 1.5rem;
+  background-color: transparent;
+  padding: 0.8rem 2rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-weight: 500;
 }
 
 .viewProductBtn:hover {
-  background: var(--color-blue-secondary);
+  background: white;
+  color: var(--color-blue-primary);
 }
+
+/* Multiple Products */
+.multipleProducts {
+  position: relative;
+  max-width: 40rem;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.multipleProducts :global(.swiper) {
+  height: auto !important;
+}
+
+.multipleProducts :global(.swiper-wrapper) {
+  height: auto !important;
+}
+
+.multipleProducts :global(.swiper-slide) {
+  height: auto !important;
+}
+
+.productsNavigationButtons {
+  position: absolute;
+  top: 40%;
+  left: -2rem;
+  right: -2rem;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.productsNavigationButtons .arrowLeft,
+.productsNavigationButtons .arrowRight {
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  border-radius: 50%;
+  width: 3.6rem;
+  height: 3.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  pointer-events: all;
+  transition: all 0.2s ease;
+  color: var(--color-navy-dark);
+  box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.15);
+}
+
+.productsNavigationButtons .arrowLeft:hover,
+.productsNavigationButtons .arrowRight:hover {
+  background: white;
+  box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+}
+
+/* Navigation Buttons */
+.navigationButtons {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 10;
+  padding: 0 1rem;
+}
+
+.arrowLeft,
+.arrowRight {
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  pointer-events: all;
+  transition: all 0.2s ease;
+  color: var(--color-navy-dark);
+}
+
+.arrowLeft:hover,
+.arrowRight:hover {
+  background: white;
+  box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.15);
+}
+
 
 @keyframes fadeInMobile {
   from {
@@ -171,11 +308,42 @@
 
 @media screen and (min-width: 768px) {
   .interactiveDiagram {
-    padding: 12rem 0;
+    padding: 10rem 0 2.4rem;
+  }
+
+
+  .title {
+    margin-bottom: 6.4rem;
   }
 
   .modalContent {
     width: 32rem;
+    max-width: 32rem;
+  }
+
+  .modalInfo {
+    min-height: 12rem;
+    padding: 2rem 1.6rem;
+  }
+
+  .modalInfo h3 {
+    font-size: 1.8rem;
+  }
+
+  .viewProductBtn {
+    font-size: 1.4rem;
+    padding: .8rem 2rem;
+  }
+
+  .productsNavigationButtons {
+    left: -2.5rem;
+    right: -2.5rem;
+  }
+
+  .productsNavigationButtons .arrowLeft,
+  .productsNavigationButtons .arrowRight {
+    width: 4.4rem;
+    height: 4.4rem;
   }
 
   .modalBackdrop {
@@ -205,11 +373,17 @@
     height: 0;
     border-left: 1.6rem solid transparent;
     border-right: 1.6rem solid transparent;
-    border-top: 1.6rem solid var(--color-navy-dark);
+    border-top: 1.6rem solid var(--color-blue-primary);
   }
 
-  .viewProductBtn {
-    display: none;
+  .navigationButtons {
+    padding: 0 2rem;
+  }
+
+  .arrowLeft,
+  .arrowRight {
+    width: 4.8rem;
+    height: 4.8rem;
   }
 }
 

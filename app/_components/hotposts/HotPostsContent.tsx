@@ -1,6 +1,34 @@
-import Image from "next/image";
-import hotpostsData from "@/data/hotposts.json";
+import InteractiveImage from "../interactive-image/InteractiveImage";
+import hotpostsData from "../../../public/data/hotposts.json";
 import styles from "./HotSpotsContent.module.css";
+
+interface HotpostItem {
+  sifra: string;
+  image: string;
+  additionalImage?: string;
+  category: string;
+  aspectRatio: string;
+  forProductCode?: string[];
+  forAdditionalImageProductCode?: string[];
+  dots?: Array<{
+    position: { x: number; y: number };
+    products: Array<{
+      name: string;
+      productCode: string;
+      image: string;
+      link: string;
+    }>;
+  }>;
+  additionalDots?: Array<{
+    position: { x: number; y: number };
+    products: Array<{
+      name: string;
+      productCode: string;
+      image: string;
+      link: string;
+    }>;
+  }>;
+}
 
 export default function HotPostsContent() {
   const categories = [
@@ -32,7 +60,7 @@ export default function HotPostsContent() {
 
         <div className={styles.categories}>
           {categories.map((category) => {
-            const items = hotpostsData.filter(
+            const items = (hotpostsData as HotpostItem[]).filter(
               (item) => item.category === category.key
             );
 
@@ -40,39 +68,38 @@ export default function HotPostsContent() {
 
             return (
               <div key={category.key} className={styles.category}>
-                <h4 className={styles.categoryTitle}>{category.title}</h4>
-                <div className={styles.itemsGrid}>
-                  {items.map((item, index) => (
-                    <div key={`${item.sifra}-${index}`} className={styles.item}>
-                      {item.image && (
-                        <div
-                          className={styles.imageWrapper}
-                          style={{ aspectRatio: item.aspectRatio }}
-                        >
-                          <Image
-                            src={item.image}
-                            alt={item.sifra || "Rezervni deo"}
-                            fill
-                            className="object-cover"
-                          />
-                        </div>
-                      )}
-                      {item.additionalImage && (
-                        <div
-                          className={styles.imageWrapper}
-                          style={{ aspectRatio: item.aspectRatio }}
-                        >
-                          <Image
-                            src={item.additionalImage}
-                            alt={item.sifra || "Rezervni deo dodatna slika"}
-                            fill
-                            className="object-cover"
-                          />
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
+                {items.map((item, index) => {
+                  // Prepare images array with their corresponding dots
+                  const images = [
+                    {
+                      src: item.image,
+                      aspectRatio: item.aspectRatio,
+                      dots: item.dots || []
+                    },
+                  ];
+                  if (item.additionalImage) {
+                    images.push({
+                      src: item.additionalImage,
+                      aspectRatio: item.aspectRatio,
+                      dots: item.additionalDots || []
+                    });
+                  }
+
+                  // Only render InteractiveImage if at least one image has dots
+                  const hasAnyDots = images.some(img => img.dots.length > 0);
+                  if (hasAnyDots) {
+                    return (
+                      <InteractiveImage
+                        key={`${item.sifra}-${index}`}
+                        images={images}
+                        categoryTitle={category.title}
+                      />
+                    );
+                  }
+
+                  // If no dots, don't render anything (or render a simple image display)
+                  return null;
+                })}
               </div>
             );
           })}
