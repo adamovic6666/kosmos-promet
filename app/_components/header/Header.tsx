@@ -82,7 +82,11 @@ const Header = () => {
     <header className={styles.header}>
       <div className="container">
         <div className={styles.mobileIcons}>
-          <Burger onClick={handleOpenMenu} className={styles.burger} />
+          <Burger
+            onClick={handleOpenMenu}
+            className={styles.burger}
+            isOpen={menuIsOpen}
+          />
           {!searchIsOpen && (
             <Search
               onClick={handleOpenSearch}
