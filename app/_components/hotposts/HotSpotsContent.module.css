@@ -1,5 +1,5 @@
 .HotSpotsContent {
-  padding: 16rem 0 8rem;
+  padding: 18.4rem 0 2.4rem;
   background-color: var(--color-gray-light);
 }
 
@@ -45,7 +45,7 @@
 
 @media screen and (min-width: 768px) {
   .HotSpotsContent {
-    padding: 18.4rem 0 12rem;
+    padding: 21.4rem 0 2.4rem;
   }
 
   .categories {

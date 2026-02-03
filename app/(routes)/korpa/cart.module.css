@@ -1,7 +1,7 @@
 /* Mobile-first base styles */
 .cart,
 .emptyCart {
-  padding: 16rem 0 6.4rem;
+  padding: 18.4rem 0 8rem;
   min-height: calc(100dvh - 5.2rem);
   background-color: var(--color-gray-light);
 }
@@ -268,7 +268,7 @@
 @media (min-width: 768px) {
   .cart,
   .emptyCart {
-    padding: 18.4rem 0 8rem;
+    padding: 21.4rem 0 12rem;
   }
 
   .header {
@@ -360,7 +360,7 @@
   }
 
   .header h2 {
-    margin-bottom: 6.4rem;
+    margin-bottom: 8rem;
   }
 }
 

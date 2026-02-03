@@ -1,5 +1,5 @@
 .calculator {
-  padding: 16rem 0 6.4rem;
+  padding: 18.4rem 0 8rem;
   background-color: var(--color-gray-light);
   color: var(--color-white);
 }
@@ -87,7 +87,7 @@
 
 @media screen and (min-width: 768px) {
   .calculator {
-    padding: 18.4rem 0 8rem;
+    padding: 21.4rem 0 10.4rem;
   }
 
   .subTitle {

@@ -66,9 +66,7 @@ const Products = ({
           {!parentDetails?.description &&
             !isProductPage &&
             products.length !== 0 &&
-            isStoreOrMainGroup && (
-              <div className={styles.description}>{description}</div>
-            )}
+            isStoreOrMainGroup && <div>{description}</div>}
           {parentDetails?.description && (
             <div
               dangerouslySetInnerHTML={{ __html: parentDetails?.description }}

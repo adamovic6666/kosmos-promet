@@ -1,5 +1,5 @@
 .checkoutForm {
-  padding: 16rem 0 6.4rem;
+  padding: 18.4rem 0 8rem;
   background-color: var(--color-gray-light);
   min-height: 100vh;
 }
@@ -222,11 +222,11 @@
 @media screen and (min-width: 768px) {
 
   .checkoutForm {
-    padding: 18.4rem 0 12rem;
+    padding: 21.4rem 0 12rem;
   }
 
   .checkoutForm h2 {
-    margin-bottom: 6.4rem;
+    margin-bottom: 8rem;
   }
 
   .inputGroup {
@@ -254,7 +254,7 @@
   .orderSummary {
     grid-column: 2;
     grid-row: 1;
-    top: 12rem;
+    top: 16.4rem;
   }
 
   .formSection {

@@ -5,7 +5,7 @@
   text-align: center;
   position: relative;
   aspect-ratio: 1920 / 785;
-  padding-top: 7rem;
+  padding-top: 10rem;
   transition: all 0.3s ease;
   height: 100dvh;
   width: 100%;
@@ -70,8 +70,9 @@
 
 @media screen and (min-width: 920px) {
   .hero {
-    min-height: 60dvh;
+    min-height: 70dvh;
     height: auto;
+    padding-top: 12rem;
   }
 
   .heroContent {
