@@ -8,6 +8,7 @@ import Select from "../ui/Select";
 import styles from "./Calculator.module.css";
 import Input from "../ui/Input";
 import Image from "next/image";
+import Link from "next/link";
 
 interface SelectOption {
   value: string;
@@ -37,6 +38,7 @@ interface ProductData {
   redvise: number;
   atomizer: number;
   keratomizer: number;
+  href?: string;
 }
 
 interface StandardSprayResults {
@@ -781,28 +783,42 @@ const Calculator = () => {
                 </tr>
               </thead>
               <tbody>
-                {finalProducts.map((product, index) => (
-                  <tr key={index}>
-                    <td>{product.sifra}</td>
-                    <td>{product.naziv}</td>
-                    <td>{product.cena.toFixed(2)}</td>
-                    <td>
-                      <a
-                        href={product.prodavnica}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Image
-                          src={product.link}
-                          alt={product.naziv}
-                          width={80}
-                          height={80}
-                          objectFit="cover"
-                        />
-                      </a>
-                    </td>
-                  </tr>
-                ))}
+                {finalProducts.map((product, index) => {
+                  const splittedHref = product?.href
+                    ? product.href.split("/")
+                    : null;
+                  const href = splittedHref
+                    ? splittedHref[splittedHref.length - 1]
+                    : null;
+                  return (
+                    <tr key={index}>
+                      <td>{product.sifra}</td>
+                      <td>{product.naziv}</td>
+                      <td>{product.cena.toFixed(2)}</td>
+                      <td>
+                        {href ? (
+                          <Link href={"/product/" + href}>
+                            <Image
+                              src={product.link}
+                              alt={product.naziv}
+                              width={80}
+                              height={80}
+                              objectFit="cover"
+                            />
+                          </Link>
+                        ) : (
+                          <Image
+                            src={product.link}
+                            alt={product.naziv}
+                            width={80}
+                            height={80}
+                            objectFit="cover"
+                          />
+                        )}
+                      </td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>
