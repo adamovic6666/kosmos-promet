@@ -21,8 +21,8 @@
     "dots": [
       {
         "position": {
-          "x": 12.34,
-          "y": 32.3437
+          "x": 27.34,
+          "y": 40.3437
         },
         "products": [
           {
@@ -128,6 +128,18 @@
             "productCode": "1062",
             "image": "/sites/default/files/product-images/1062-rau-razvodnik-caura-za-oprugu-180.jpg",
             "link": "product/1062-caura-opruge-a-3-sa-gumicom"
+          },
+          {
+            "name": "Opruga regulatora A",
+            "productCode": "0625",
+            "image": "/sites/default/files/product-images/0625-rau-razvodnik-opruga-velika-120.jpg",
+            "link": "product/0625-rau-razvodnik-opruga-velika"
+          },
+                    {
+            "name": "Ventil regulatora A zadnji",
+            "productCode": "0968",
+            "image": "/sites/default/files/2026-01/967%20zadnji%20ventil%20a.jpg",
+            "link": "product/0968-rau-razvodnik-ventil-regulatora-zadnji"
           }
         ]
       },
@@ -176,6 +188,12 @@
             "productCode": "0972",
             "image": "/sites/default/files/2026-01/972%20prirubnica.jpg",
             "link": "product/0972-spojnica-regulatora-razvodnika-a-3-sa-gumicom"
+          },
+          {
+            "name": "Ventil regulatora A prednji",
+            "productCode": "0967",
+            "image": "/sites/default/files/2026-01/967%20pREDNJI%20VENTIL%20REGULATORA.jpg",
+            "link": "product/0967-rau-razvodnik-ventil-regulatora-prednji"
           }
         ]
       },
@@ -258,10 +276,10 @@
             "link": "product/0795-rau-razvodnik-naglavak-slavine-za-crevo-o13"
           },
           {
-            "name": "Regulator PR 3D CF 3+1",
-            "productCode": "2691",
-            "image": "/sites/default/files/product-images/2606.jpg",
-            "link": "product/k2691-regulator-b-31-sa-finim-podesavanjem"
+            "name": "Usadnik za diznu i crevo Ø8mm",
+            "productCode": "2693",
+            "image": "/sites/default/files/2026-01/0795.jpg",
+            "link": "product/2693-usadnik-za-diznu-sa-nastavkom-za-crevo-fi-8"
           }
         ]
       },
@@ -337,20 +355,6 @@
       "K1901"
     ],
     "dots": [
-      {
-        "position": {
-          "x": 23.34,
-          "y": 55.3437
-        },
-        "products": [
-          {
-            "name": "Navrtka MS otvorena1/2\"",
-            "productCode": "1276",
-            "image": "/sites/default/files/2026-01/1352.jpg",
-            "link": "product/1276-agromehanika-grana-navrtka-12-otvorena"
-          }
-        ]
-      },
       {
         "position": {
           "x": 25.34,
@@ -466,10 +470,10 @@
         },
         "products": [
           {
-            "name": "Regulator PR 3D CF 3+1",
-            "productCode": "2691",
-            "image": "/sites/default/files/product-images/2606.jpg",
-            "link": "product/k2691-regulator-b-31-sa-finim-podesavanjem"
+            "name": "Usadnik za diznu i crevo Ø8mm",
+            "productCode": "2693",
+            "image": "/sites/default/files/2026-02/2693%20fi8.jpg",
+            "link": "product/2693-usadnik-za-diznu-sa-nastavkom-za-crevo-fi-8"
           },
           {
             "name": "Usadnik slavine regulatora Ø10",
@@ -543,7 +547,7 @@
           {
             "name": "Nastavak za manometar regulatora PR 1",
             "productCode": "1877",
-            "image": "/sites/default/files/2026-01/1877.jpg",
+            "image": "/sites/default/files/2026-02/1877%20priklju%C4%8Dak%20za%20manometar.jpg",
             "link": "product/1877-agm-pr1-nastavak-za-manometar-017-01-006"
           }
         ]
@@ -596,27 +600,6 @@
 
       {
         "position": {
-          "x": 84.74,
-          "y": 11.3437
-        },
-        "products": [
-          {
-            "name": "Koleno usisno BM 65/30 Ø25mm",
-            "productCode": "1347",
-            "image": "/sites/default/files/product-images/0238.jpg",
-            "link": "product/1347-koleno-o25-bm-60-sa-gumicom"
-          },
-          {
-            "name": "Navrtka sa kolenom BM 65/30 M42 x 2 + Ø25mm",
-            "productCode": "0864",
-            "image": "/sites/default/files/product-images/2432.jpg",
-            "link": "product/0864-agm-bm60-navrtka-sa-kolenom-za-usis"
-          }
-        ]
-      },
-
-      {
-        "position": {
           "x": 79.74,
           "y": 6.3437
         },
@@ -632,6 +615,12 @@
             "productCode": "1319",
             "image": "/sites/default/files/product-images/0239.jpg",
             "link": "product/1319-agm-bm60-navrtka-usisa-m42x2"
+          },
+                    {
+            "name": "Koleno usisno BM 65/30 Ø25mm",
+            "productCode": "1347",
+            "image": "/sites/default/files/product-images/00332.jpg",
+            "link": "/sites/default/files/product-images/00332.jpg"
           }
         ]
       },
@@ -881,8 +870,8 @@
 
       {
         "position": {
-          "x": 16.04,
-          "y": 74.8437
+          "x": 26.04,
+          "y": 70.8437
         },
         "products": [
           {
@@ -1040,6 +1029,23 @@
           }
         ]
       },
+
+            {
+        "position": {
+          "x": 75.54,
+          "y": 12.8437
+        },
+        "products": [
+          {
+            "name": "Usadnik za preliv regulatora PR 3 Ø25mm",
+            "productCode": "1799",
+            "image": "/sites/default/files/2026-01/1799.jpg",
+            "link": "product/1799-usadnik-za-preliv-razvodnika-serije-b-sa-gumicom"
+          }
+        ]
+      },
+
+
       {
         "position": {
           "x": 91.54,
@@ -1047,10 +1053,16 @@
         },
         "products": [
           {
-            "name": "navrtka regulatora PR 3 M48",
+            "name": "Navrtka regulatora PR 3 M48",
             "productCode": "1560",
             "image": "/sites/default/files/product-images/0027.jpg",
             "link": "product/1560-agromehanika-regulator-b-4-matica-velika"
+          },
+                    {
+            "name": "Zadnji ventil regulatora PR 3",
+            "productCode": "1806",
+            "image": "/sites/default/files/2026-01/1806.jpg",
+            "link": "product/1806-agm-razvodnik-pr-3-produzetak-osovinice-m5-e260263"
           }
         ]
       },
@@ -1086,6 +1098,12 @@
             "productCode": "1555",
             "image": "/sites/default/files/2026-01/1555%20Regulator%20serije%20PR%203.webp",
             "link": "product/1555-agromehanika-regulator-b4-prirubnica"
+          },
+                    {
+            "name": "Ventil regulatora prednji PR 3",
+            "productCode": "1801",
+            "image": "/sites/default/files/product-images/r101.jpg",
+            "link": "product/1801-agm-razvodnik-pr-3-ventil-regulacijski-prednji-e26016"
           }
         ]
       },
@@ -1223,7 +1241,7 @@
           {
             "name": "Reducir filtera RAU za Injektor L-58mm",
             "productCode": "1507",
-            "image": "/sites/default/files/product-images/0118.jpg",
+            "image": "/sites/default/files/2026-02/1507%20reducir.jpg ",
             "link": "product/1507-agromehanika-bure-reducir-za-stari-tip-58mm"
           }
         ]
@@ -1238,8 +1256,8 @@
           {
             "name": "Telo injektora",
             "productCode": "1411",
-            "image": "/sites/default/files/product-images/702-agromehanika-bure-injektor-2160.jpg",
-            "link": "product/0702-agromehanika-bure-injektor"
+            "image": "/sites/default/files/2026-02/1411%20telo%20injektora.jpg",
+            "link": "product/1411-agromehanika-bure-telo-injektora"
           }
         ]
       },
@@ -1253,13 +1271,13 @@
           {
             "name": "Uskočnik injektora manji Ø4mm",
             "productCode": "1414",
-            "image": "/sites/default/files/product-images/1414-agromehanika-bure-snala-injektora-manja-72.jpg",
+            "image": "/sites/default/files/2026-02/1414%20usko%C4%8Dnik%20injektora.jpg",
             "link": "product/1414-agromehanika-bure-snala-injektora-manja"
           },
           {
             "name": "Uskočnik injektora veći Ø4mm",
             "productCode": "1415",
-            "image": "/sites/default/files/product-images/1415-agromehanika-bure-snala-inektora-veca-72.jpg",
+            "image": "/sites/default/files/2026-02/1414%20usko%C4%8Dnik%20injektora.jpg",
             "link": "product/1415-agromehanika-bure-snala-inektora-veca"
           }
         ]
@@ -1274,20 +1292,20 @@
           {
             "name": "Mreža za injektor Ø50 x124mm 32mesh",
             "productCode": "1306",
-            "image": "/sites/default/files/product-images/115.jpg",
+            "image": "/sites/default/files/2026-02/1306%2032mesh.jpg",
             "link": "product/1306-agromehanika-bure-sito-za-injektor"
           },
           {
             "name": "Mreža za injektor Ø50 x124mm 50mesh",
             "productCode": "1911",
-            "image": "/sites/default/files/product-images/1415-agromehanika-bure-snala-inektora-veca-72.jpg",
+            "image": "/sites/default/files/2026-02/1912%2050mesh.jpg",
             "link": "product/1911-sito-za-injektor-50-mesh-a"
           },
           {
-            "name": "Navrtka MS za pločicu Ø18 M22 x 1.5mm",
-            "productCode": "1312",
-            "image": "/sites/default/files/product-images/0156.jpg",
-            "link": "product/1312-navrtka-mesing-za-diznu-o18"
+            "name": "Mreža za injektor Ø50 x124mm 80mesh",
+            "productCode": "1912",
+            "image": "/sites/default/files/2026-02/1912%2080mesh.jpg",
+            "link": "product/1912-sito-za-injektor"
           },
           {
             "name": "Mreža za injektor Ø50 x124mm 100mesh",
@@ -1328,7 +1346,7 @@
           {
             "name": "Šipka injektora",
             "productCode": "1410",
-            "image": "/sites/default/files/product-images/1410-agromehanika-bure-sipka-injektora-komplet-7201.jpg",
+            "image": "/sites/default/files/2026-02/1410%20%C5%A1pkainjektora.jpg",
             "link": "product/1410-agromehanika-bure-sipka-injektora-komplet"
           }
         ]
@@ -1343,7 +1361,7 @@
           {
             "name": "Ručka injektora KPT",
             "productCode": "1413",
-            "image": "/sites/default/files/product-images/1413-agromehanika-bure-tropolozajna-rucka-sklop-fi47-960.jpg",
+            "image": "/sites/default/files/2026-02/1413%20labud%20kpt.jpg",
             "link": "product/1413-tropolozajna-rucka-injektora-kpt-sa-gumicom"
           }
         ]
@@ -1444,7 +1462,7 @@
             "name": "Koleno usisno BM 65/30 Ø25mm",
             "productCode": "1347",
             "image": "sites/default/files/product-images/0238.jpg",
-            "link": "product/1347-koleno-o25-bm-60-sa-gumicom"
+            "link": "/sites/default/files/product-images/00332.jpg"
           },
           {
             "name": "Koleno usisno BM 65/30 Ø30mm",
@@ -1463,7 +1481,7 @@
           {
             "name": "Zaptivka sifona Ø40 x 60 x 4mm",
             "productCode": "0997",
-            "image": "/sites/default/files/product-images/04345.jpg",
+            "image": "/sites/default/files/2026-02/0997%20zaptivka%20sifona.jpg",
             "link": "product/0997-zaptivka-sifona"
           }
         ]
@@ -1478,7 +1496,7 @@
           {
             "name": "Navrtka 5/4\" manja",
             "productCode": "1310",
-            "image": "/sites/default/files/product-images/0339.jpg",
+            "image": "sites/default/files/2026-02/2006%20navrtka%20prolazna.jpg",
             "link": "product/1310-agromehanika-bure-navrtka-54-za-sifon-manja"
           }
         ]
@@ -1499,7 +1517,7 @@
           {
             "name": "Navrtka 5/4\"",
             "productCode": "1309",
-            "image": "/sites/default/files/product-images/0206.jpg",
+            "image": "/sites/default/files/product-images/2005.jpg",
             "link": "product/1309-agromehanika-bure-navrtka-54-za-sifon-veca"
           }
         ]
@@ -1514,7 +1532,7 @@
           {
             "name": "Priključak za sifon 5/4\" Ø25mm ",
             "productCode": "1308",
-            "image": "/sites/default/files/product-images/0248.jpg",
+            "image": "/sites/default/files/2026-02/1308%20u-25.jpg",
             "link": "product/1308-usadnik-za-sifon-o25-sa-gumicom"
           },
           {
@@ -1593,22 +1611,22 @@
         },
         "products": [
           {
-            "name": "Mreža za sifon Ø80 x 108 32mesh",
-            "productCode": "1683",
-            "image": "/sites/default/files/product-images/file2147r7.jpg",
-            "link": "product/1683-mreza-za-sifon-80-x-108-32-mesh"
+            "name": "Mreža sifona ø80 x 170mm 80mesh",
+            "productCode": "1862",
+            "image": "/sites/default/files/2026-02/1862%2080mesh.jpg",
+            "link": "product/1862-mreza-sifona-o80-x170-80mesh-314-20035-030"
           },
           {
-            "name": "Mreža za sifon Ø80 x 108 50mesh",
-            "productCode": "1684",
-            "image": "/sites/default/files/product-images/file2146r.jpg",
-            "link": "product/1684-mreza-za-sifon-80-x-108-50-mesh"
+            "name": "Mreža za sifon Ø80 x 170 50mesh",
+            "productCode": "1681",
+            "image": "/sites/default/files/2026-02/1681%2050mesh.jpg",
+            "link": "product/1681-mreza-za-sifon-80-x-170-50-mesh"
           },
           {
-            "name": "Mreža sifona ø80 x 108mm 80mesh",
-            "productCode": "1863",
-            "image": "/sites/default/files/product-images/10.jpg",
-            "link": "product/1863-mreza-sifona-o80-x108-80mesh-318-20035-030"
+            "name": "Mreža za sifon Ø80 x 170 32mesh",
+            "productCode": "1680",
+            "image": "/sites/default/files/2026-02/1680%2032mesh.jpg",
+            "link": "product/1680-mreza-za-sifon-80-x-170-32-mesh"
           }
         ]
       },
@@ -1738,7 +1756,7 @@
           {
             "name": "Podloška sifona Ø45 x 65 x 4mm",
             "productCode": "2529",
-            "image": "/sites/default/files/product-images/2529.jpg",
+            "image": "/sites/default/files/2026-02/0997%20zaptivka%20sifona.jpg",
             "link": "product/2529-podloska-za-sifon-45-x-65-x-4"
           }
         ]
@@ -1798,7 +1816,7 @@
           {
             "name": "Navrtka usadnika 6/4\"",
             "productCode": "1574",
-            "image": "/sites/default/files/product-images/0210.jpg",
+            "image": "/sites/default/files/product-images/2005.jpg",
             "link": "product/1574-navrtka-usadnika-64-fi-47-8mmq"
           }
         ]
@@ -1812,7 +1830,7 @@
           {
             "name": "Navrtka usadnika 6/4\"",
             "productCode": "1574",
-            "image": "/sites/default/files/product-images/0210.jpg",
+            "image": "//sites/default/files/product-images/2005.jpg",
             "link": "product/1574-navrtka-usadnika-64-fi-47-8mmq"
           }
         ]
@@ -2012,7 +2030,7 @@
           {
             "name": "Uzengija za kućište ventila BM 65/30",
             "productCode": "1478",
-            "image": "sites/default/files/product-images/0134.jpg",
+            "image": "/sites/default/files/2026-02/1478%20uzengija.jpg",
             "link": "product/1478-agromehanika-bm60-uzengija-za-kuciste-ventila"
           }
         ]
@@ -2047,7 +2065,7 @@
           {
             "name": "Zaptivka ventila BM 60",
             "productCode": "0411",
-            "image": "/sites/default/files/product-images/01412.jpg",
+            "image": "/sites/default/files/2026-01/2072-2%20o%20prsten.jpg",
             "link": "product/0411-zaptivni-prsten-ventila-agromehanika-bm60"
           }
         ]
@@ -2062,13 +2080,13 @@
           {
             "name": "Membrana bočna BM65/30 Ø115mm",
             "productCode": "0426",
-            "image": "/sites/default/files/product-images/0175.jpg",
+            "image": "/sites/default/files/2026-02/0426%20membrana%20bm65-30.jpg",
             "link": "product/0426-agm-bm60-membrana-bocna-o115"
           },
           {
             "name": "Membrane Set BM65/30",
             "productCode": "0637",
-            "image": "/sites/default/files/2026-01/0637%20set%20membrana%20agromehanika%20BM%2065-30.jpg",
+            "image": "//sites/default/files/2026-01/0637%20set%20membrana%20agromehanika%20BM%2065-30.jpg",
             "link": "product/0637-set-membrana-agromehanika-bm60"
           }
         ]
@@ -2083,7 +2101,7 @@
           {
             "name": "Klip pumpe BM65/30 Ø75/18mm",
             "productCode": "0631",
-            "image": "/sites/default/files/product-images/0365.jpg",
+            "image": "/sites/default/files/2026-02/631%20KLIP%20FI75.jpg",
             "link": "product/0631-agm-bm60-klip-o75"
           }
         ]
@@ -2097,8 +2115,8 @@
         "products": [
           {
             "name": "Hilzna klipa Ø75mm",
-            "productCode": "0862",
-            "image": "/sites/default/files/product-images/0862-agm-bm60-cilindar-klipa-1560.jpg",
+            "productCode": "K0862",
+            "image": "/sites/default/files/2026-02/0862%20hilzna%20fi75.jpg",
             "link": "product/0862-agm-bm60-cilindar-klipa"
           }
         ]
@@ -2113,7 +2131,7 @@
           {
             "name": "Čep ulja plastični-BM65/30 Ø12mm",
             "productCode": "1568",
-            "image": "/sites/default/files/product-images/0262.jpg",
+            "image": "/sites/default/files/2026-02/1568%20%C4%8Dep%20ulja%20BM65_30.jpg",
             "link": "product/1568-cep-ulja-plasticni-bm-60-sa-gumicama"
           }
         ]
@@ -2143,7 +2161,7 @@
           {
             "name": "Vijak membrane BM 65/30 M12 x 35mm",
             "productCode": "1299",
-            "image": "/sites/default/files/product-images/1299-agm-bm60-vijak-drzaca-membrane-60.jpg",
+            "image": "/sites/default/files/2026-02/1299%20vijak%20membrane.jp",
             "link": "product/1299-agromehanika-bm-6530-membrane-bolt"
           }
         ]
@@ -2173,7 +2191,7 @@
           {
             "name": "Poklopac bočni BM 65/30",
             "productCode": "0628",
-            "image": "/sites/default/files/product-images/0171.jpg",
+            "image": "/sites/default/files/2026-02/poklopac%20kzk.jpg",
             "link": "product/0628-agm-bm60-bocni-poklopac"
           }
         ]
@@ -2188,7 +2206,7 @@
           {
             "name": "Koleno usisno BM 65/30",
             "productCode": "0856",
-            "image": "/sites/default/files/product-images/0233.jpg",
+            "image": "/sites/default/files/2026-02/856%20bm65-30.jpg",
             "link": "product/0856-koleno-usisa-pom-bm-60-sa-gumicama"
           }
         ]
@@ -2203,13 +2221,13 @@
           {
             "name": "Cev usisna T BM 65/30 M42 x 2mm",
             "productCode": "1317",
-            "image": "/sites/default/files/product-images/0334.jpg",
+            "image": "/sites/default/files/2026-02/1317%20cev%20bm65-30.jpg",
             "link": "product/1317-agromehanika-bm60-usisna-cev-za-prskalicu"
           },
           {
             "name": "Usisna grana za prskalicu BM 65/30",
             "productCode": "1345",
-            "image": "/sites/default/files/product-images/0232.jpg",
+            "image": "/sites/default/files/2026-02/1345%20bm65-30-2.jpg",
             "link": "product/1345-agm-bm60-usisna-grana-za-prskalicu"
           }
         ]
@@ -2224,7 +2242,7 @@
           {
             "name": "Navrtka usisa BM 65/30 M42 x 2mm",
             "productCode": "1319",
-            "image": "/sites/default/files/product-images/0239.jpg",
+            "image": "/sites/default/files/2026-02/1319%20navrtka%20m42x2.jpg",
             "link": "product/1319-agm-bm60-navrtka-usisa-m42x2"
           }
         ]
@@ -2239,7 +2257,7 @@
           {
             "name": "Priključak za sifon 5/4\" Ø25mm",
             "productCode": "1308",
-            "image": "/sites/default/files/product-images/0248.jpg",
+            "image": "/sites/default/files/2026-02/1308%20u-25.jpg",
             "link": "product/1308-usadnik-za-sifon-o25-sa-gumicom"
           },
           {
@@ -2260,7 +2278,7 @@
           {
             "name": "Ventil za vazduh sa stopalom Ø8mm",
             "productCode": "1433",
-            "image": "/sites/default/files/product-images/1433-morava-mp-60-ventil-za-vazduh-sa-stopalom-300.jpg",
+            "image": "/sites/default/files/2026-02/1433%20vetil%202.jpg",
             "link": "product/1433-morava-mp-60-ventil-za-vazduh-sa-stopalom"
           }
         ]
@@ -2275,7 +2293,7 @@
           {
             "name": "Poklopac donji BM 65/30",
             "productCode": "0630",
-            "image": "/sites/default/files/product-images/0152.jpg",
+            "image": "/sites/default/files/2026-02/630%20poklopack%20zk.jpg",
             "link": "product/0630-agm-bm60-akumulator-pritiska"
           }
         ]
@@ -2296,7 +2314,7 @@
           {
             "name": "Reducir izlazni BM 65/30 M24 x 2mm",
             "productCode": "1562",
-            "image": "/sites/default/files/product-images/0293.jpg",
+            "image": "/sites/default/files/2026-02/1562%20izlaz%20pumpe.jpg",
             "link": "product/1562-agromehanika-bm60-izlazni-reducir-iz-komore-nt"
           }
         ]
@@ -2340,7 +2358,7 @@
           {
             "name": "Membrana Vazdušna Ø150mm BM65/30",
             "productCode": "0606",
-            "image": "/sites/default/files/product-images/01792.jpg",
+            "image": "/sites/default/files/2026-02/0606%20membrana%20bm65-30.jpg",
             "link": "product/0606-agm-bm60-membrana-akumulatora-pritiska"
           },
           {
@@ -2361,7 +2379,7 @@
           {
             "name": "Poklopac gornji BM 65/30",
             "productCode": "0629",
-            "image": "/sites/default/files/product-images/0157.jpg",
+            "image": "/sites/default/files/2026-02/629%20poklopac%20kzk.jpg",
             "link": "product/0629-agm-bm60-poklopac-akumulatora-pritiska"
           }
         ]
@@ -2377,13 +2395,13 @@
           {
             "name": "Usisna grana za atomizer BM 65/30",
             "productCode": "1346",
-            "image": "/sites/default/files/product-images/0231.jpg",
+            "image": "/sites/default/files/2026-02/1346%20bm65-30.jpg",
             "link": "product/1346-agm-bm60-usisna-grana-za-atomizer-kpt"
           },
           {
             "name": "Cev usisna V M42 x 2mm BM 65/30",
             "productCode": "0857",
-            "image": "/sites/default/files/product-images/0333.jpg",
+            "image": "/sites/default/files/2026-02/857%20bm65-30.jpg",
             "link": "product/0857-agromehanika-bm-6530-v-usisna-cev-m-42-x-2"
           }
         ]
@@ -2397,7 +2415,7 @@
           {
             "name": "Koleno usisno BM 65/30",
             "productCode": "0856",
-            "image": "/sites/default/files/product-images/0233.jpg",
+            "image": "/sites/default/files/2026-02/856%20bm65-30.jpg",
             "link": "product/0856-koleno-usisa-pom-bm-60-sa-gumicama"
           }
         ]
@@ -2440,7 +2458,7 @@
           {
             "name": "Navrtka usisa BM 65/30 M42 x 2mm",
             "productCode": "1319",
-            "image": "/sites/default/files/product-images/0239.jpg",
+            "image": "/sites/default/files/2026-02/1319%20navrtka%20m42x2.jpg",
             "link": "product/1319-agm-bm60-navrtka-usisa-m42x2"
           }
         ]
@@ -2455,8 +2473,8 @@
           {
             "name": "Koleno usisno BM 65/30 Ø25mm",
             "productCode": "1347",
-            "image": "/sites/default/files/product-images/0238.jpg",
-            "link": "product/1347-koleno-o25-bm-60-sa-gumicom"
+            "image": "/sites/default/files/product-images/00332.jpg",
+            "link": "/sites/default/files/product-images/00332.jpg"
           },
           {
             "name": "Navrtka sa kolenom BM 65/30 M42 x 2 + Ø25mm",
@@ -2526,13 +2544,13 @@
           {
             "name": "Set klipnjača BM 65/30 Ø56mm",
             "productCode": "1488",
-            "image": "/sites/default/files/product-images/0320.jpg",
+            "image": "/sites/default/files/2026-02/1488%20set%20agm.jpg",
             "link": "product/1488-agm-bm60-set-klipnjaca-i-prst-o56-st-tip"
           },
           {
             "name": "Klipnjača pumpe BM 65/30 Ø56mm",
             "productCode": "0632",
-            "image": "/sites/default/files/product-images/0318.jpg",
+            "image": "/sites/default/files/2026-02/632%20klipnja%C4%8Da%20bm65-30.jpg",
             "link": "product/0632-agm-bm60-klipnjaca-o56"
           }
         ]
@@ -2589,7 +2607,7 @@
           {
             "name": "Osovinica klipa BM 65/30 Ø18 x 62mm",
             "productCode": "1579",
-            "image": "/sites/default/files/product-images/0115.jpg",
+            "image": "/sites/default/files/2026-02/1579%20osovina%20fi18.jpg",
             "link": "product/1579-agromehanika-bm-6530-osovinica-klipa-o-18-x-57"
           }
         ]
@@ -2604,7 +2622,7 @@
           {
             "name": "Prsten plastični BM 65/30 Ø42mm",
             "productCode": "0766",
-            "image": "/sites/default/files/product-images/0326.jpg",
+            "image": "/sites/default/files/2026-02/0766%20odstojnik%20bm65-30.jpg",
             "link": "product/0766-agm-bm60-prsten-veci-pa"
           }
         ]
@@ -2649,13 +2667,13 @@
           {
             "name": "Klipnjača pumpe BM 65/30 Ø42mm",
             "productCode": "0669",
-            "image": "/sites/default/files/product-images/0322.jpg",
+            "image": "/sites/default/files/2026-02/669%20klipnja%C4%8Da%20bm65-30.jpg",
             "link": "product/0669-agromehanika-bm-6530-klipnjaca-o-42"
           },
           {
             "name": "Set klipnjača BM 65/30 Ø42mm",
             "productCode": "1489",
-            "image": "/sites/default/files/product-images/0321.jpg",
+            "image": "/sites/default/files/2026-02/1489%20set.jpg",
             "link": "product/1489-agm-bm60-set-klipnjaca-i-prst-o42-novi-tip"
           }
         ]
@@ -2670,7 +2688,7 @@
           {
             "name": "Klip pumpe BM65/30 Ø75/18mm",
             "productCode": "0631",
-            "image": "/sites/default/files/product-images/0365.jpg",
+            "image": "/sites/default/files/2026-02/631%20KLIP%20FI75.jpgg",
             "link": "product/0631-agm-bm60-klip-o75"
           }
         ]
@@ -2685,7 +2703,7 @@
           {
             "name": "Prirubnica BM 65/30",
             "productCode": "1569",
-            "image": "/sites/default/files/product-images/file1781r.jpg",
+            "image": "/sites/default/files/2026-02/1569%20prirubnica.jpg",
             "link": "product/1569-agm-bm-68-prirubnica-aluminijum"
           }
         ]
@@ -2700,7 +2718,7 @@
           {
             "name": "Zaptivka prirubnice BM 65/30",
             "productCode": "1567",
-            "image": "/sites/default/files/product-images/328.jpg",
+            "image": "/sites/default/files/2026-02/1567%20dihtung.jpg",
             "link": "product/1567-dihtung-prirubnice-bm-60"
           }
         ]
@@ -2774,7 +2792,7 @@
           {
             "name": "Ventil za vazduh sa stopalom Ø8mm",
             "productCode": "1433",
-            "image": "/sites/default/files/product-images/1433-morava-mp-60-ventil-za-vazduh-sa-stopalom-300.jpg",
+            "image": "/sites/default/files/2026-02/0422.jpg",
             "link": "product/1433-morava-mp-60-ventil-za-vazduh-sa-stopalom"
           }
         ]
@@ -2788,7 +2806,7 @@
           {
             "name": "Sedište membrane pumpe MP 60",
             "productCode": "0769",
-            "image": "/sites/default/files/product-images/0373.jpg",
+            "image": "/sites/default/files/2026-02/0641%20ventil%20mp60.jpg",
             "link": "product/0769-morava-mp-60-sediste-membrane"
           }
         ]
@@ -2818,8 +2836,36 @@
           {
             "name": "Šapa pumpe MP 60",
             "productCode": "1231",
-            "image": "/sites/default/files/product-images/1231-morava-mp-60-sapa-pumpe-320.jpg",
+            "image": "/sites/default/files/2026-02/1231%20stopa%20pumpe%20mp60.jpg",
             "link": "product/1231-morava-mp-60-sapa-pumpe"
+          }
+        ]
+      },
+      {
+        "position": {
+          "x": 35.34,
+          "y": 48.3437
+        },
+        "products": [
+          {
+            "name": "Šelna inox Ø40 - 60mm",
+            "productCode": "2705",
+            "image": "/sites/default/files/2026-01/2700.jpg",
+            "link": "product/2705-selna-inox-o40-60mm"
+          }
+        ]
+      },
+            {
+        "position": {
+          "x": 73.34,
+          "y": 48.3437
+        },
+        "products": [
+          {
+            "name": "Stezač ventila MP 60",
+            "productCode": "1248",
+            "image": "/sites/default/files/2026-02/1248%20uzengija%20mp60.jpg",
+            "link": "product/1248-morava-mp60-stezac-ventila-na-deklama"
           }
         ]
       },
@@ -2833,7 +2879,7 @@
           {
             "name": "Membrane Set Morava MP60",
             "productCode": "0422",
-            "image": "/sites/default/files/product-images/0221.jpg",
+            "image": "/sites/default/files/2026-02/0422.jpg",
             "link": "product/0422-set-membrana-morava-mp60"
           },
           {
@@ -2854,7 +2900,7 @@
           {
             "name": "Usisni vod MP 60",
             "productCode": "0799",
-            "image": "/sites/default/files/product-images/0799-morava-mp-60-usisni-vod-880.jpg",
+            "image": "/sites/default/files/2026-02/0799%20usisna%20cev%20mp60.jpg",
             "link": "product/0799-morava-mp-60-usisni-vod"
           }
         ]
@@ -2884,7 +2930,7 @@
           {
             "name": "Ventil pumpe MP 60",
             "productCode": "0641",
-            "image": "/sites/default/files/product-images/0370.jpg",
+            "image": "/sites/default/files/2026-02/0641%20ventil%20mp60.jpg",
             "link": "product/0641-morava-mp-60-ventil-pumpe"
           }
         ]
@@ -2898,7 +2944,7 @@
           {
             "name": "Poklopac donji MP 60",
             "productCode": "0699",
-            "image": "/sites/default/files/product-images/0699-morava-mp-60-akumulator-pritiska-2000.jpg",
+            "image": "/sites/default/files/2026-02/0641%20ventil%20mp60.jpg",
             "link": "product/0699-morava-mp-60-akumulator-pritiska"
           }
         ]
@@ -2913,7 +2959,7 @@
           {
             "name": "Membrane Set Morava MP60",
             "productCode": "0422",
-            "image": "/sites/default/files/product-images/0221.jpg",
+            "image": "/sites/default/files/2026-02/0422.jpg",
             "link": "product/0422-set-membrana-morava-mp60"
           },
           {
@@ -2949,7 +2995,7 @@
           {
             "name": "Klipnjača pumpe MP 60",
             "productCode": "0908",
-            "image": "/sites/default/files/product-images/0908-morava-mp-60-klipnjaca-pumpe-1600.jpg",
+            "image": "/sites/default/files/2026-02/1299%20vijak%20membrane.jpg",
             "link": "product/0908-morava-mp-60-klipnjaca-pumpe"
           }
         ]
@@ -2964,7 +3010,7 @@
           {
             "name": "Telo pumpe za atomizer MP 60",
             "productCode": "1230",
-            "image": "/sites/default/files/product-images/1230-morava-mp-60-telo-pumpe-za-atomizer-5500.jpg",
+            "image": "/sites/default/files/2026-02/0422.jpg",
             "link": "product/1230-morava-mp-60-telo-pumpe-za-atomizer"
           },
           {
@@ -2985,7 +3031,7 @@
           {
             "name": "Membrane Set Morava MP60",
             "productCode": "0422",
-            "image": "/sites/default/files/product-images/0221.jpg",
+            "image": "/sites/default/files/2026-02/0422.jpg",
             "link": "product/0422-set-membrana-morava-mp60"
           },
           {
@@ -3005,7 +3051,7 @@
           {
             "name": "Cilindar klipa MP 60 Ø70mm",
             "productCode": "1484",
-            "image": "/sites/default/files/product-images/1484.jpg",
+            "image": "/sites/default/files/2026-02/0853%20mp%2060.jpg",
             "link": "product/1484-morava-mp60-cilindar-pumpe-o70"
           }
         ]
@@ -3020,7 +3066,7 @@
           {
             "name": "Membrane Set Morava MP60",
             "productCode": "0422",
-            "image": "/sites/default/files/product-images/0221.jpg",
+            "image": "/sites/default/files/2026-02/0422.jpg",
             "link": "product/0422-set-membrana-morava-mp60"
           },
           {
@@ -3041,7 +3087,7 @@
           {
             "name": "Vijak membrane MP 60 M12 x 35mm",
             "productCode": "1486",
-            "image": "/sites/default/files/product-images/1486.jpg",
+            "image": "/sites/default/files/2026-02/0853%20mp%2060.jpg",
             "link": "product/1486-morava-mp60-zavrtanj-membrane"
           }
         ]
@@ -3071,7 +3117,7 @@
           {
             "name": "Klip pumpe MP 60",
             "productCode": "0697",
-            "image": "/sites/default/files/product-images/0917-morava-mp-25-klip-pumpe-840.jpg",
+            "image": "/sites/default/files/product-images/1484.jpg",
             "link": "product/0697-morava-mp-60-klip-pumpe"
           }
         ]
@@ -3086,7 +3132,7 @@
           {
             "name": "Osovinica klipa MP 60 Ø18 x 57mm",
             "productCode": "1485",
-            "image": "/sites/default/files/product-images/1485.jpg",
+            "image": "/sites/default/files/2026-02/0422.jpg",
             "link": "product/1485-morava-mp60-osovinica-klipa"
           }
         ]
@@ -3101,7 +3147,7 @@
           {
             "name": "Radilica za prskalicu MP 60",
             "productCode": "1088",
-            "image": "/sites/default/files/product-images/1088-morava-mp-60-radilica-za-prskalicu-6200.jpg",
+            "image": "/sites/default/files/2026-02/1088%20radilica%20mp60.jpg",
             "link": "product/1088-morava-mp-60-radilica-za-prskalicu"
           },
           {
@@ -3109,6 +3155,21 @@
             "productCode": "1102",
             "image": "/sites/default/files/product-images/1102-morava-mp-60-radilica-za-atomizer-6500.jpg",
             "link": "product/1102-morava-mp-60-radilica-za-atomizer"
+          }
+        ]
+      },
+
+            {
+        "position": {
+          "x": 13.84,
+          "y": 85.2437
+        },
+        "products": [
+          {
+            "name": "Semering Ø35 x 72 x 12mm MP 60",
+            "productCode": "0825",
+            "image": "/sites/default/files/product-images/0825-morava-mp-60-semering-35x72x12-192.jpg",
+            "link": "product/0825-morava-mp-60-semering-35x72x12"
           }
         ]
       }
@@ -3130,8 +3191,22 @@
           {
             "name": "Radilica pumpe MP 25",
             "productCode": "1006",
-            "image": "/sites/default/files/product-images/1006-morava-mp25-radilica-pumpe-4800.jpg",
+            "image": "/sites/default/files/2026-02/1006%20%20radilica%20morava%20mp25.jpg",
             "link": "product/1006-morava-mp25-radilica-pumpe"
+          }
+        ]
+      },
+            {
+        "position": {
+          "x": 14.54,
+          "y": 29.9437
+        },
+        "products": [
+          {
+            "name": "Semering Ø25 x 52 x 10mm MP 25",
+            "productCode": "1275",
+            "image": "/sites/default/files/2026-01/0826-morava-mp-60-semering-30x62x10-1923.jpg.webp",
+            "link": "product/1275-morava-mp25-semering-25-x-52-x-10"
           }
         ]
       },
@@ -3141,18 +3216,20 @@
           "y": 9.9437
         },
         "products": [
-          {
+                    {
             "name": "Čep ulja MP60",
             "productCode": "0430",
-            "image": "/sites/default/files/product-images/0413.jpg",
+            "image": "/sites/default/files/2026-02/0430%20membrana%20lja%20mp60.jpg",
             "link": "product/0430-morava-mp-60-cep-ulja"
           },
-                    {
+          {
             "name": "Membrane Set MP 25",
             "productCode": "0604",
-            "image": "/sites/default/files/product-images/0220.jpg",
+            "image": "/sites/default/files/2026-02/0604%20set%20mp25.jpg",
             "link": "product/0604-set-membrana-morava-mp25"
           }
+
+
         ]
       },
 
@@ -3192,18 +3269,19 @@
           "y": 25.9437
         },
         "products": [
+                 {
+            "name": "Membrana bočna MP 25 Ø75mm",
+            "productCode": "0437",
+            "image": "/sites/default/files/2026-02/0437%20membrana%20mp25%20fi75.jpg",
+            "link": "product/0437-morava-mp-25-membrana-bocna"
+          },
           {
             "name": "Membrane Set MP 25",
             "productCode": "0604",
-            "image": "/sites/default/files/product-images/0220.jpg",
+            "image": "/sites/default/files/2026-02/0604%20set%20mp25.jpg",
             "link": "product/0604-set-membrana-morava-mp25"
-          },
-                    {
-            "name": "Membrana bočna MP 25 Ø75mm",
-            "productCode": "0437",
-            "image": "/sites/default/files/product-images/0416.jpg",
-            "link": "product/0437-morava-mp-25-membrana-bocna"
           }
+             
         ]
       },
                                     {
@@ -3246,7 +3324,7 @@
           {
             "name": "Osovinica klipa MP 25 Ø12/53mm",
             "productCode": "1553",
-            "image": "/sites/default/files/product-images/01153.jpg",
+            "image": "/sites/default/files/2026-02/1579%20osovina%20fi18.jpg",
             "link": "product/1553-morava-mp-25-osovinica-klipa"
           }
         ]
@@ -3261,7 +3339,7 @@
           {
             "name": "Ventil za vazduh sa stopalom Ø8mm",
             "productCode": "1433",
-            "image": "/sites/default/files/product-images/1433-morava-mp-60-ventil-za-vazduh-sa-stopalom-300.jpg",
+            "image": "/sites/default/files/2026-02/0422.jpg",
             "link": "product/1433-morava-mp-60-ventil-za-vazduh-sa-stopalom"
           }
         ]
@@ -3276,7 +3354,7 @@
           {
             "name": "Poklopac akumulatora pritiska MP 25",
             "productCode": "0920",
-            "image": "sites/default/files/product-images/0920-morava-mp-25-poklopac-akumulatora-pritiska-840.jpg",
+            "image": "/sites/default/files/product-images/0920-morava-mp-25-poklopac-akumulatora-pritiska-840.jpg",
             "link": "product/0920-morava-mp-25-poklopac-akumulatora-pritiska"
           }
         ]
@@ -3291,7 +3369,7 @@
           {
             "name": "Koleno potisnog voda MP25",
             "productCode": "1233",
-            "image": "/sites/default/files/product-images/1233.jpg",
+            "image": "/sites/default/files/2026-02/1233%20ku%C4%87i%C5%A1te%20ventila%20potisno%20mp25.jpg",
             "link": "product/1233-koleno-potisnog-voda-mp25a"
           }
         ]
@@ -3306,7 +3384,7 @@
           {
             "name": "Ventil pumpe MP 25",
             "productCode": "0879",
-            "image": "/sites/default/files/product-images/0213.jpg",
+            "image": "/sites/default/files/2026-02/879%20ventil%20mp25.jpg",
             "link": "product/0879-morava-mp25-ventil-pumpe"
           }
         ]
@@ -3320,7 +3398,7 @@
           {
             "name": "Zaptivka ventila MP 25",
             "productCode": "0880",
-            "image": "/sites/default/files/product-images/04349.jpg",
+            "image": "/sites/default/files/2026-02/0997%20zaptivka%20sifona.jpg",
             "link": "product/0880-morava-mp25-zaptivka-ventila"
           }
         ]
@@ -3335,7 +3413,7 @@
           {
             "name": "Stega ventila MP 25",
             "productCode": "1531",
-            "image": "/sites/default/files/product-images/12488.jpg",
+            "image": "/sites/default/files/2026-02/1248%20uzengija%20mp60.jpg",
             "link": "product/1531-morava-mp25-stega-201-04-01"
           }
         ]
@@ -3350,7 +3428,7 @@
           {
             "name": "Koleno usisnog voda MP 25",
             "productCode": "0915",
-            "image": "/sites/default/files/product-images/915.jpg",
+            "image": "/sites/default/files/2026-02/0915%20ku%C4%87i%C5%A1te%20ventila%20usisno%20morava%20mp25.jpg",
             "link": "product/0915-koleno-usisnog-voda-mp-25-sa-gumicom"
           }
         ]
@@ -3410,7 +3488,7 @@
           {
             "name": "Cev usisna MP 25",
             "productCode": "0914",
-            "image": "/sites/default/files/product-images/0914-morava-mp-25-cev-usisa-600.jpg",
+            "image": "/sites/default/files/2026-02/0914.jpg ",
             "link": "product/0914-morava-mp-25-cev-usisa"
           }
         ]
@@ -3424,7 +3502,7 @@
           {
             "name": "Šapa pumpe MP 25",
             "productCode": "1232",
-            "image": "/sites/default/files/product-images/1232-morava-mp-25-sapa-pumpe-280.jpg",
+            "image": "//sites/default/files/2026-02/1231%20stopa%20pumpe%20mp60.jpg",
             "link": "product/1232-morava-mp-25-sapa-pumpe"
           }
         ]
@@ -3453,7 +3531,7 @@
           {
             "name": "Sedište membrane MP 25",
             "productCode": "1004",
-            "image": "/sites/default/files/product-images/0372.jpg",
+            "image": "/sites/default/files/2026-02/1004%20%C4%8Da%C5%A1a%20mp25.jpg",
             "link": "product/1004-morava-mp-25-sediste-membrane-pac"
           }
         ]
@@ -3465,18 +3543,19 @@
           "y": 56.3437
         },
         "products": [
+                              {
+            "name": "Membrana vazdušna MP 25",
+            "productCode": "0438",
+            "image": "/sites/default/files/2026-02/0438%20membrana.jpg",
+            "link": "product/0438-morava-mp-25-membrana-akumulatora-pritiska"
+          },
           {
             "name": "Membrane Set MP 25",
             "productCode": "0604",
-            "image": "/sites/default/files/product-images/0220.jpg",
+            "image": "/sites/default/files/2026-02/0604%20set%20mp25.jpg",
             "link": "product/0604-set-membrana-morava-mp25"
-          },
-                    {
-            "name": "Membrana vazdušna MP 25",
-            "productCode": "0438",
-            "image": "/sites/default/files/product-images/0345.jpg",
-            "link": "product/0438-morava-mp-25-membrana-akumulatora-pritiska"
           }
+
         ]
       }
     ]
