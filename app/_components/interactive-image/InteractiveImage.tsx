@@ -44,9 +44,11 @@ const InteractiveImage = ({
   noTitle,
 }: InteractiveImageProps) => {
   const [activeDot, setActiveDot] = useState<Dot | null>(null);
-  const [activeDotImageIndex, setActiveDotImageIndex] = useState<number>(0);
   const [isMobile, setIsMobile] = useState(false);
-  const [modalPosition, setModalPosition] = useState<{ left: string; top: string } | null>(null);
+  const [modalPosition, setModalPosition] = useState<{
+    left: string;
+    top: string;
+  } | null>(null);
   const imageRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
@@ -65,7 +67,6 @@ const InteractiveImage = ({
 
   const handleDotClick = (dot: Dot, imageIndex: number) => {
     setActiveDot(dot);
-    setActiveDotImageIndex(imageIndex);
 
     // Calculate modal position relative to the specific image element
     if (!isMobile && imageRefs.current[imageIndex]) {
@@ -143,7 +144,8 @@ const InteractiveImage = ({
         <div className={styles.imageWrapper}>
           {images.map((imageData, idx) => {
             const baseAlt = categoryTitle || "Interactive diagram";
-            const imageAlt = images.length > 1 ? `${baseAlt} - Image ${idx + 1}` : baseAlt;
+            const imageAlt =
+              images.length > 1 ? `${baseAlt} - Image ${idx + 1}` : baseAlt;
 
             return (
               <div
