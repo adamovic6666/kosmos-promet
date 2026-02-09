@@ -43,7 +43,7 @@ export default function HotPostsContent() {
     },
     { key: "injektori", title: "Rezervni delovi za injektore" },
     { key: "sifoni", title: "Rezervni delovi za sifone" },
-    { key: "pumpa-BM-60-30", title: "Rezervni delovi za pumpu BM 60/30" },
+    { key: "pumpa-BM-60-30", title: "Rezervni delovi za pumpu BM 65/30" },
     { key: "pumpa-MP-60", title: "Rezervni delovi za pumpu MP 60" },
     { key: "pumpa-MP-25", title: "Rezervni delovi za pumpu MP 25" },
   ];
@@ -74,19 +74,19 @@ export default function HotPostsContent() {
                     {
                       src: item.image,
                       aspectRatio: item.aspectRatio,
-                      dots: item.dots || []
+                      dots: item.dots || [],
                     },
                   ];
                   if (item.additionalImage) {
                     images.push({
                       src: item.additionalImage,
                       aspectRatio: item.aspectRatio,
-                      dots: item.additionalDots || []
+                      dots: item.additionalDots || [],
                     });
                   }
 
                   // Only render InteractiveImage if at least one image has dots
-                  const hasAnyDots = images.some(img => img.dots.length > 0);
+                  const hasAnyDots = images.some((img) => img.dots.length > 0);
                   if (hasAnyDots) {
                     return (
                       <InteractiveImage

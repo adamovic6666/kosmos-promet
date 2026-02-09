@@ -135,7 +135,7 @@
             "image": "/sites/default/files/product-images/0625-rau-razvodnik-opruga-velika-120.jpg",
             "link": "product/0625-rau-razvodnik-opruga-velika"
           },
-                    {
+          {
             "name": "Ventil regulatora A zadnji",
             "productCode": "0968",
             "image": "/sites/default/files/2026-01/967%20zadnji%20ventil%20a.jpg",
@@ -616,7 +616,7 @@
             "image": "/sites/default/files/product-images/0239.jpg",
             "link": "product/1319-agm-bm60-navrtka-usisa-m42x2"
           },
-                    {
+          {
             "name": "Koleno usisno BM 65/30 Ø25mm",
             "productCode": "1347",
             "image": "/sites/default/files/product-images/00332.jpg",
@@ -1030,7 +1030,7 @@
         ]
       },
 
-            {
+      {
         "position": {
           "x": 75.54,
           "y": 12.8437
@@ -1045,7 +1045,6 @@
         ]
       },
 
-
       {
         "position": {
           "x": 91.54,
@@ -1058,7 +1057,7 @@
             "image": "/sites/default/files/product-images/0027.jpg",
             "link": "product/1560-agromehanika-regulator-b-4-matica-velika"
           },
-                    {
+          {
             "name": "Zadnji ventil regulatora PR 3",
             "productCode": "1806",
             "image": "/sites/default/files/2026-01/1806.jpg",
@@ -1099,7 +1098,7 @@
             "image": "/sites/default/files/2026-01/1555%20Regulator%20serije%20PR%203.webp",
             "link": "product/1555-agromehanika-regulator-b4-prirubnica"
           },
-                    {
+          {
             "name": "Ventil regulatora prednji PR 3",
             "productCode": "1801",
             "image": "/sites/default/files/product-images/r101.jpg",
@@ -1496,7 +1495,7 @@
           {
             "name": "Navrtka 5/4\" manja",
             "productCode": "1310",
-            "image": "sites/default/files/2026-02/2006%20navrtka%20prolazna.jpg",
+            "image": "/sites/default/files/2026-02/2006%20navrtka%20prolazna.jpg",
             "link": "product/1310-agromehanika-bure-navrtka-54-za-sifon-manja"
           }
         ]
@@ -1611,22 +1610,22 @@
         },
         "products": [
           {
-            "name": "Mreža sifona ø80 x 170mm 80mesh",
-            "productCode": "1862",
-            "image": "/sites/default/files/2026-02/1862%2080mesh.jpg",
-            "link": "product/1862-mreza-sifona-o80-x170-80mesh-314-20035-030"
+            "name": "Mreža sifona ø80 x 108mm 80mesh",
+            "productCode": "1863",
+            "image": "/sites/default/files/2026-02/1863%2080mesh.jpg",
+            "link": "product/1863-mreza-sifona-o80-x108-80mesh-318-20035-030"
           },
           {
-            "name": "Mreža za sifon Ø80 x 170 50mesh",
-            "productCode": "1681",
-            "image": "/sites/default/files/2026-02/1681%2050mesh.jpg",
-            "link": "product/1681-mreza-za-sifon-80-x-170-50-mesh"
+            "name": "Mreža za sifon Ø80 x 108 32mesh",
+            "productCode": "1683",
+            "image": "/sites/default/files/product-images/file2147r7.jpg",
+            "link": "product/1683-mreza-za-sifon-80-x-108-32-mesh"
           },
           {
-            "name": "Mreža za sifon Ø80 x 170 32mesh",
-            "productCode": "1680",
-            "image": "/sites/default/files/2026-02/1680%2032mesh.jpg",
-            "link": "product/1680-mreza-za-sifon-80-x-170-32-mesh"
+            "name": "Mreža za sifon Ø80 x 108 50mesh",
+            "productCode": "1684",
+            "image": "/sites/default/files/product-images/file2146r.jpg",
+            "link": "product/1684-mreza-za-sifon-80-x-108-50-mesh"
           }
         ]
       },
@@ -1935,19 +1934,19 @@
           {
             "name": "Mreža sifona ø80 x 170mm 80mesh",
             "productCode": "1862",
-            "image": "/sites/default/files/product-images/011.jpg",
+            "image": "/sites/default/files/2026-02/1862%2080mesh.jpg",
             "link": "product/1862-mreza-sifona-o80-x170-80mesh-314-20035-030"
           },
           {
             "name": "Mreža za sifon Ø80 x 170 50mesh",
             "productCode": "1681",
-            "image": "/sites/default/files/product-images/file2142r.jpg",
+            "image": "/sites/default/files/2026-02/1681%2050mesh.jpg",
             "link": "product/1681-mreza-za-sifon-80-x-170-50-mesh"
           },
           {
             "name": "Mreža za sifon Ø80 x 170 32mesh",
             "productCode": "1680",
-            "image": "/sites/default/files/product-images/file2140r.jpg",
+            "image": "/sites/default/files/2026-02/1680%2032mesh.jpg",
             "link": "product/1680-mreza-za-sifon-80-x-170-32-mesh"
           }
         ]
@@ -2434,20 +2433,6 @@
           }
         ]
       },
-      {
-        "position": {
-          "x": 35.5,
-          "y": 51.3437
-        },
-        "products": [
-          {
-            "name": "Ventil pumpe BM 65/30",
-            "productCode": "0778",
-            "image": "/sites/default/files/product-images/0778-agm-bm60-ventil-pumpe-240.jpg",
-            "link": "product/0778-agm-bm60-ventil-pumpe"
-          }
-        ]
-      },
 
       {
         "position": {
@@ -2688,7 +2673,7 @@
           {
             "name": "Klip pumpe BM65/30 Ø75/18mm",
             "productCode": "0631",
-            "image": "/sites/default/files/2026-02/631%20KLIP%20FI75.jpgg",
+            "image": "/sites/default/files/2026-02/631%20KLIP%20FI75.jpg",
             "link": "product/0631-agm-bm60-klip-o75"
           }
         ]
@@ -2792,7 +2777,7 @@
           {
             "name": "Ventil za vazduh sa stopalom Ø8mm",
             "productCode": "1433",
-            "image": "/sites/default/files/2026-02/0422.jpg",
+            "image": "/sites/default/files/2026-02/1433%20vetil%202.jpg",
             "link": "product/1433-morava-mp-60-ventil-za-vazduh-sa-stopalom"
           }
         ]
@@ -2806,7 +2791,7 @@
           {
             "name": "Sedište membrane pumpe MP 60",
             "productCode": "0769",
-            "image": "/sites/default/files/2026-02/0641%20ventil%20mp60.jpg",
+            "image": "/sites/default/files/2026-02/1433%20vetil%202.jpg",
             "link": "product/0769-morava-mp-60-sediste-membrane"
           }
         ]
@@ -2855,7 +2840,7 @@
           }
         ]
       },
-            {
+      {
         "position": {
           "x": 73.34,
           "y": 48.3437
@@ -2944,7 +2929,7 @@
           {
             "name": "Poklopac donji MP 60",
             "productCode": "0699",
-            "image": "/sites/default/files/2026-02/0641%20ventil%20mp60.jpg",
+            "image": "/sites/default/files/2026-02/0699%20akumulator.jpg",
             "link": "product/0699-morava-mp-60-akumulator-pritiska"
           }
         ]
@@ -2995,7 +2980,7 @@
           {
             "name": "Klipnjača pumpe MP 60",
             "productCode": "0908",
-            "image": "/sites/default/files/2026-02/1299%20vijak%20membrane.jpg",
+            "image": "/sites/default/files/2026-02/0908%20klipnja%C4%8Da%20mp60.jpg",
             "link": "product/0908-morava-mp-60-klipnjaca-pumpe"
           }
         ]
@@ -3010,7 +2995,7 @@
           {
             "name": "Telo pumpe za atomizer MP 60",
             "productCode": "1230",
-            "image": "/sites/default/files/2026-02/0422.jpg",
+            "image": "/sites/default/files/2026-02/0938%20telo%20atomizerske%20pumpe.jpg",
             "link": "product/1230-morava-mp-60-telo-pumpe-za-atomizer"
           },
           {
@@ -3051,7 +3036,7 @@
           {
             "name": "Cilindar klipa MP 60 Ø70mm",
             "productCode": "1484",
-            "image": "/sites/default/files/2026-02/0853%20mp%2060.jpg",
+            "image": "/sites/default/files/product-images/1484.jpg",
             "link": "product/1484-morava-mp60-cilindar-pumpe-o70"
           }
         ]
@@ -3087,7 +3072,7 @@
           {
             "name": "Vijak membrane MP 60 M12 x 35mm",
             "productCode": "1486",
-            "image": "/sites/default/files/2026-02/0853%20mp%2060.jpg",
+            "image": "/sites/default/files/2026-02/1299%20vijak%20membrane.jpg",
             "link": "product/1486-morava-mp60-zavrtanj-membrane"
           }
         ]
@@ -3117,7 +3102,7 @@
           {
             "name": "Klip pumpe MP 60",
             "productCode": "0697",
-            "image": "/sites/default/files/product-images/1484.jpg",
+            "image": "/sites/default/files/product-images/0917-morava-mp-25-klip-pumpe-840.jpg",
             "link": "product/0697-morava-mp-60-klip-pumpe"
           }
         ]
@@ -3132,7 +3117,7 @@
           {
             "name": "Osovinica klipa MP 60 Ø18 x 57mm",
             "productCode": "1485",
-            "image": "/sites/default/files/2026-02/0422.jpg",
+            "image": "/sites/default/files/2026-02/1579%20osovina%20fi18.jpg",
             "link": "product/1485-morava-mp60-osovinica-klipa"
           }
         ]
@@ -3159,7 +3144,7 @@
         ]
       },
 
-            {
+      {
         "position": {
           "x": 13.84,
           "y": 85.2437
@@ -3196,7 +3181,7 @@
           }
         ]
       },
-            {
+      {
         "position": {
           "x": 14.54,
           "y": 29.9437
@@ -3210,13 +3195,13 @@
           }
         ]
       },
-            {
+      {
         "position": {
           "x": 39.54,
           "y": 9.9437
         },
         "products": [
-                    {
+          {
             "name": "Čep ulja MP60",
             "productCode": "0430",
             "image": "/sites/default/files/2026-02/0430%20membrana%20lja%20mp60.jpg",
@@ -3228,12 +3213,10 @@
             "image": "/sites/default/files/2026-02/0604%20set%20mp25.jpg",
             "link": "product/0604-set-membrana-morava-mp25"
           }
-
-
         ]
       },
 
-                  {
+      {
         "position": {
           "x": 69.54,
           "y": 22.9437
@@ -3248,7 +3231,7 @@
         ]
       },
 
-                        {
+      {
         "position": {
           "x": 74.54,
           "y": 24.9437
@@ -3263,13 +3246,13 @@
         ]
       },
 
-                              {
+      {
         "position": {
           "x": 84.54,
           "y": 25.9437
         },
         "products": [
-                 {
+          {
             "name": "Membrana bočna MP 25 Ø75mm",
             "productCode": "0437",
             "image": "/sites/default/files/2026-02/0437%20membrana%20mp25%20fi75.jpg",
@@ -3281,10 +3264,9 @@
             "image": "/sites/default/files/2026-02/0604%20set%20mp25.jpg",
             "link": "product/0604-set-membrana-morava-mp25"
           }
-             
         ]
       },
-                                    {
+      {
         "position": {
           "x": 93.54,
           "y": 27.1437
@@ -3299,7 +3281,7 @@
         ]
       },
 
-                                          {
+      {
         "position": {
           "x": 53.54,
           "y": 25.1437
@@ -3314,8 +3296,7 @@
         ]
       },
 
-
-                                          {
+      {
         "position": {
           "x": 48.54,
           "y": 26.6437
@@ -3330,7 +3311,7 @@
         ]
       },
 
-                                                {
+      {
         "position": {
           "x": 47.54,
           "y": 44.6437
@@ -3339,13 +3320,13 @@
           {
             "name": "Ventil za vazduh sa stopalom Ø8mm",
             "productCode": "1433",
-            "image": "/sites/default/files/2026-02/0422.jpg",
+            "image": "/sites/default/files/2026-02/1433%20vetil%202.jpg",
             "link": "product/1433-morava-mp-60-ventil-za-vazduh-sa-stopalom"
           }
         ]
       },
 
-                                                      {
+      {
         "position": {
           "x": 47.54,
           "y": 50.6437
@@ -3360,7 +3341,7 @@
         ]
       },
 
-                                                            {
+      {
         "position": {
           "x": 70.54,
           "y": 58.6437
@@ -3375,7 +3356,7 @@
         ]
       },
 
-                                                                  {
+      {
         "position": {
           "x": 70.54,
           "y": 64.6437
@@ -3389,7 +3370,7 @@
           }
         ]
       },
-                                                                        {
+      {
         "position": {
           "x": 70.54,
           "y": 71.6437
@@ -3404,7 +3385,7 @@
         ]
       },
 
-                                                                              {
+      {
         "position": {
           "x": 83.54,
           "y": 81.6437
@@ -3419,7 +3400,7 @@
         ]
       },
 
-                                                                                    {
+      {
         "position": {
           "x": 70.54,
           "y": 91.6437
@@ -3434,7 +3415,7 @@
         ]
       },
 
-                                                                                          {
+      {
         "position": {
           "x": 55.54,
           "y": 78.6437
@@ -3449,8 +3430,7 @@
         ]
       },
 
-
-                                                                                          {
+      {
         "position": {
           "x": 57.54,
           "y": 76.6437
@@ -3465,7 +3445,7 @@
         ]
       },
 
-                                                                                                {
+      {
         "position": {
           "x": 50.54,
           "y": 61.6437
@@ -3479,7 +3459,7 @@
           }
         ]
       },
-                                                                                                      {
+      {
         "position": {
           "x": 42.54,
           "y": 86.3437
@@ -3493,7 +3473,7 @@
           }
         ]
       },
-                                                                                                            {
+      {
         "position": {
           "x": 18.54,
           "y": 79.3437
@@ -3508,7 +3488,7 @@
         ]
       },
 
-                                                                                                                  {
+      {
         "position": {
           "x": 20.54,
           "y": 69.3437
@@ -3522,7 +3502,7 @@
           }
         ]
       },
-                                                                                                                        {
+      {
         "position": {
           "x": 39.54,
           "y": 60.3437
@@ -3537,13 +3517,13 @@
         ]
       },
 
-                                                                                                                              {
+      {
         "position": {
           "x": 39.54,
           "y": 56.3437
         },
         "products": [
-                              {
+          {
             "name": "Membrana vazdušna MP 25",
             "productCode": "0438",
             "image": "/sites/default/files/2026-02/0438%20membrana.jpg",
@@ -3555,7 +3535,6 @@
             "image": "/sites/default/files/2026-02/0604%20set%20mp25.jpg",
             "link": "product/0604-set-membrana-morava-mp25"
           }
-
         ]
       }
     ]
