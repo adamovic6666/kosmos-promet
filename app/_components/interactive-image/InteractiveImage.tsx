@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -44,7 +44,10 @@ const InteractiveImage = ({
   noTitle,
 }: InteractiveImageProps) => {
   const [activeDot, setActiveDot] = useState<Dot | null>(null);
+  const [activeDotImageIndex, setActiveDotImageIndex] = useState<number>(0);
   const [isMobile, setIsMobile] = useState(false);
+  const [modalPosition, setModalPosition] = useState<{ left: string; top: string } | null>(null);
+  const imageRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
     // Set isMobile only on client side to avoid hydration mismatch
@@ -60,21 +63,53 @@ const InteractiveImage = ({
     };
   }, []);
 
-  const handleDotClick = (dot: Dot) => {
+  const handleDotClick = (dot: Dot, imageIndex: number) => {
     setActiveDot(dot);
+    setActiveDotImageIndex(imageIndex);
+
+    // Calculate modal position relative to the specific image element
+    if (!isMobile && imageRefs.current[imageIndex]) {
+      const imageElement = imageRefs.current[imageIndex];
+      if (imageElement) {
+        const imageRect = imageElement.getBoundingClientRect();
+        const imageWrapper = imageElement.parentElement;
+
+        if (imageWrapper) {
+          const wrapperRect = imageWrapper.getBoundingClientRect();
+
+          // Calculate absolute position within the wrapper
+          const dotXInImage = (dot.position.x / 100) * imageRect.width;
+          const dotYInImage = (dot.position.y / 100) * imageRect.height;
+
+          const absoluteLeft = imageRect.left - wrapperRect.left + dotXInImage;
+          const absoluteTop = imageRect.top - wrapperRect.top + dotYInImage;
+
+          // Convert back to percentages relative to wrapper
+          const leftPercent = (absoluteLeft / wrapperRect.width) * 100;
+          const topPercent = (absoluteTop / wrapperRect.height) * 100;
+
+          setModalPosition({
+            left: `${leftPercent}%`,
+            top: `${topPercent}%`,
+          });
+        }
+      }
+    }
   };
 
   const handleCloseModal = () => {
     setActiveDot(null);
+    setModalPosition(null);
   };
 
   const handleDotKeyDown = (
     e: React.KeyboardEvent<HTMLButtonElement>,
-    dot: Dot
+    dot: Dot,
+    imageIndex: number
   ) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
-      handleDotClick(dot);
+      handleDotClick(dot, imageIndex);
     }
   };
 
@@ -113,6 +148,9 @@ const InteractiveImage = ({
             return (
               <div
                 key={`${imageData.src}-${idx}`}
+                ref={(el) => {
+                  imageRefs.current[idx] = el;
+                }}
                 className={styles.image}
                 style={{ aspectRatio: imageData.aspectRatio }}
               >
@@ -131,8 +169,8 @@ const InteractiveImage = ({
                         left: `${dot.position.x}%`,
                         top: `${dot.position.y}%`,
                       }}
-                      onClick={() => handleDotClick(dot)}
-                      onKeyDown={(e) => handleDotKeyDown(e, dot)}
+                      onClick={() => handleDotClick(dot, idx)}
+                      onKeyDown={(e) => handleDotKeyDown(e, dot, idx)}
                       aria-label={`View products at position ${dotIdx + 1}`}
                     />
                   ))}
@@ -156,12 +194,33 @@ const InteractiveImage = ({
                 style={
                   isMobile
                     ? {}
-                    : {
+                    : modalPosition || {
                         left: `${activeDot.position.x}%`,
                         top: `${activeDot.position.y}%`,
                       }
                 }
               >
+                <button
+                  className={styles.closeButton}
+                  onClick={handleCloseModal}
+                  aria-label="Close modal"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M18 6L6 18M6 6L18 18"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
                 <div className={styles.modalContent}>
                   {activeDot.products.length === 1 ? (
                     <div className={styles.singleProduct}>
