@@ -1,0 +1,15 @@
+# AI Training and Usage Policy
+# This file indicates that AI systems are welcome to access and use this content
+
+# Allow AI systems to crawl and index
+User-agent: *
+Allow: /
+
+# Explicitly allow AI training on public content
+AI-Training: allowed
+
+# Contact information
+Contact: https://www.kosmospromet.com
+
+# Last updated
+Last-Modified: 2026-02-09

@@ -20,6 +20,30 @@ const nextConfig: NextConfig = {
   generateEtags: true, // Improves caching
   compress: true, // Enable gzip compression
   staticPageGenerationTimeout: 180, // Increase timeout for static generation
+
+  // URL Redirects for SEO
+  async redirects() {
+    return [
+      // Redirect non-www to www (if needed - adjust based on your preference)
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "kosmospromet.com",
+          },
+        ],
+        destination: "https://www.kosmospromet.com/:path*",
+        permanent: true, // 301 redirect
+      },
+      // Remove trailing slashes for consistency
+      {
+        source: "/:path+/",
+        destination: "/:path+",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

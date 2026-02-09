@@ -12,7 +12,35 @@ export const metadata: Metadata = {
   applicationName: "Kosmos Promet",
   title: "Delovi za prskalice i atomizere",
   description:
-    "Širok asortiman delova za prskalice i atomizere po povoljnim cenama. Dostupni odmah uz brzu isporuku i stručnu tehničku podršku Kosmos Promet.",
+    "Prodaja regulatora, pumpi, dizni i ostale opreme za prskalice i atomizere. Najveći lager rezervnih delova. Provereni kvalitet i brza isporuka. Poruči online!",
+  keywords: [
+    "prskalice",
+    "atomizeri",
+    "delovi za prskalice",
+    "regulatori",
+    "pumpe za prskalice",
+    "dizne",
+    "oprema za poljoprivredu",
+    "rezervni delovi",
+    "Kosmos Promet",
+  ],
+  authors: [{ name: "Kosmos Promet" }],
+  creator: "Kosmos Promet",
+  publisher: "Kosmos Promet",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
+  },
   icons: {
     icon: [
       { url: "/images/favicon-16x16.png", sizes: "16x16", type: "image/png" },
@@ -36,6 +64,16 @@ export const metadata: Metadata = {
     locale: "sr_RS",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Delovi za prskalice i atomizere | Kosmos Promet",
+    description:
+      "Širok asortiman delova za prskalice i atomizere po povoljnim cenama. Dostupni odmah uz brzu isporuku.",
+    images: [ogImage.src],
+  },
+  alternates: {
+    canonical: "https://www.kosmospromet.com/",
+  },
 };
 
 export default function RootLayout({
@@ -43,8 +81,49 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Organization JSON-LD Schema for AI Crawlers
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Kosmos Promet",
+    url: "https://www.kosmospromet.com",
+    logo: "https://www.kosmospromet.com/images/og.webp",
+    description:
+      "Prodaja regulatora, pumpi, dizni i ostale opreme za prskalice i atomizere. Najveći lager rezervnih delova.",
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "Customer Service",
+      availableLanguage: ["Serbian"],
+    },
+    sameAs: [],
+  };
+
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Kosmos Promet",
+    url: "https://www.kosmospromet.com",
+    description:
+      "Prodaja regulatora, pumpi, dizni i ostale opreme za prskalice i atomizere. Najveći lager rezervnih delova.",
+    publisher: {
+      "@type": "Organization",
+      name: "Kosmos Promet",
+    },
+  };
+
   return (
-    <html lang="en">
+    <html lang="sr">
+      <head>
+        {/* JSON-LD Structured Data for AI Crawlers */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+      </head>
       <body>
         <GoogleAnalytics />
         <CartProvider>
