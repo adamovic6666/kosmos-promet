@@ -452,6 +452,7 @@ export async function POST(request: NextRequest) {
           postal_code: postalCode,
           given_name: firstName,
           family_name: lastName,
+          phone_number: phone,
         },
       },
       products: orderItems.map((item: OrderItem) => ({

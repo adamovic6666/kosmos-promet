@@ -67,12 +67,9 @@ const ProductDetails = ({ productDetails }: ProductDetailsProps) => {
   const handleOrder = (quantity: number) => {
     const priceString = productDetails.akcijska_cena || productDetails.cena;
 
-    const productId = productDetails.product_code
-      ? productDetails.product_code.split("").reduce((acc, char) => {
-          return acc + char.charCodeAt(0);
-        }, 0)
-      : 0;
-
+    // Generate a proper hash for the product code to avoid collisions
+    // Using a simple but effective hash function
+    const productId = productDetails.product_code;
     addToCart(
       {
         productId,

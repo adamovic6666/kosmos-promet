@@ -82,7 +82,7 @@ export interface ProductItem {
 
 // Cart types
 export interface CartItem {
-  productId: number;
+  productId: string | number; // Support both string (product code) and number for backward compatibility
   name: string;
   image: string;
   price: string;

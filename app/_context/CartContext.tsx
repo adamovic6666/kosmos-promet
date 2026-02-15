@@ -12,10 +12,10 @@ import { CartItem, Cart } from "@/app/_types";
 interface CartContextType {
   cart: Cart;
   addToCart: (item: Omit<CartItem, "quantity">, quantity?: number) => void;
-  removeFromCart: (productId: number) => void;
-  updateQuantity: (productId: number, quantity: number) => void;
+  removeFromCart: (productId: string | number) => void;
+  updateQuantity: (productId: string | number, quantity: number) => void;
   clearCart: () => void;
-  isInCart: (productId: number) => boolean;
+  isInCart: (productId: string | number) => boolean;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -45,6 +45,23 @@ export function CartProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
   }, [cart]);
+
+  // Synchronize cart across tabs - listen for storage changes from other tabs
+  useEffect(() => {
+    const handleStorageChange = (e: StorageEvent) => {
+      if (e.key === CART_STORAGE_KEY && e.newValue) {
+        try {
+          const updatedCart = JSON.parse(e.newValue);
+          setCart(updatedCart);
+        } catch (error) {
+          console.error("Failed to sync cart from another tab:", error);
+        }
+      }
+    };
+
+    window.addEventListener("storage", handleStorageChange);
+    return () => window.removeEventListener("storage", handleStorageChange);
+  }, []);
 
   const calculateTotal = (items: CartItem[]) => {
     return items.reduce(
@@ -88,7 +105,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     });
   };
 
-  const removeFromCart = (productId: number) => {
+  const removeFromCart = (productId: string | number) => {
     setCart((prevCart) => {
       const newItems = prevCart.items.filter((i) => i.productId !== productId);
       return {
@@ -99,7 +116,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     });
   };
 
-  const updateQuantity = (productId: number, quantity: number) => {
+  const updateQuantity = (productId: string | number, quantity: number) => {
     if (quantity <= 0) {
       removeFromCart(productId);
       return;
@@ -125,7 +142,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     });
   };
 
-  const isInCart = (productId: number) => {
+  const isInCart = (productId: string | number) => {
     return cart.items.some((item) => item.productId === productId);
   };
 

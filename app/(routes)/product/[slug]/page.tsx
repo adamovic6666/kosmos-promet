@@ -7,12 +7,29 @@ import type { Metadata } from "next";
 import GotQuestions from "@/app/_components/got-questions/GotQuestions";
 import AboutProduct from "@/app/_components/about-product/AboutProduct";
 import ProductHotpost from "@/app/_components/interactive-image/ProductHotpost";
+import { redirect, notFound } from "next/navigation";
 
 // Cached data fetching function to eliminate duplicate API calls
 const getProductData = cache(async (slug: string): Promise<ProductDetail> => {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/v1/get-product?p=/product/${slug}&cc=${process.env.API_HASH}`
+    `${process.env.NEXT_PUBLIC_API_URL}/api/v1/get-product?p=/product/${slug}&cc=${process.env.API_HASH}`,
+    { redirect: "manual" } // Handle redirects manually
   );
+
+  // Handle 301 redirects - redirect to /prodavnica for old links
+  if (response.status === 301 || response.status === 302 || response.status === 308) {
+    redirect("/prodavnica");
+  }
+
+  // Handle 404 - product not found
+  if (response.status === 404) {
+    notFound();
+  }
+
+  // Handle 403 - forbidden/unauthorized
+  if (response.status === 403) {
+    throw new Error("Access forbidden");
+  }
 
   if (!response.ok) {
     const text = await response.text();
