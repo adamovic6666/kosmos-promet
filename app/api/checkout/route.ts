@@ -885,7 +885,7 @@ export async function POST(request: NextRequest) {
     // Send email to owner (for testing, sending to customer as well)
     await resend.emails.send({
       from: "Kosmos Promet <onboarding@resend.dev>",
-      to: [email], // Sending to customer for testing - change to ["slobodansimic82@gmail.com"] for production
+      to: ["kosmosindjija93@gmail.com"],
       subject: `[ZA PRODAVCA] Nova porudžbina #${orderNumber} - ${fullName}`,
       html: ownerEmailHtml,
       attachments: [

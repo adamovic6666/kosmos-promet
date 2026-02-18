@@ -10,7 +10,7 @@ import TopBar from "./_components/top-bar/TopBar";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.kosmospromet.com/"),
   applicationName: "Kosmos Promet",
-  title: "Delovi za prskalice i atomizere",
+  title: "Delovi za prskalice i atomizere | Kosmos Promet",
   description:
     "Prodaja regulatora, pumpi, dizni i ostale opreme za prskalice i atomizere. Najveći lager rezervnih delova. Provereni kvalitet i brza isporuka. Poruči online!",
   keywords: [
@@ -117,7 +117,9 @@ export default function RootLayout({
         {/* JSON-LD Structured Data for AI Crawlers */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
         />
         <script
           type="application/ld+json"

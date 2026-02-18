@@ -137,12 +137,12 @@ const Header = () => {
                   >
                     <ul className={styles.productsList}>
                       <li>
-                        <Link href="/prodavnica/regulatori">
+                        <Link href="/prodavnica/regulatori-za-prskalice-i-atomizere">
                           Regulatori za prskalice i atomizere
                         </Link>
                       </li>
                       <li>
-                        <Link href="/prodavnica/pumpe">
+                        <Link href="/prodavnica/pumpe-za-prskalice-i-atomizere">
                           Pumpe za prskalice i atomizere
                         </Link>
                       </li>

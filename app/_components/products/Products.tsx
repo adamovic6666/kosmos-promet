@@ -79,17 +79,33 @@ const Products = ({
           >
             {products &&
               products.length > 0 &&
-              products.map((product: Product) => (
-                <Card
-                  key={product.id || product.alias}
-                  name={(product?.title || product?.name) as string}
-                  image={product.image}
-                  alias={product.alias}
-                  isNew={product.is_new}
-                  productCode={product.product_code}
-                  mediaUpdatedAt={product.media_updated_at || 0}
-                />
-              ))}
+              products.map((product: Product) => {
+                let name = "";
+                if (
+                  product?.title === "Regulatori za prskalice i atomizere" ||
+                  product?.name === "Regulatori za prskalice i atomizere"
+                ) {
+                  name = "Regulatori";
+                } else if (
+                  product?.title === "Pumpe za prskalice i atomizere" ||
+                  product?.name === "Pumpe za prskalice i atomizere"
+                ) {
+                  name = "Pumpe";
+                } else {
+                  name = (product?.title || product?.name) as string;
+                }
+                return (
+                  <Card
+                    key={product.id || product.alias}
+                    name={name}
+                    image={product.image}
+                    alias={product.alias}
+                    isNew={product.is_new}
+                    productCode={product.product_code}
+                    mediaUpdatedAt={product.media_updated_at || 0}
+                  />
+                );
+              })}
           </div>
           {products.length === 0 && (
             <div className={styles.noProducts}>
