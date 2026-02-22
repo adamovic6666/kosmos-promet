@@ -94,21 +94,13 @@ export async function POST(request: NextRequest) {
       </html>
     `;
 
-    // Send email to owner
-    await resend.emails.send({
-      from: "Kosmos Promet <hello@kosmospromet.com>",
-      to: ["slobodansimic82@gmail.com"],
-      subject: `Nova poruka od ${fullName} - ${reason}`,
-      html: contactEmailHtml,
-      replyTo: email, // Allow direct reply to customer
-    });
-
     // Send auto-reply to customer
     await resend.emails.send({
       from: "Kosmos Promet <hello@kosmospromet.com>",
       to: [email],
       subject: "Potvrda prijema poruke - Kosmos Promet",
       html: autoReplyHtml,
+      replyTo: 'kosmosindjija93@gmail.com',
     });
 
     return NextResponse.json(

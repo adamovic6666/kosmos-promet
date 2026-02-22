@@ -902,6 +902,7 @@ export async function POST(request: NextRequest) {
       to: [email],
       subject: "Kosmos Promet | Vaša porudžbina je uspešno primljena!",
       html: customerEmailHtml,
+      replyTo: 'kosmosindjija93@gmail.com',
     });
 
     return NextResponse.json(
