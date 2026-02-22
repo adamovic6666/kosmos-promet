@@ -86,7 +86,7 @@ export async function POST(request: NextRequest) {
             </div>
             <div class="footer">
               <p>Kosmos Promet<br>
-              Email: info@kosmospromet.com<br>
+              Email: office@kosmospromet.com<br>
               Web: www.kosmospromet.com</p>
             </div>
           </div>
@@ -97,7 +97,7 @@ export async function POST(request: NextRequest) {
     // Send email to owner
     await resend.emails.send({
       from: "Kosmos Promet <hello@kosmospromet.com>",
-      to: ["slobodansimic82@gmail.com"],
+      to: ["office@kosmospromet.com"],
       subject: `Nova poruka od ${fullName} - ${reason}`,
       html: contactEmailHtml,
       replyTo: email, // Allow direct reply to customer
@@ -109,7 +109,7 @@ export async function POST(request: NextRequest) {
       to: [email],
       subject: "Potvrda prijema poruke - Kosmos Promet",
       html: autoReplyHtml,
-      replyTo: 'kosmosindjija93@gmail.com',
+      replyTo: 'office@kosmospromet.com',
     });
 
     return NextResponse.json(
