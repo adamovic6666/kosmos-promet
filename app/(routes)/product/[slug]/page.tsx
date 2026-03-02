@@ -64,6 +64,9 @@ export async function generateMetadata({
     description:
       metatag?.description ??
       "Širok asortiman delova za prskalice i atomizere po povoljnim cenama. Dostupni odmah uz brzu isporuku i stručnu tehničku podršku Kosmos Promet.",
+    alternates: {
+      canonical: `https://www.kosmospromet.com/product/${slug}`,
+    },
   };
 }
 

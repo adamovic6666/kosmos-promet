@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Delovi za prskalice i atomizere | Kosmos Promet",
     description:
-      "Širok asortiman delova za prskalice i atomizere po povoljnim cenama. Dostupni odmah uz brzu isporuku i stručnu tehničku podršku Kosmos Promet.",
+      "Prodaja regulatora, pumpi, dizni i ostale opreme za prskalice i atomizere. Najveći lager rezervnih delova. Provereni kvalitet i brza isporuka. Poruči online!",
     url: "https://www.kosmospromet.com/",
     siteName: "Kosmos Promet",
     images: [

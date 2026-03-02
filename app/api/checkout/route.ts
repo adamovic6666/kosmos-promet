@@ -45,6 +45,13 @@ async function generateWarehousePDF(
   const boldFont = await pdfDoc.embedFont(boldFontBytes);
   const regularFont = await pdfDoc.embedFont(regularFontBytes);
 
+  function formatPhoneNumber(input: string): string {
+    // Step 1: Remove all non-digit characters
+    const digits = input.replace(/\D/g, '');
+    // Step 2: Format as 3 + 3 + 4 digits (for pattern like 064 446 6406)
+    return digits.replace(/^(\d{3})(\d{3})(\d{4})$/, '$1 $2 $3');
+  }
+
   let yPosition = height - 50;
 
   // Company Header - Properly centered
@@ -150,7 +157,7 @@ async function generateWarehousePDF(
     font: regularFont,
   });
 
-  page.drawText(`Telefon: ${phone}`, {
+  page.drawText(`Telefon: ${formatPhoneNumber(phone)}`, {
     x: 60,
     y: yPosition - 65,
     size: 10,
@@ -230,10 +237,34 @@ async function generateWarehousePDF(
 
   yPosition -= 20;
 
-  // Table Rows
+  // Table Rows - with multi-page support
+  let currentPage = page;
+
+  const drawTableHeader = (p: typeof page, y: number) => {
+    p.drawRectangle({
+      x: 50,
+      y: y - 20,
+      width: 495,
+      height: 20,
+      color: rgb(0, 0, 0.4),
+    });
+    p.drawText("Šifra", { x: 55, y: y - 15, size: 10, font: boldFont, color: rgb(1, 1, 1) });
+    p.drawText("Naziv proizvoda", { x: 135, y: y - 15, size: 10, font: boldFont, color: rgb(1, 1, 1) });
+    p.drawText("Kol.", { x: 445, y: y - 15, size: 10, font: boldFont, color: rgb(1, 1, 1) });
+    p.drawText("[ ]", { x: 508, y: y - 15, size: 10, font: boldFont, color: rgb(1, 1, 1) });
+  };
+
   orderItems.forEach((item, index) => {
+    // Need ~200px at bottom for summary section; add a new page if not enough space
+    if (yPosition - 25 < 200) {
+      currentPage = pdfDoc.addPage([595.28, 841.89]);
+      yPosition = height - 50;
+      drawTableHeader(currentPage, yPosition);
+      yPosition -= 20;
+    }
+
     const rowColor = index % 2 === 0 ? rgb(0.97, 0.98, 0.98) : rgb(1, 1, 1);
-    page.drawRectangle({
+    currentPage.drawRectangle({
       x: 50,
       y: yPosition - 25,
       width: 495,
@@ -244,7 +275,7 @@ async function generateWarehousePDF(
     });
 
     // Product Code
-    page.drawText(item.productCode, {
+    currentPage.drawText(item.productCode, {
       x: 55,
       y: yPosition - 17,
       size: 9,
@@ -254,7 +285,7 @@ async function generateWarehousePDF(
     // Product Name (truncate if too long)
     const productName =
       item.name.length > 45 ? item.name.substring(0, 42) + "..." : item.name;
-    page.drawText(productName, {
+    currentPage.drawText(productName, {
       x: 135,
       y: yPosition - 17,
       size: 9,
@@ -262,7 +293,7 @@ async function generateWarehousePDF(
     });
 
     // Quantity
-    page.drawText(item.quantity.toString(), {
+    currentPage.drawText(item.quantity.toString(), {
       x: 450,
       y: yPosition - 17,
       size: 11,
@@ -270,7 +301,7 @@ async function generateWarehousePDF(
     });
 
     // Checkbox
-    page.drawRectangle({
+    currentPage.drawRectangle({
       x: 505,
       y: yPosition - 20,
       width: 15,
@@ -284,11 +315,17 @@ async function generateWarehousePDF(
 
   yPosition -= 20;
 
+  // If not enough room for the summary section, add a new page
+  if (yPosition < 220) {
+    currentPage = pdfDoc.addPage([595.28, 841.89]);
+    yPosition = height - 50;
+  }
+
   // Cost Summary with proper alignment
   const labelX = 360;
   const valueX = 520;
 
-  page.drawText("Međuzbir:", {
+  currentPage.drawText("Međuzbir:", {
     x: labelX,
     y: yPosition,
     size: 10,
@@ -296,14 +333,14 @@ async function generateWarehousePDF(
   });
   const subtotalText = `${subtotal} RSD`;
   const subtotalWidth = regularFont.widthOfTextAtSize(subtotalText, 10);
-  page.drawText(subtotalText, {
+  currentPage.drawText(subtotalText, {
     x: valueX - subtotalWidth,
     y: yPosition,
     size: 10,
     font: regularFont,
   });
 
-  page.drawText("Troškovi isporuke:", {
+  currentPage.drawText("Troškovi isporuke:", {
     x: labelX,
     y: yPosition - 15,
     size: 10,
@@ -311,7 +348,7 @@ async function generateWarehousePDF(
   });
   const deliveryText = `${deliveryCost} RSD`;
   const deliveryWidth = regularFont.widthOfTextAtSize(deliveryText, 10);
-  page.drawText(deliveryText, {
+  currentPage.drawText(deliveryText, {
     x: valueX - deliveryWidth,
     y: yPosition - 15,
     size: 10,
@@ -319,14 +356,14 @@ async function generateWarehousePDF(
   });
 
   // Draw separator line
-  page.drawLine({
+  currentPage.drawLine({
     start: { x: 350, y: yPosition - 25 },
     end: { x: 545, y: yPosition - 25 },
     thickness: 2,
     color: rgb(0, 0, 0.4),
   });
 
-  page.drawText("UKUPNO:", {
+  currentPage.drawText("UKUPNO:", {
     x: labelX,
     y: yPosition - 40,
     size: 12,
@@ -334,7 +371,7 @@ async function generateWarehousePDF(
   });
   const totalText = `${total} RSD`;
   const totalWidth = boldFont.widthOfTextAtSize(totalText, 12);
-  page.drawText(totalText, {
+  currentPage.drawText(totalText, {
     x: valueX - totalWidth,
     y: yPosition - 40,
     size: 12,
@@ -344,7 +381,7 @@ async function generateWarehousePDF(
   yPosition -= 60;
 
   // Payment Instructions Box
-  page.drawRectangle({
+  currentPage.drawRectangle({
     x: 50,
     y: yPosition - 40,
     width: 495,
@@ -353,7 +390,7 @@ async function generateWarehousePDF(
     borderWidth: 2,
   });
 
-  page.drawText("Način plaćanja:", {
+  currentPage.drawText("Način plaćanja:", {
     x: 60,
     y: yPosition - 20,
     size: 10,
@@ -365,7 +402,7 @@ async function generateWarehousePDF(
       ? `POUZEĆEM - Iznos za naplatu kuriru: ${total} RSD`
       : "UPLATOM - Roba se šalje nakon potvrde uplate";
 
-  page.drawText(paymentInstructions, {
+  currentPage.drawText(paymentInstructions, {
     x: 60,
     y: yPosition - 35,
     size: 9,
@@ -375,19 +412,19 @@ async function generateWarehousePDF(
   yPosition -= 90;
 
   // Signature Fields
-  page.drawText("Pripremio: ___________________", {
+  currentPage.drawText("Pripremio: ___________________", {
     x: 50,
     y: yPosition,
     size: 9,
     font: regularFont,
   });
-  page.drawText("Datum: ___________________", {
+  currentPage.drawText("Datum: ___________________", {
     x: 220,
     y: yPosition,
     size: 9,
     font: regularFont,
   });
-  page.drawText("Potpis: ___________________", {
+  currentPage.drawText("Potpis: ___________________", {
     x: 390,
     y: yPosition,
     size: 9,
@@ -397,7 +434,7 @@ async function generateWarehousePDF(
   // Footer - Properly centered
   const footerText = "Ovaj dokument je automatski generisan iz sistema Kosmos Promet";
   const footerWidth = regularFont.widthOfTextAtSize(footerText, 8);
-  page.drawText(footerText, {
+  currentPage.drawText(footerText, {
     x: (width - footerWidth) / 2,
     y: 30,
     size: 8,
@@ -437,6 +474,7 @@ export async function POST(request: NextRequest) {
         email,
         first_name: firstName,
         last_name: lastName,
+        payment_method: paymentMethod === "cash_on_delivery" ? "personal" : "invoice",
         billing_address: {
           country_code: "RS",
           address_line1: address,

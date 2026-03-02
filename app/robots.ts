@@ -6,7 +6,16 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/"],
+        disallow: [
+          "/api/",
+          "/*?add-to-cart=*",
+          "/*?product=*",
+          "/*?s=*",
+          "/*?start=*",
+          "/*?avia_extended_shop_select=*",
+          "/*?product_order=*",
+          "/*?product_count=*",
+        ],
       },
       // Explicitly allow AI crawlers
       {
